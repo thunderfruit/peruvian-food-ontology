@@ -39,7 +39,7 @@
 \maketitle
 
 \begin{abstract}
-Los comensales con alergias, restricciones alimentarias u objetivos de control de peso deciden con información incompleta, porque la composición de los platos rara vez está estructurada. Este trabajo construye una ontología OWL 2 de la cocina peruana, con énfasis en Trujillo, que sirve de base a un sistema de recomendación basado en conocimiento. Se elaboró un conjunto de datos de 100 platos (50 de la costa, 30 de la sierra y 20 de la selva) y 135 ingredientes normalizados con 51 sinónimos regionales; se modeló la ontología, se pobló automáticamente, se verificó su consistencia con el razonador HermiT y se desplegó, junto con su motor de reglas, en Apache Jena Fuseki sobre Google Cloud. En una evaluación comparativa con 30 consultas SPARQL (3000 pares consulta--plato), la versión refinada del motor elevó la Precision media de 0,710 a 0,938, el Recall de 0,911 a 0,995 y la medida F$_1$ de 0,768 a 0,961, diferencias significativas según la prueba de Wilcoxon ($p<0{,}05$). Las consultas sobre alérgenos y dietas alcanzaron Precision 1,0, mientras que los errores residuales se concentran en los perfiles nutricionales cualitativos.
+Los comensales con alergias, restricciones alimentarias u objetivos de control de peso deciden con información incompleta, porque la composición de los platos rara vez está estructurada. Este trabajo construye una ontología OWL 2 de la cocina peruana, con énfasis en Trujillo, que sirve de base a un sistema de recomendación basado en conocimiento. Se elaboró un conjunto de datos de 100 platos (50 de la costa, 30 de la sierra y 20 de la selva) y 135 ingredientes normalizados con 51 sinónimos regionales; se modeló la ontología, se pobló automáticamente, se verificó su consistencia con el razonador HermiT y se desplegó, junto con su motor de reglas, en Apache Jena Fuseki sobre la plataforma en la nube Render. En una evaluación comparativa con 30 consultas SPARQL (3000 pares consulta--plato), la versión refinada del motor elevó la Precision media de 0,710 a 0,938, el Recall de 0,911 a 0,995 y la medida F$_1$ de 0,768 a 0,961, diferencias significativas según la prueba de Wilcoxon ($p<0{,}05$). Las consultas sobre alérgenos y dietas alcanzaron Precision 1,0, mientras que los errores residuales se concentran en los perfiles nutricionales cualitativos.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -82,7 +82,7 @@ Para alcanzarlo se formulan cuatro objetivos específicos de carácter secuencia
 \begin{enumerate}
 \item Construir un conjunto de datos de platos de la cocina peruana (costa, sierra y selva), con énfasis en los platos de Trujillo, que registre sus ingredientes normalizados, alérgenos, técnica de cocción y perfil nutricional cualitativo.
 \item Modelar y construir la base de conocimiento en OWL 2, definiendo la taxonomía, las propiedades, los axiomas y las reglas de inferencia del dominio, poblándola con el conjunto de datos y verificando su consistencia con un razonador.
-\item Desplegar el motor de inferencia y la base de conocimiento utilizando la infraestructura y las herramientas de Google Cloud.
+\item Desplegar el motor de inferencia y la base de conocimiento en un servicio en la nube (Render).
 \item Evaluar la precisión de las recomendaciones mediante las métricas Precision, Recall y F$_1$, en una evaluación comparativa de rendimiento (benchmarking) antes y después del refinamiento de las reglas de inferencia.
 \end{enumerate}
 
@@ -144,9 +144,9 @@ La evaluación de las recomendaciones se realiza mediante la técnica de medici�
 F_1 &= \frac{2\cdot\text{Precision}\cdot\text{Recall}}{\text{Precision}+\text{Recall}}. \label{eq:f1}
 \end{align}
 
-La validez de contenido de las fichas se somete a juicio de expertos, y la confiabilidad se sustenta en que las consultas SPARQL son deterministas: ejecutadas sobre los mismos datos y en el mismo entorno de Google Cloud, producen el mismo resultado.
+La validez de contenido de las fichas se somete a juicio de expertos, y la confiabilidad se sustenta en que las consultas SPARQL son deterministas: ejecutadas sobre los mismos datos y en el mismo entorno en la nube, producen el mismo resultado.
 
-Los valores de cada métrica se promedian por versión del motor, y la diferencia entre la versión base y la refinada se contrasta con la prueba de rangos con signo de Wilcoxon para muestras relacionadas, o con la prueba $t$ para muestras relacionadas si se verifica la normalidad de las diferencias mediante la prueba de Shapiro--Wilk, con un nivel de significancia de 0,05. La ontología se edita en Protégé y su consistencia se verifica con el razonador HermiT, el repositorio de triples se sirve con Apache Jena Fuseki, desplegado en Google Cloud, y el poblado, la inferencia y el análisis estadístico se realizan en Python con las bibliotecas rdflib, owlready2 y SciPy.
+Los valores de cada métrica se promedian por versión del motor, y la diferencia entre la versión base y la refinada se contrasta con la prueba de rangos con signo de Wilcoxon para muestras relacionadas, o con la prueba $t$ para muestras relacionadas si se verifica la normalidad de las diferencias mediante la prueba de Shapiro--Wilk, con un nivel de significancia de 0,05. La ontología se edita en Protégé y su consistencia se verifica con el razonador HermiT, el repositorio de triples se sirve con Apache Jena Fuseki, desplegado en Render, y el poblado, la inferencia y el análisis estadístico se realizan en Python con las bibliotecas rdflib, owlready2 y SciPy.
 
 \section{Resultados}
 
@@ -289,9 +289,9 @@ Consistencia (HermiT) & Sí & Sí \\
 \end{tabular}
 \end{table}
 
-\subsection{Despliegue en Google Cloud}
+\subsection{Despliegue en Render}
 
-La base de conocimiento materializada de cada versión se sirve con Apache Jena Fuseki 5.2.0, empaquetado en una imagen de contenedor que incluye ambas ontologías. El archivo de configuración de Fuseki define dos servicios, \texttt{/base/query} y \texttt{/refined/query}, ambos de solo lectura, de modo que el endpoint público no admite operaciones de modificación. La imagen se construyó con Podman, se publicó en Artifact Registry y se desplegó en Cloud Run (región \texttt{southamerica-west1}, 512~MiB de memoria), un servicio administrado que escala a cero instancias cuando no recibe consultas \pendiente{URL pública del servicio y capturas de la consola de Cloud Run y de la interfaz de Fuseki}. Antes del despliegue, el contenedor se verificó localmente: el programa de evaluación, ejecutado contra el endpoint de Fuseki, produjo exactamente las mismas métricas que contra los archivos locales, y un intento de operación de actualización fue rechazado con el código HTTP 405. El procedimiento completo se documenta en el repositorio.
+La base de conocimiento materializada de cada versión se sirve con Apache Jena Fuseki 5.2.0, empaquetado en una imagen de contenedor que incluye ambas ontologías. El archivo de configuración de Fuseki define dos servicios, \texttt{/base/query} y \texttt{/refined/query}, ambos de solo lectura, de modo que el endpoint público no admite operaciones de modificación. La imagen se despliega como servicio web en Render, que la construye directamente desde el repositorio del proyecto en cada actualización y la publica en \url{https://peruvian-food-ontology.onrender.com}. Se usó la capa gratuita, que suspende el servicio tras unos minutos sin consultas, por lo que la primera consulta después de una pausa tarda cerca de un minuto. Sobre este endpoint se construyó un prototipo web que arma la consulta SPARQL a partir de los alérgenos, la dieta, el perfil y la región elegidos, y lista los platos compatibles \pendiente{capturas del panel de Render, de la interfaz de Fuseki y del prototipo}. Antes del despliegue, el contenedor se verificó localmente: el programa de evaluación, ejecutado contra el endpoint de Fuseki, produjo exactamente las mismas métricas que contra los archivos locales, y un intento de operación de actualización fue rechazado con el código HTTP 405. Tras el despliegue, la evaluación ejecutada contra el endpoint público reprodujo las mismas métricas. El procedimiento completo se documenta en el repositorio.
 
 \subsection{Evaluación de las recomendaciones}
 
