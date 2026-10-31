@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+# LaTeX
+report/build/
+*.aux
+*.log
+*.synctex.gz
+# Editor
+.vscode/
+.idea/
