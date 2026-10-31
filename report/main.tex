@@ -370,9 +370,6 @@ F$_1$ & 0,002 & 0 & $<0{,}001$ \\
 
 El análisis de errores explica la mejora. En la versión base, los falsos positivos de las consultas sobre alérgenos y dietas se deben a tres causas: (i) ingredientes escritos con su sinónimo regional, como el ceviche, cuyo «lenguado» no se reconocía como pescado, o el shambar, cuyo «trigo» no se reconocía como cereal con gluten; (ii) ingredientes derivados, como la papa a la huancaína, cuya salsa aporta leche, gluten y huevo; y (iii) la contaminación cruzada no considerada, como el chicharrón de pescado preparado en freidoras compartidas con mariscos. Las reglas refinadas eliminan los tres tipos de error, y las 19 consultas sobre alérgenos y dietas alcanzan Precision y Recall de 1,0. En los perfiles, la versión base clasificaba como bajos en calorías los postres y bebidas azucarados y las preparaciones con varios lácteos, y como altos en proteínas los platos con huevo o queso como acompañamiento; las reglas refinadas corrigen estos patrones. Los errores residuales (38 falsos positivos y 4 falsos negativos) se concentran en los perfiles nutricionales cualitativos de preparaciones como la causa, el chairo, la patasca o el sudado de pescado, cuya clasificación depende de las porciones y de la cantidad de grasa, información que el modelo cualitativo no representa. Se optó por no añadir reglas específicas para estos platos, para no sobreajustar el motor al banco de pruebas.
 
-\section*{Agradecimientos}
-\pendiente{opcional: agradecer al especialista en nutrición que validó la anotación de referencia.}
-
 \begin{thebibliography}{99}
 
 \bibitem{bertini2026} A. Bertini, H. Cáceres-Ozimica, R. Valenzuela, and S. Durán-Agüero, ``Global and regional inequalities in dairy recommendations: A natural language processing analysis of food-based dietary guidelines across income groups,'' \emph{Lancet Reg. Health--Americas}, vol. 62, Art. no. 101550, 2026, doi: 10.1016/j.lana.2026.101550.
