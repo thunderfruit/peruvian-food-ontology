@@ -4,8 +4,8 @@
 
 | Versión | Precision | Recall | F1 | TP | FP | FN | TN |
 |---|---|---|---|---|---|---|---|
-| base | 0.667 | 0.909 | 0.735 | 1132 | 393 | 57 | 1418 |
-| refined | 0.916 | 0.987 | 0.940 | 1180 | 46 | 9 | 1765 |
+| base | 0.676 | 0.909 | 0.738 | 1124 | 399 | 55 | 1422 |
+| refined | 0.913 | 0.987 | 0.938 | 1170 | 49 | 9 | 1772 |
 
 ## Matriz de confusión agregada (filas: real, columnas: recomendado)
 
@@ -13,20 +13,20 @@
 
 | | Recomendado | No recomendado |
 |---|---|---|
-| Compatible | 1132 (TP) | 57 (FN) |
-| No compatible | 393 (FP) | 1418 (TN) |
+| Compatible | 1124 (TP) | 55 (FN) |
+| No compatible | 399 (FP) | 1422 (TN) |
 
 **refined**
 
 | | Recomendado | No recomendado |
 |---|---|---|
-| Compatible | 1180 (TP) | 9 (FN) |
-| No compatible | 46 (FP) | 1765 (TN) |
+| Compatible | 1170 (TP) | 9 (FN) |
+| No compatible | 49 (FP) | 1772 (TN) |
 
 ## Comparación base vs refinada (alfa = 0,05)
 
 | Métrica | Shapiro-Wilk p (diferencias) | Prueba | Estadístico | p |
 |---|---|---|---|---|
-| precision | 0.0031 | Wilcoxon | 0.0000 | 0.0000 |
+| precision | 0.0021 | Wilcoxon | 0.0000 | 0.0000 |
 | recall | 0.0000 | Wilcoxon | 1.0000 | 0.0173 |
-| f1 | 0.0018 | Wilcoxon | 0.0000 | 0.0000 |
+| f1 | 0.0022 | Wilcoxon | 0.0000 | 0.0000 |

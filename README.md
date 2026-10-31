@@ -40,5 +40,5 @@ Despliegue: `deploy/README.md`.
 - **Base** = `rules/core` (alérgenos de los ingredientes, dietas) + `rules/profiles_base` (perfiles solo por técnica y categorías directas).
 - **Refinada** = `rules/refine` (sinónimos regionales, ingredientes derivados con la cadena `tieneIngrediente o tieneComponente`, contaminación cruzada) + `rules/core` + `rules/profiles_refined` (perfiles que además tienen en cuenta azúcar, grasa animal, maní y frutos secos, varios lácteos y la fuente proteica principal).
 - Las consultas (`queries/queries.csv`) son las mismas para ambas versiones. El gold standard sale de `data/gold_dishes.csv`, que se anota a mano, plato por plato, sin mirar la ontología, y lo valida el nutricionista.
-- Datos: 100 platos (50 costa, 30 sierra, 20 selva; 11 de Trujillo), 146 ingredientes con 59 sinónimos, 30 consultas (12, 12 y 6 criterios).
+- Datos: 100 platos (50 costa, 30 sierra, 20 selva; 5 de Trujillo), 146 ingredientes con 59 sinónimos, 30 consultas (12, 12 y 6 criterios).
 - **Pendiente del equipo:** 24 platos de `dishes.csv` tienen `source` que empieza por `POR VERIFICAR (fuente débil)`: solo prensa o fuentes secundarias, que hay que abrir y confirmar. `gold_dishes.csv` es un borrador que debe validar un especialista en nutrición. Si cambian los datos, se vuelven a correr todos los scripts y se actualizan las cifras del informe.

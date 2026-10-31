@@ -11,7 +11,6 @@ escabeche_de_pescado,pescado|gluten|huevo,0,0,0,1,0,0
 chupe_de_pallares_verdes,crustaceos|huevo|leche|pescado,0,0,0,1,0,1
 majado_de_yuca,,0,0,0,1,0,0
 chicha_de_jora,,1,1,0,0,0,0
-papa_a_la_huancaina,leche|gluten|huevo,1,0,0,0,0,1
 lomo_saltado,soya|gluten,0,0,0,1,0,1
 aji_de_gallina,gluten|leche|frutos_secos|huevo,0,0,0,1,0,0
 picarones,gluten,1,1,0,0,0,0
@@ -50,6 +49,7 @@ emoliente,gluten,1,1,0,0,0,0
 aguadito_de_pollo,gluten,0,0,1,1,1,1
 papa_rellena,huevo|gluten,0,0,0,1,0,0
 shambar,gluten,0,0,0,1,0,0
+papa_a_la_huancaina,leche|gluten|huevo,1,0,0,0,0,1
 chupe_de_camarones,crustaceos|leche|huevo,0,0,0,1,0,1
 chayro,,0,0,0,1,0,1
 pachamanca,leche,0,0,0,1,0,0

@@ -1,2 +1,2 @@
-base: consistente (HermiT); clases: 17, individuos: 328, clases insatisfacibles: 0
-refined: consistente (HermiT); clases: 17, individuos: 328, clases insatisfacibles: 0
+base: consistente (HermiT); clases: 17, individuos: 332, clases insatisfacibles: 0
+refined: consistente (HermiT); clases: 17, individuos: 332, clases insatisfacibles: 0
