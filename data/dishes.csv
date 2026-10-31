@@ -1,101 +1,101 @@
 id,label,region,city,dish_type,technique,ingredients,may_contain,source
-ceviche_de_pescado,Ceviche de pescado,costa,Trujillo,fondo,marinado,lenguado|limon|cebolla|aji limo|camote|choclo|canchita,moluscos|crustaceos,POR VERIFICAR
-sopa_teologa,Sopa teóloga,costa,Trujillo,sopa,sancochado,gallina|pan|leche evaporada|queso fresco|papa|aji amarillo,,POR VERIFICAR
-cabrito_a_la_nortena,Cabrito a la norteña,costa,Trujillo,fondo,guisado,cabrito|chicha de jora|aji amarillo|culantro|frijol|yuca|arroz,,POR VERIFICAR
-chicharron_de_pescado,Chicharrón de pescado,costa,Trujillo,fondo,frito,pescado|harina de trigo|aceite|yuca|salsa criolla,crustaceos|moluscos,POR VERIFICAR
-sudado_de_pescado,Sudado de pescado,costa,Trujillo,fondo,guisado,corvina|cebolla|tomate|aji amarillo|chicha de jora|culantro|yuca,,POR VERIFICAR
-frito_trujillano,Frito trujillano,costa,Trujillo,fondo,frito,cerdo|aji panca|ajo|comino|yuca|manteca,,POR VERIFICAR
-pepian_de_pava,Pepián de pava,costa,Trujillo,fondo,guisado,pava|choclo|aji amarillo|culantro|ajo|arroz,,POR VERIFICAR
-jalea_mixta,Jalea mixta,costa,Trujillo,fondo,frito,pescado|calamar|langostino|choros|harina de trigo|aceite|yuca|salsa criolla,,POR VERIFICAR
-causa_de_pescado,Causa de pescado,costa,Trujillo,entrada,sancochado,papa|aji amarillo|limon|pescado|mayonesa|palta|aceituna,,POR VERIFICAR
-sopa_de_choros,Sopa de choros,costa,Trujillo,sopa,sancochado,choros|papa|arroz|culantro|cebolla|aji amarillo,,POR VERIFICAR
-majado_de_yuca,Majado de yuca,costa,Trujillo,fondo,frito,yuca|cerdo|manteca|ajo|cebolla,,POR VERIFICAR
-chicha_de_jora,Chicha de jora,costa,Trujillo,bebida,sancochado,jora|chancaca|clavo|canela,,POR VERIFICAR
-papa_a_la_huancaina,Papa a la huancaína,costa,Lima,entrada,sancochado,papa|salsa huancaina|huevo|aceituna|lechuga,,POR VERIFICAR
-lomo_saltado,Lomo saltado,costa,Lima,fondo,salteado,lomo fino|cebolla|tomate|salsa de soya|vinagre|papas fritas|arroz,,POR VERIFICAR
-aji_de_gallina,Ají de gallina,costa,Lima,fondo,guisado,gallina|aji amarillo|pan de molde|leche|pecanas|parmesano|papa|huevo|aceituna,,POR VERIFICAR
-picarones,Picarones,costa,Lima,postre,frito,zapallo|camote|harina de trigo|levadura|miel de chancaca|anis|aceite,,POR VERIFICAR
-mazamorra_morada,Mazamorra morada,costa,Lima,postre,sancochado,maiz morado|pina|membrillo|harina de camote|canela|azucar,,POR VERIFICAR
-suspiro_a_la_limena,Suspiro a la limeña,costa,Lima,postre,sancochado,leche evaporada|leche condensada|yema|oporto|azucar|canela,,POR VERIFICAR
-causa_limena,Causa limeña,costa,Lima,entrada,sancochado,papa|aji amarillo|limon|pollo|mayonesa|palta|huevo|aceituna,,POR VERIFICAR
-anticuchos,Anticuchos de corazón,costa,Lima,entrada,a_la_parrilla,corazon de res|aji panca|vinagre|comino|ajo|aceite|papa|choclo,,POR VERIFICAR
-arroz_con_pollo,Arroz con pollo,costa,Lima,fondo,guisado,pollo|arroz|culantro|arveja|zanahoria|pimiento|cerveza negra,,POR VERIFICAR
-tacu_tacu,Tacu tacu,costa,Lima,fondo,frito,frijol|arroz|aceite|cebolla|ajo,,POR VERIFICAR
-carapulcra,Carapulcra,costa,Chincha,fondo,guisado,papa seca|cerdo|aji panca|mani|ajo|comino|aceite,,POR VERIFICAR
-tiradito,Tiradito de pescado,costa,Lima,entrada,marinado,pescado|limon|aji amarillo|culantro,,POR VERIFICAR
-leche_de_tigre,Leche de tigre,costa,Lima,bebida,marinado,leche de tigre|canchita|choclo,,POR VERIFICAR
-arroz_con_mariscos,Arroz con mariscos,costa,Lima,fondo,guisado,arroz|langostino|calamar|choros|aji panca|arveja|parmesano|aceite,,POR VERIFICAR
-chilcano_de_pescado,Chilcano de pescado,costa,Lima,sopa,sancochado,cabeza de pescado|limon|culantro|cebolla china|kion,,POR VERIFICAR
-pescado_a_lo_macho,Pescado a lo macho,costa,Lima,fondo,frito,pescado|harina de trigo|aceite|langostino|calamar|crema de leche|aji panca|arroz,,POR VERIFICAR
-choritos_a_la_chalaca,Choritos a la chalaca,costa,Callao,entrada,sancochado,choros|salsa criolla|tomate|choclo,,POR VERIFICAR
-seco_de_res,Seco de res,costa,Lima,fondo,guisado,carne de res|culantro|chicha de jora|aji amarillo|frijol|arroz,,POR VERIFICAR
-tamal_criollo,Tamal criollo,costa,Lima,entrada,al_vapor,maiz pelado|cerdo|aji panca|mani|huevo|aceituna|manteca,,POR VERIFICAR
-pan_con_chicharron,Pan con chicharrón,costa,Lima,entrada,frito,pan|chicharron|camote|salsa criolla,,POR VERIFICAR
-pollo_a_la_brasa,Pollo a la brasa,costa,Lima,fondo,asado,pollo|salsa de soya|ajo|comino|cerveza negra|papas fritas|lechuga|tomate,,POR VERIFICAR
-arroz_chaufa,Arroz chaufa,costa,Lima,fondo,salteado,arroz|huevo|salsa de soya|cebolla china|pollo|aceite de ajonjoli|kion,crustaceos,POR VERIFICAR
-wantan_frito,Wantán frito,costa,Lima,entrada,frito,masa wantan|cerdo|kion|aceite,crustaceos,POR VERIFICAR
-seco_de_chabelo,Seco de chabelo,costa,Piura,fondo,guisado,platano verde|carne seca|tomate|cebolla|aji amarillo|aceite,,POR VERIFICAR
-malarrabia,Malarrabia,costa,Piura,fondo,guisado,platano maduro|frijol|queso fresco|aji amarillo|cebolla|aceite,,POR VERIFICAR
-ceviche_de_conchas_negras,Ceviche de conchas negras,costa,Tumbes,entrada,marinado,conchas negras|limon|cebolla|aji limo|culantro|camote,,POR VERIFICAR
-chinguirito,Chinguirito,costa,Chiclayo,entrada,marinado,guitarra|limon|cebolla|aji limo|camote|choclo,,POR VERIFICAR
-espesado,Espesado,costa,Chiclayo,fondo,guisado,choclo|loche|frijol|carne de res|culantro|yuca|arroz,,POR VERIFICAR
-arroz_con_pato,Arroz con pato,costa,Chiclayo,fondo,guisado,pato|arroz|culantro|cerveza negra|arveja|aji amarillo|zapallo loche,,POR VERIFICAR
-king_kong,King kong,costa,Chiclayo,postre,al_horno,harina de trigo|mantequilla|yema|manjar blanco|dulce de pina,mani|frutos_secos,POR VERIFICAR
-humitas,Humitas,costa,Lima,entrada,al_vapor,choclo|queso fresco|manteca|anis|azucar,,POR VERIFICAR
-ensalada_de_pallares,Ensalada de pallares,costa,Ica,entrada,crudo,pallar|cebolla|tomate|limon|culantro|aceite de oliva,,POR VERIFICAR
-frejol_colado,Frejol colado,costa,Chincha,postre,sancochado,frijol|chancaca|leche evaporada|clavo|ajonjoli,,POR VERIFICAR
-arroz_con_leche,Arroz con leche,costa,Lima,postre,sancochado,arroz|leche|leche condensada|canela|clavo|pasas,,POR VERIFICAR
-chicha_morada,Chicha morada,costa,Lima,bebida,sancochado,maiz morado|pina|membrillo|limon|canela|azucar,,POR VERIFICAR
-emoliente,Emoliente,costa,Lima,bebida,sancochado,cebada|linaza|cola de caballo|limon|azucar,,POR VERIFICAR
-aguadito_de_pollo,Aguadito de pollo,costa,Lima,sopa,sancochado,pollo|culantro|arroz|arveja|choclo|papa|zanahoria,,POR VERIFICAR
-papa_rellena,Papa rellena,costa,Lima,entrada,frito,papa|carne molida|huevo|aceituna|pasas|harina de trigo|aceite|salsa criolla,,POR VERIFICAR
-shambar,Shambar,sierra,Trujillo,sopa,sancochado,trigo|frejol|alverja|haba|garbanzo|pellejo de cerdo|jamon|culantro|hierbabuena|canchita,,POR VERIFICAR
-chupe_de_camarones,Chupe de camarones,sierra,Arequipa,sopa,sancochado,camarones|leche|huevo|queso fresco|papa|arroz|aji panca|huacatay,,POR VERIFICAR
-ensalada_de_quinua,Ensalada de quinua,sierra,,entrada,crudo,quinoa|tomate|cebolla|palta|limon|cilantro,,POR VERIFICAR
-pachamanca,Pachamanca,sierra,Huancayo,fondo,al_horno,cerdo|cordero|pollo|papa|camote|haba|humita|huacatay|chicha de jora,,POR VERIFICAR
-papa_a_la_ocopa,Papa a la ocopa,sierra,Arequipa,entrada,sancochado,papa|salsa ocopa|huevo|aceituna|lechuga,,POR VERIFICAR
-rocoto_relleno,Rocoto relleno,sierra,Arequipa,fondo,al_horno,rocoto|carne molida|mani|queso fresco|huevo|leche|pasas|aceituna|papa,,POR VERIFICAR
-adobo_arequipeno,Adobo arequipeño,sierra,Arequipa,fondo,guisado,cerdo|chicha de jora|aji panca|vinagre|ajo|comino|cebolla,,POR VERIFICAR
-solterito,Solterito arequipeño,sierra,Arequipa,entrada,crudo,haba|queso fresco|choclo|cebolla|tomate|rocoto|aceituna|limon|aceite de oliva,,POR VERIFICAR
-pastel_de_papa,Pastel de papa,sierra,Arequipa,fondo,al_horno,papa|leche|queso|huevo|mantequilla,,POR VERIFICAR
-cuy_chactado,Cuy chactado,sierra,Arequipa,fondo,frito,cuy|harina de maiz|aceite|papa|ajo,,POR VERIFICAR
-cuy_al_horno,Cuy al horno,sierra,Cusco,fondo,al_horno,cuy|papa|huacatay|ajo|aji panca|aceite,,POR VERIFICAR
-chiri_uchu,Chiri uchu,sierra,Cusco,fondo,asado,cuy|gallina|cecina|chorizo|queso fresco|cochayuyo|huevera|torreja de maiz|rocoto,,POR VERIFICAR
-olluquito_con_charqui,Olluquito con charqui,sierra,,fondo,guisado,olluco|charqui|aji panca|ajo|cebolla|perejil|arroz,,POR VERIFICAR
-patasca,Patasca,sierra,,sopa,sancochado,mote|mondongo|cerdo|hierbabuena|ajo|cebolla,,POR VERIFICAR
-chairo,Chairo,sierra,Puno,sopa,sancochado,chuno|cordero|charqui|haba|papa|trigo|zanahoria|hierbabuena,,POR VERIFICAR
-caldo_verde,Caldo verde,sierra,Cajamarca,sopa,sancochado,papa|huevo|queso fresco|paico|culantro|huacatay|hierbabuena,,POR VERIFICAR
-trucha_frita,Trucha frita,sierra,Puno,fondo,frito,trucha|harina de trigo|aceite|papa|arroz|lechuga|tomate,,POR VERIFICAR
-ceviche_de_trucha,Ceviche de trucha,sierra,Puno,entrada,marinado,trucha|limon|cebolla|rocoto|camote|choclo|cancha,,POR VERIFICAR
-pesque_de_quinua,Pesque de quinua,sierra,Puno,fondo,sancochado,quinua|leche|queso fresco|mantequilla,,POR VERIFICAR
-sopa_de_quinua,Sopa de quinua,sierra,,sopa,sancochado,quinua|papa|zanahoria|arveja|culantro|cebolla|ajo,,POR VERIFICAR
-api_morado,Api morado,sierra,Puno,bebida,sancochado,maiz morado|canela|clavo|azucar|limon,,POR VERIFICAR
-puca_picante,Puca picante,sierra,Ayacucho,fondo,guisado,papa|mani|aji panca|betarraga|chicharron|arroz,,POR VERIFICAR
-qapchi,Qapchi,sierra,Ayacucho,entrada,crudo,queso fresco|papa|huacatay|cebolla|rocoto|leche,,POR VERIFICAR
-picante_de_cuy,Picante de cuy,sierra,Huaraz,fondo,guisado,cuy|mani|aji panca|papa|ajo|aceite,,POR VERIFICAR
-chicharron_cusqueno,Chicharrón cusqueño,sierra,Cusco,fondo,frito,cerdo|manteca|mote|papa|hierbabuena|cebolla,,POR VERIFICAR
-queso_helado,Queso helado,sierra,Arequipa,postre,crudo,leche|leche condensada|coco|canela|clavo,frutos_secos,POR VERIFICAR
-alpaca_a_la_parrilla,Alpaca a la parrilla,sierra,Arequipa,fondo,a_la_parrilla,carne de alpaca|papa|lechuga|tomate|limon,,POR VERIFICAR
-ponche_de_habas,Ponche de habas,sierra,Cusco,bebida,sancochado,haba|leche|azucar|canela|clavo,,POR VERIFICAR
-cancha_con_queso,Cancha con queso,sierra,,entrada,asado,cancha|queso fresco|aceite,,POR VERIFICAR
-mazamorra_de_quinua,Mazamorra de quinua,sierra,,postre,sancochado,quinua|leche|azucar|canela|clavo,,POR VERIFICAR
-juane_de_gallina,Juane de gallina,selva,Tarapoto,fondo,sancochado,arroz|gallina criolla|huevo|aceituna|palillo|sacha culantro,,POR VERIFICAR
-tacacho_con_cecina,Tacacho con cecina,selva,Tarapoto,fondo,frito,platano bellaco|manteca|cecina,,POR VERIFICAR
-inchicapi,Inchicapi,selva,Iquitos,sopa,sancochado,gallina|mani|yuca|sacha culantro|harina de maiz|ajo,,POR VERIFICAR
-patarashca,Patarashca,selva,Iquitos,fondo,a_la_parrilla,doncella|cocona|aji dulce|sacha culantro|cebolla|ajo,,POR VERIFICAR
-paiche_frito,Paiche frito,selva,Iquitos,fondo,frito,paiche|harina de yuca|aceite|yuca|limon,,POR VERIFICAR
-ensalada_de_chonta,Ensalada de chonta,selva,Pucallpa,entrada,crudo,palmito|palta|tomate|cebolla|limon|aceite de oliva,,POR VERIFICAR
-juane_de_yuca,Juane de yuca,selva,Iquitos,fondo,sancochado,yuca|boquichico|sacha culantro|ajo|aceite,,POR VERIFICAR
-timbuche,Timbuche,selva,Iquitos,sopa,sancochado,boquichico|cocona|aji dulce|sacha culantro|platano verde,,POR VERIFICAR
-ninajuane,Ninajuane,selva,Tarapoto,fondo,al_vapor,huevo|gallina|sacha culantro|ajo|comino|palillo,,POR VERIFICAR
-chapo,Chapo,selva,Iquitos,bebida,sancochado,platano maduro|canela|clavo|azucar,,POR VERIFICAR
-aguajina,Aguajina,selva,Iquitos,bebida,crudo,aguaje|azucar,,POR VERIFICAR
-masato,Masato,selva,Pucallpa,bebida,sancochado,yuca|camote|azucar,,POR VERIFICAR
-chorizo_regional_con_yuca,Chorizo regional con yuca,selva,Tarapoto,fondo,frito,chorizo|yuca|platano maduro|tomate|cebolla,,POR VERIFICAR
-paiche_a_la_parrilla,Paiche a la parrilla,selva,Iquitos,fondo,a_la_parrilla,paiche|limon|yuca|lechuga|tomate,,POR VERIFICAR
-chaufa_de_cecina,Chaufa de cecina,selva,Tarapoto,fondo,salteado,arroz|cecina|platano maduro|huevo|salsa de soya|cebolla china|aceite,,POR VERIFICAR
-picadillo_de_paiche,Picadillo de paiche,selva,Iquitos,fondo,salteado,paiche|huevo|cebolla|tomate|aji dulce|aceite,,POR VERIFICAR
-pijuayo_sancochado,Pijuayo sancochado,selva,Iquitos,entrada,sancochado,pijuayo,,POR VERIFICAR
-refresco_de_camu_camu,Refresco de camu camu,selva,Pucallpa,bebida,crudo,camu camu|azucar,,POR VERIFICAR
-maduro_con_queso,Maduro con queso,selva,Pucallpa,entrada,a_la_parrilla,platano maduro|queso fresco,,POR VERIFICAR
-cebiche_de_cocona,Cebiche de cocona,selva,Tarapoto,entrada,crudo,cocona|cebolla|aji charapita|sacha culantro|limon,,POR VERIFICAR
+ceviche_de_pescado,Ceviche de pescado,costa,Trujillo,fondo,marinado,lenguado|limon|cebolla|aji limo|camote|choclo|canchita,moluscos|crustaceos,"INC, RDN 241/INC (2004); PromPerú, peru.travel, costa norte; INEI (Tumbes)"
+sopa_teologa,Sopa teóloga,costa,Trujillo,sopa,sancochado,gallina|pan|leche evaporada|queso fresco|papa|aji amarillo,huevo,"INEI cap. 3, p. 100 (La Libertad); RPP (Moche)"
+cabrito_a_la_nortena,Cabrito a la norteña,costa,Trujillo,fondo,guisado,cabrito|chicha de jora|aji amarillo|culantro|frijol|yuca|arroz,,"INEI cap. 3, p. 111 (Piura); Panamericana"
+chicharron_de_pescado,Chicharrón de pescado,costa,Trujillo,fondo,frito,pescado|harina de trigo|aceite|yuca|salsa criolla,crustaceos|moluscos|huevo,"POR VERIFICAR (fuente débil): Perú21 (2019); Infobae (2026), solo resúmenes"
+sudado_de_pescado,Sudado de pescado,costa,Trujillo,fondo,guisado,corvina|cebolla|tomate|aji amarillo|chicha de jora|culantro|yuca,,"POR VERIFICAR (fuente débil): PromPerú, peru.travel, costa norte (sin ingredientes)"
+frito_trujillano,Frito trujillano,costa,Trujillo,fondo,frito,cerdo|aji panca|ajo|comino|yuca|manteca,,POR VERIFICAR (fuente débil): Diario Correo; Infobae (2022)
+pepian_de_pava,Pepián de pava,costa,Trujillo,fondo,guisado,pava|choclo|aji amarillo|culantro|ajo|arroz,,"POR VERIFICAR (fuente débil): tesis UNT, García Paucar (2018); Custer (2000)"
+jalea_mixta,Jalea mixta,costa,Trujillo,fondo,frito,pescado|calamar|langostino|choros|harina de trigo|aceite|yuca|salsa criolla,huevo,"POR VERIFICAR (fuente débil): Custer (2000), extracto en ckbk"
+escabeche_de_pescado,Escabeche de pescado,costa,,fondo,frito,pescado|harina de trigo|cebolla|huevo|aceituna|aji panca|vinagre|aceite|lechuga|choclo,,"INEI, Platos típicos regionales (cap. 3), p. 88 (Áncash)"
+chupe_de_pallares_verdes,Chupe de pallares verdes,costa,Ica,sopa,sancochado,pallar|choclo|zapallo|arroz|camarones|huevo|leche|corvina|oregano|cebolla|ajo,,"INEI, Platos típicos regionales (cap. 3), p. 98 (Ica)"
+majado_de_yuca,Majado de yuca,costa,Trujillo,fondo,frito,yuca|cerdo|manteca|ajo|cebolla,,"El Tiempo, Piura (2023)"
+chicha_de_jora,Chicha de jora,costa,Trujillo,bebida,sancochado,jora|chancaca|clavo|canela,,"PromPerú, peru.travel, costa norte; Dialnet"
+papa_a_la_huancaina,Papa a la huancaína,costa,Lima,entrada,sancochado,papa|salsa huancaina|huevo|aceituna|lechuga,,"INEI cap. 3, p. 99 (Junín)"
+lomo_saltado,Lomo saltado,costa,Lima,fondo,salteado,lomo fino|cebolla|tomate|salsa de soya|vinagre|papas fritas|arroz,,"INEI cap. 3, p. 102 (Lima y Callao)"
+aji_de_gallina,Ají de gallina,costa,Lima,fondo,guisado,gallina|aji amarillo|pan de molde|leche|pecanas|parmesano|papa|huevo|aceituna,,"INEI cap. 3, p. 106"
+picarones,Picarones,costa,Lima,postre,frito,zapallo|camote|harina de trigo|levadura|miel de chancaca|anis|aceite,,"POR VERIFICAR (fuente débil): Andina (2024); RPP, Olivas Weston (resumen)"
+mazamorra_morada,Mazamorra morada,costa,Lima,postre,sancochado,maiz morado|pina|membrillo|harina de camote|canela|azucar,,El Peruano (28 jul. 2026)
+suspiro_a_la_limena,Suspiro a la limeña,costa,Lima,postre,sancochado,leche evaporada|leche condensada|yema|oporto|azucar|canela|clara de huevo,,El Peruano (28 jul. 2026)
+causa_limena,Causa limeña,costa,Lima,entrada,sancochado,papa|aji amarillo|limon|pollo|mayonesa|palta|huevo|aceituna,,POR VERIFICAR (fuente débil): Wikipedia (no leída)
+anticuchos,Anticuchos de corazón,costa,Lima,entrada,a_la_parrilla,corazon de res|aji panca|vinagre|comino|ajo|aceite|papa|choclo,,POR VERIFICAR (fuente débil): La República (2024); RPP
+arroz_con_pollo,Arroz con pollo,costa,Lima,fondo,guisado,pollo|arroz|culantro|arveja|zanahoria|pimiento|cerveza negra,,"INEI cap. 3, p. 105"
+tacu_tacu,Tacu tacu,costa,Lima,fondo,frito,frijol|arroz|aceite|cebolla|ajo,,"RPP (2020), receta de Acurio"
+carapulcra,Carapulcra,costa,Chincha,fondo,guisado,papa seca|cerdo|aji panca|mani|ajo|comino|aceite,,"INEI cap. 3, p. 98 (Ica)"
+tiradito,Tiradito de pescado,costa,Lima,entrada,marinado,pescado|limon|aji amarillo|culantro,,"Andina (2019), origen nikkei"
+leche_de_tigre,Leche de tigre,costa,Lima,bebida,marinado,canchita|choclo|pescado|limon|cebolla|aji limo|apio,,"POR VERIFICAR (fuente débil): Andina (2019), solo mención"
+arroz_con_mariscos,Arroz con mariscos,costa,Lima,fondo,guisado,arroz|langostino|calamar|choros|aji panca|arveja|parmesano|aceite,,"POR VERIFICAR (fuente débil): PromPerú, peru.travel, Cuisine of Lima (sin ingredientes)"
+chilcano_de_pescado,Chilcano de pescado,costa,Lima,sopa,sancochado,cabeza de pescado|limon|culantro|cebolla china|kion,,"POR VERIFICAR (fuente débil): Arcaya de Deliot (2009), solo título; Cookpad"
+pescado_a_lo_macho,Pescado a lo macho,costa,Lima,fondo,frito,pescado|harina de trigo|aceite|langostino|calamar|crema de leche|aji panca|arroz|choros|almejas,,Arcaya de Deliot (2009)
+choritos_a_la_chalaca,Choritos a la chalaca,costa,Callao,entrada,sancochado,choros|salsa criolla|tomate|choclo,,"Custer (2000); PromPerú, peru.travel, Cuisine of Lima"
+seco_de_res,Seco de res,costa,Lima,fondo,guisado,carne de res|culantro|chicha de jora|aji amarillo|frijol|arroz,,Cuadra y Escardó (2014)
+tamal_criollo,Tamal criollo,costa,Lima,entrada,al_vapor,maiz pelado|cerdo|aji panca|mani|huevo|aceituna|manteca,,"PromPerú, peru.travel, Cuisine of Lima; Custer (2000)"
+pan_con_chicharron,Pan con chicharrón,costa,Lima,entrada,frito,pan|chicharron|camote|salsa criolla,,"POR VERIFICAR (fuente débil): El Comercio, Perú21 y Exitosa (solo resúmenes)"
+pollo_a_la_brasa,Pollo a la brasa,costa,Lima,fondo,asado,pollo|salsa de soya|ajo|comino|cerveza negra|papas fritas|lechuga|tomate,,INEI (Lima y Callao); RPP; Andina
+arroz_chaufa,Arroz chaufa,costa,Lima,fondo,salteado,arroz|huevo|salsa de soya|cebolla china|pollo|kion,crustaceos|sesamo,"Rodríguez Pastor (2006); PromPerú, peru.travel, Cuisine of Lima; Andina (2024)"
+wantan_frito,Wantán frito,costa,Lima,entrada,frito,masa wantan|cerdo|kion|aceite,crustaceos,POR VERIFICAR (fuente débil): Rodríguez Pastor (2006); Andina (2024)
+seco_de_chabelo,Seco de chabelo,costa,Piura,fondo,guisado,platano verde|carne seca|tomate|cebolla|aji amarillo|aceite,,"Indecopi, ETG; El Peruano; Diario Correo"
+malarrabia,Malarrabia,costa,Piura,fondo,guisado,platano maduro|frijol|queso fresco|aji amarillo|cebolla|aceite|pescado|arroz,,RPP; UDEP (2024); Diario Correo (ETG)
+ceviche_de_conchas_negras,Ceviche de conchas negras,costa,Tumbes,entrada,marinado,conchas negras|limon|cebolla|aji limo|culantro|camote,,"RPP (3 notas, una con receta de Acurio)"
+chinguirito,Chinguirito,costa,Chiclayo,entrada,marinado,guitarra|limon|cebolla|aji limo|camote|choclo,,"Andina, gastronomía lambayecana (2023)"
+espesado,Espesado,costa,Chiclayo,fondo,guisado,choclo|loche|frijol|carne de res|culantro|yuca|arroz,,"Andina, gastronomía lambayecana (2023); RPP, podcast de Acurio"
+arroz_con_pato,Arroz con pato,costa,Chiclayo,fondo,guisado,pato|arroz|culantro|cerveza negra|arveja|aji amarillo|zapallo loche,,"Andina, gastronomía lambayecana (2023)"
+king_kong,King kong,costa,Chiclayo,postre,al_horno,harina de trigo|mantequilla|yema|manjar blanco|dulce de pina|mani,frutos_secos,"Andina, gastronomía lambayecana (2023)"
+humitas,Humitas,costa,Lima,entrada,al_vapor,choclo|queso fresco|manteca|anis|azucar,,"Andina, gastronomía lambayecana (2023) (humitas verdes)"
+ensalada_de_pallares,Ensalada de pallares,costa,Ica,entrada,crudo,pallar|cebolla|tomate|limon|culantro|aceite de oliva,,"Andina (2025, Ica)"
+frejol_colado,Frejol colado,costa,Chincha,postre,sancochado,frijol|chancaca|leche evaporada|clavo|ajonjoli,,"POR VERIFICAR (fuente débil): Arcaya de Deliot (2009), solo título; Living in Peru"
+arroz_con_leche,Arroz con leche,costa,Lima,postre,sancochado,arroz|leche|leche condensada|canela|clavo|pasas,,"POR VERIFICAR (fuente débil): PromPerú, peru.travel, Cuisine of Lima (una línea)"
+chicha_morada,Chicha morada,costa,Lima,bebida,sancochado,maiz morado|pina|membrillo|limon|canela|azucar,,"POR VERIFICAR (fuente débil): PromPerú, peru.travel, Cuisine of Lima"
+emoliente,Emoliente,costa,Lima,bebida,sancochado,cebada|linaza|cola de caballo|limon|azucar,,POR VERIFICAR (fuente débil): USIL (proyecto académico)
+aguadito_de_pollo,Aguadito de pollo,costa,Lima,sopa,sancochado,pollo|culantro|arroz|arveja|choclo|papa|zanahoria,gluten,POR VERIFICAR (fuente débil): La República (solo resumen)
+papa_rellena,Papa rellena,costa,Lima,entrada,frito,papa|carne molida|huevo|aceituna|pasas|harina de trigo|aceite|salsa criolla,,peru.travel (2020)
+shambar,Shambar,sierra,Trujillo,sopa,sancochado,trigo|frejol|alverja|haba|garbanzo|pellejo de cerdo|jamon|culantro|hierbabuena|canchita,,"INEI cap. 3, p. 100 (La Libertad); revista UNMSM"
+chupe_de_camarones,Chupe de camarones,sierra,Arequipa,sopa,sancochado,camarones|leche|huevo|queso fresco|papa|arroz|aji panca|huacatay,,"Andina, Manjares al pie del Misti"
+chayro,Chayro,sierra,Puno,sopa,sancochado,carne de res|cordero|charqui|zapallo|papa|repollo|haba|chuno|choclo|zanahoria|aji amarillo,,"INEI, Platos típicos regionales (cap. 3), p. 112 (Puno)"
+pachamanca,Pachamanca,sierra,Huancayo,fondo,al_horno,cerdo|cordero|pollo|papa|camote|haba|humita|huacatay|chicha de jora,,"Andina, RDN 471/2003-INC; RM 0577-2015-MINAGRI"
+papa_a_la_ocopa,Papa a la ocopa,sierra,Arequipa,entrada,sancochado,papa|salsa ocopa|huevo|aceituna|lechuga,,"Andina, Manjares al pie del Misti"
+rocoto_relleno,Rocoto relleno,sierra,Arequipa,fondo,al_horno,rocoto|carne molida|mani|queso fresco|huevo|leche|pasas|aceituna|papa,,"Andina, Manjares al pie del Misti"
+adobo_arequipeno,Adobo arequipeño,sierra,Arequipa,fondo,guisado,cerdo|chicha de jora|aji panca|vinagre|ajo|comino|cebolla,gluten,"Andina, Manjares al pie del Misti"
+solterito,Solterito arequipeño,sierra,Arequipa,entrada,crudo,haba|queso fresco|choclo|cebolla|tomate|rocoto|aceituna|limon|aceite de oliva,,"Andina, Manjares al pie del Misti"
+pastel_de_papa,Pastel de papa,sierra,Arequipa,fondo,al_horno,papa|leche|queso|huevo|mantequilla,,"Andina, Manjares al pie del Misti"
+cuy_chactado,Cuy chactado,sierra,Arequipa,fondo,frito,cuy|harina de maiz|aceite|papa|ajo,,"Andina, Manjares al pie del Misti"
+cuy_al_horno,Cuy al horno,sierra,Cusco,fondo,al_horno,cuy|papa|huacatay|ajo|aji panca|aceite,,"POR VERIFICAR (fuente débil): Andina, Cusco (2023), solo mención"
+chiri_uchu,Chiri uchu,sierra,Cusco,fondo,asado,cuy|gallina|cecina|chorizo|queso fresco|cochayuyo|huevera|torreja de maiz|rocoto,,"Andina, chiriuchu; RPP"
+olluquito_con_charqui,Olluquito con charqui,sierra,,fondo,guisado,olluco|charqui|aji panca|ajo|cebolla|perejil|arroz,,"POR VERIFICAR (fuente débil): Morales (2015), p. 104 (solo índice)"
+patasca,Patasca,sierra,,sopa,sancochado,mote|mondongo|cerdo|hierbabuena|ajo|cebolla,,"Andina, Moquegua"
+chairo,Chairo,sierra,Puno,sopa,sancochado,chuno|cordero|charqui|haba|papa|trigo|zanahoria|hierbabuena,,"Marca Perú, platos de Puno; INEI cap. 3, p. 112 (chayro)"
+caldo_verde,Caldo verde,sierra,Cajamarca,sopa,sancochado,papa|huevo|queso fresco|paico|culantro|huacatay|hierbabuena,,RPP; Morales en Great British Chefs
+trucha_frita,Trucha frita,sierra,Puno,fondo,frito,trucha|harina de trigo|aceite|papa|arroz|lechuga|tomate,,"Marca Perú, platos de Puno"
+fricase,Fricasé,sierra,Puno,fondo,guisado,cerdo|cebolla|comino|oregano|ajo|aji amarillo|cebolla china|pan,,"INEI, Platos típicos regionales (cap. 3), p. 112 (Puno)"
+pesque_de_quinua,Pesque de quinua,sierra,Puno,fondo,sancochado,quinua|leche|queso fresco|mantequilla,,"Marca Perú, platos de Puno"
+sopa_de_quinua,Sopa de quinua,sierra,,sopa,sancochado,quinua|papa|zanahoria|arveja|culantro|cebolla|ajo,pescado|crustaceos,"FAO (2014), p. 55 (puñuchi, Perú)"
+manjar_blanco,Manjar blanco,sierra,Cajamarca,postre,sancochado,leche|azucar|canela|chuno,,"INEI, Platos típicos regionales (cap. 3), p. 94 (Cajamarca)"
+puca_picante,Puca picante,sierra,Ayacucho,fondo,guisado,papa|mani|aji panca|betarraga|chicharron|arroz,,"INEI cap. 3, p. 93 (índice); Trome; Explore Parts Unknown"
+qapchi,Qapchi,sierra,Ayacucho,entrada,crudo,queso fresco|papa|huacatay|cebolla|rocoto|leche,,"Andina, Día del Queso (2019)"
+picante_de_cuy,Picante de cuy,sierra,Huaraz,fondo,guisado,cuy|mani|aji panca|papa|ajo|aceite,,peru.travel (receta); Infobae
+chicharron_cusqueno,Chicharrón cusqueño,sierra,Cusco,fondo,frito,cerdo|manteca|mote|papa|hierbabuena|cebolla,,"INEI cap. 3, p. 95 (Cusco); Andina"
+queso_helado,Queso helado,sierra,Arequipa,postre,crudo,leche|leche condensada|coco|canela|clavo,frutos_secos,"Andina, Manjares al pie del Misti; El Peruano"
+alpaca_a_la_parrilla,Alpaca a la parrilla,sierra,Arequipa,fondo,a_la_parrilla,carne de alpaca|papa|lechuga|tomate|limon,,"POR VERIFICAR (fuente débil): El Comercio (2018), resumen"
+caldo_de_cabeza,Caldo de cabeza,sierra,Cusco,sopa,sancochado,carnero|yuca|papa|zanahoria|arroz|moraya|ajo|cebolla|oregano|perejil,,"INEI, Platos típicos regionales (cap. 3), p. 95 (Cusco)"
+patachi,Patachi,sierra,Huancavelica,sopa,sancochado,carne de res|cerdo|charqui|tocino|trigo|chochoca|frijol|haba|arveja|chuno|papa|aceite|ajo|palillo|comino|aji amarillo|oregano|hierbabuena|cebolla,,"INEI, Platos típicos regionales (cap. 3), p. 96 (Huancavelica)"
+mazamorra_de_tocosh,Mazamorra de tocosh,sierra,Huánuco,postre,sancochado,tocosh|canela|clavo|chancaca,,"INEI, Platos típicos regionales (cap. 3), p. 97 (Huánuco)"
+juane_de_gallina,Juane de gallina,selva,Tarapoto,fondo,sancochado,arroz|gallina criolla|huevo|aceituna|palillo|sacha culantro,,"Promperú (2022); Andina, Expo Amazónica 2023"
+tacacho_con_cecina,Tacacho con cecina,selva,Tarapoto,fondo,frito,platano bellaco|manteca|cecina,,"INEI cap. 3, p. 107 (Loreto); Andina, Expo Amazónica 2023; Infobae"
+inchicapi,Inchicapi,selva,Iquitos,sopa,sancochado,gallina|mani|yuca|sacha culantro|harina de maiz|ajo,,"INEI cap. 3, p. 107 (Loreto); Andina, Expo Amazónica 2023"
+patarashca,Patarashca,selva,Iquitos,fondo,a_la_parrilla,doncella|cocona|aji dulce|sacha culantro|cebolla|ajo,,"Andina, Expo Amazónica 2023; Infobae"
+pato_a_la_ucayalina,Pato a la ucayalina,selva,,fondo,guisado,pato|cebolla|ajo|limon|aji panca|comino|aceite|azucar|sillao|achiote|yuca|arroz,,"INEI, Platos típicos regionales (cap. 3), p. 116 (Ucayali)"
+ensalada_de_chonta,Ensalada de chonta,selva,Pucallpa,entrada,crudo,palmito|palta|tomate|cebolla|limon|aceite de oliva,,"Andina, Expo Amazónica 2023; Infobae"
+juane_de_yuca,Juane de yuca,selva,Iquitos,fondo,sancochado,yuca|boquichico|sacha culantro|ajo|aceite,,"INEI cap. 3, p. 87 (Amazonas); Andina, Expo Amazónica 2023; Andina, Tarapoto (2024)"
+timbuche,Timbuche,selva,Iquitos,sopa,sancochado,boquichico|cocona|aji dulce|sacha culantro|platano verde,huevo,"INEI cap. 3, p. 108 (Madre de Dios); Infobae; Andina, Expo Amazónica 2023"
+ninajuane,Ninajuane,selva,Tarapoto,fondo,al_vapor,huevo|gallina|sacha culantro|ajo|comino|palillo,,"POR VERIFICAR (fuente débil): Andina, Expo Amazónica 2023, Andina, Tarapoto (2024) (solo mención)"
+chapo,Chapo,selva,Iquitos,bebida,sancochado,platano maduro|canela|clavo|azucar|leche,,"INEI cap. 3, p. 108 (Madre de Dios); Andina, Expo Amazónica 2023"
+aguajina,Aguajina,selva,Iquitos,bebida,crudo,aguaje|azucar,,"Andina, Expo Amazónica 2023"
+masato,Masato,selva,Pucallpa,bebida,sancochado,yuca|camote|azucar,,"Andina, Expo Amazónica 2023"
+apichado_de_chancho,Apichado de chancho,selva,,fondo,guisado,cerdo|mani|harina de maiz|mishquina|ajo|cebolla|culantro|sacha culantro|oregano|comino,,"INEI, Platos típicos regionales (cap. 3), p. 113 (San Martín)"
+sudado_de_doncella,Sudado de doncella,selva,,fondo,guisado,doncella|ajo|aji dulce|cebolla|chicha de jora|yuca|arroz,,"Andina, Expo Amazónica 2023 (22-09-2023)"
+chaufa_de_cecina,Chaufa de cecina,selva,Tarapoto,fondo,salteado,arroz|cecina|platano maduro|huevo|salsa de soya|cebolla china|aceite,pescado,"POR VERIFICAR (fuente débil): Panamericana (2014), receta de autor; food52"
+picadillo_de_paiche,Picadillo de paiche,selva,Iquitos,fondo,salteado,paiche|huevo|cebolla|tomate|aji dulce|aceite,,"INEI cap. 3, p. 116 (Ucayali)"
+bunuelos_de_yuca,Buñuelos de yuca,selva,,postre,frito,almidon de yuca|harina de trigo|miel de abeja|aceite,,"Andina, Expo Amazónica 2023 (22-09-2023)"
+refresco_de_camu_camu,Refresco de camu camu,selva,Pucallpa,bebida,crudo,camu camu|azucar,,"POR VERIFICAR (fuente débil): Andina, Expo Amazónica 2023 (solo como acompañamiento)"
+sara_juane,Sara juane,selva,,fondo,sancochado,mani|harina de maiz|pollo|sacha culantro,,"Andina, Expo Amazónica 2023 (22-09-2023)"
+cebiche_amazonico,Cebiche amazónico,selva,,entrada,marinado,paiche|limon|camu camu|aji charapita|cebolla,,"Andina, Expo Amazónica 2023 (22-09-2023)"

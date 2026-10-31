@@ -1,11 +1,11 @@
 id,label,source
-gluten,"Cereales que contienen gluten (trigo, cebada, centeno, avena)",Codex CXS 1-1985
+gluten,"Cereales que contienen gluten (trigo, cebada, centeno)",Codex CXS 1-1985
 crustaceos,Crustáceos y sus productos,Codex CXS 1-1985
 huevo,Huevos y productos de los huevos,Codex CXS 1-1985
 pescado,Pescado y productos pesqueros,Codex CXS 1-1985
 mani,Maní y sus productos,Codex CXS 1-1985
-soya,Soya y sus productos,Codex CXS 1-1985
+soya,Soya y sus productos,"Codex CXS 1-1985 (rev. 2024, lista regional)"
 leche,Leche y productos lácteos (incluida la lactosa),Codex CXS 1-1985
 frutos_secos,Frutos secos de árbol y sus productos,Codex CXS 1-1985
 moluscos,Moluscos y sus productos,Reglamento (UE) 1169/2011
-sesamo,Sésamo y sus productos,Reglamento (UE) 1169/2011
+sesamo,Sésamo y sus productos,Codex CXS 1-1985 (rev. 2024)

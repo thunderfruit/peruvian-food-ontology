@@ -26,6 +26,12 @@ pf:fuente a owl:DatatypeProperty ;
     rdfs:domain pf:Plato ;
     rdfs:range xsd:string .
 
+pf:ingrediente_aceite_de_ajonjoli a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Aceite de ajonjolí"@es ;
+    pf:contieneAlergeno pf:alergeno_sesamo ;
+    pf:tipoDeAlimento "grasa" .
+
 pf:ingrediente_aguacate a pf:Ingrediente,
         owl:NamedIndividual ;
     rdfs:label "aguacate"@es ;
@@ -46,6 +52,16 @@ pf:ingrediente_choritos a pf:Ingrediente,
     rdfs:label "choritos"@es ;
     pf:sinonimoDe pf:ingrediente_mejillon .
 
+pf:ingrediente_cilantro a pf:Ingrediente,
+        owl:NamedIndividual ;
+    rdfs:label "cilantro"@es ;
+    pf:sinonimoDe pf:ingrediente_culantro .
+
+pf:ingrediente_col a pf:Ingrediente,
+        owl:NamedIndividual ;
+    rdfs:label "col"@es ;
+    pf:sinonimoDe pf:ingrediente_repollo .
+
 pf:ingrediente_crema_de_huancaina a pf:Ingrediente,
         owl:NamedIndividual ;
     rdfs:label "crema de huancaina"@es ;
@@ -56,20 +72,55 @@ pf:ingrediente_frijol_canario a pf:Ingrediente,
     rdfs:label "frijol canario"@es ;
     pf:sinonimoDe pf:ingrediente_frijol .
 
+pf:ingrediente_harina_de_yuca a pf:Ingrediente,
+        owl:NamedIndividual ;
+    rdfs:label "harina de yuca"@es ;
+    pf:sinonimoDe pf:ingrediente_farina .
+
 pf:ingrediente_jengibre a pf:Ingrediente,
         owl:NamedIndividual ;
     rdfs:label "jengibre"@es ;
     pf:sinonimoDe pf:ingrediente_kion .
+
+pf:ingrediente_leche_de_tigre a pf:InsumoMarino,
+        owl:NamedIndividual ;
+    rdfs:label "Leche de tigre"@es ;
+    pf:tieneComponente pf:ingrediente_aji_limo,
+        pf:ingrediente_apio,
+        pf:ingrediente_cebolla_roja,
+        pf:ingrediente_limon,
+        pf:ingrediente_pescado_blanco ;
+    pf:tipoDeAlimento "preparado" .
 
 pf:ingrediente_lomo_de_res a pf:Ingrediente,
         owl:NamedIndividual ;
     rdfs:label "lomo de res"@es ;
     pf:sinonimoDe pf:ingrediente_carne_de_res .
 
+pf:ingrediente_maiz_molido a pf:Ingrediente,
+        owl:NamedIndividual ;
+    rdfs:label "maiz molido"@es ;
+    pf:sinonimoDe pf:ingrediente_chochoca .
+
+pf:ingrediente_miel a pf:Ingrediente,
+        owl:NamedIndividual ;
+    rdfs:label "miel"@es ;
+    pf:sinonimoDe pf:ingrediente_miel_de_abeja .
+
 pf:ingrediente_nueces a pf:Ingrediente,
         owl:NamedIndividual ;
     rdfs:label "nueces"@es ;
     pf:sinonimoDe pf:ingrediente_pecana .
+
+pf:ingrediente_pijuayo a pf:InsumoAmazonico,
+        owl:NamedIndividual ;
+    rdfs:label "Pijuayo"@es ;
+    pf:tipoDeAlimento "fruta" .
+
+pf:ingrediente_quinoa a pf:Ingrediente,
+        owl:NamedIndividual ;
+    rdfs:label "quinoa"@es ;
+    pf:sinonimoDe pf:ingrediente_quinua .
 
 pf:ingrediente_sachaculantro a pf:Ingrediente,
         owl:NamedIndividual ;
@@ -81,13 +132,25 @@ pf:ingrediente_sesamo a pf:Ingrediente,
     rdfs:label "sesamo"@es ;
     pf:sinonimoDe pf:ingrediente_ajonjoli .
 
+pf:ingrediente_tocino_ahumado a pf:Ingrediente,
+        owl:NamedIndividual ;
+    rdfs:label "tocino ahumado"@es ;
+    pf:sinonimoDe pf:ingrediente_tocino .
+
+pf:ingrediente_tunta a pf:Ingrediente,
+        owl:NamedIndividual ;
+    rdfs:label "tunta"@es ;
+    pf:sinonimoDe pf:ingrediente_moraya .
+
 pf:plato_adobo_arequipeno a pf:Plato,
         pf:PlatoAltoEnProteinas,
         pf:PlatoAptoParaMantenimientoDePeso,
         owl:NamedIndividual ;
     rdfs:label "Adobo arequipeño"@es ;
     pf:ciudad "Arequipa" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:contieneAlergeno pf:alergeno_gluten ;
+    pf:fuente "Andina, Manjares al pie del Misti" ;
+    pf:puedeContener pf:alergeno_gluten ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_guisado ;
     pf:tieneIngrediente pf:ingrediente_aji_panca,
@@ -108,7 +171,9 @@ pf:plato_aguadito_de_pollo a pf:Plato,
         owl:NamedIndividual ;
     rdfs:label "Aguadito de pollo"@es ;
     pf:ciudad "Lima" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:contieneAlergeno pf:alergeno_gluten ;
+    pf:fuente "POR VERIFICAR (fuente débil): La República (solo resumen)" ;
+    pf:puedeContener pf:alergeno_gluten ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_arroz,
@@ -126,7 +191,7 @@ pf:plato_aguajina a pf:Plato,
         owl:NamedIndividual ;
     rdfs:label "Aguajina"@es ;
     pf:ciudad "Iquitos" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina, Expo Amazónica 2023" ;
     pf:region pf:Selva ;
     pf:tecnicaDeCoccion pf:tecnica_crudo ;
     pf:tieneIngrediente pf:ingrediente_aguaje,
@@ -143,7 +208,7 @@ pf:plato_aji_de_gallina a pf:Plato,
         pf:alergeno_gluten,
         pf:alergeno_huevo,
         pf:alergeno_leche ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "INEI cap. 3, p. 106" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_guisado ;
     pf:tieneIngrediente pf:ingrediente_aceituna,
@@ -170,7 +235,7 @@ pf:plato_alpaca_a_la_parrilla a pf:Plato,
         owl:NamedIndividual ;
     rdfs:label "Alpaca a la parrilla"@es ;
     pf:ciudad "Arequipa" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): El Comercio (2018), resumen" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_a_la_parrilla ;
     pf:tieneIngrediente pf:ingrediente_carne_de_alpaca,
@@ -188,7 +253,7 @@ pf:plato_anticuchos a pf:Plato,
         owl:NamedIndividual ;
     rdfs:label "Anticuchos de corazón"@es ;
     pf:ciudad "Lima" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): La República (2024); RPP" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_a_la_parrilla ;
     pf:tieneIngrediente pf:ingrediente_aceite,
@@ -202,21 +267,27 @@ pf:plato_anticuchos a pf:Plato,
         pf:ingrediente_vinagre ;
     pf:tipoDePlato "entrada" .
 
-pf:plato_api_morado a pf:Plato,
-        pf:PlatoVegano,
-        pf:PlatoVegetariano,
+pf:plato_apichado_de_chancho a pf:Plato,
+        pf:PlatoAltoEnProteinas,
+        pf:PlatoAptoParaMantenimientoDePeso,
         owl:NamedIndividual ;
-    rdfs:label "Api morado"@es ;
-    pf:ciudad "Puno" ;
-    pf:fuente "POR VERIFICAR" ;
-    pf:region pf:Sierra ;
-    pf:tecnicaDeCoccion pf:tecnica_sancochado ;
-    pf:tieneIngrediente pf:ingrediente_azucar,
-        pf:ingrediente_canela,
-        pf:ingrediente_clavo,
-        pf:ingrediente_limon,
-        pf:ingrediente_maiz_morado ;
-    pf:tipoDePlato "bebida" .
+    rdfs:label "Apichado de chancho"@es ;
+    pf:contieneAlergeno pf:alergeno_mani ;
+    pf:fuente "INEI, Platos típicos regionales (cap. 3), p. 113 (San Martín)" ;
+    pf:region pf:Selva ;
+    pf:tecnicaDeCoccion pf:tecnica_guisado ;
+    pf:tieneIngrediente pf:ingrediente_ajo,
+        pf:ingrediente_cebolla,
+        pf:ingrediente_cebolla_roja,
+        pf:ingrediente_cerdo,
+        pf:ingrediente_comino,
+        pf:ingrediente_culantro,
+        pf:ingrediente_harina_de_maiz,
+        pf:ingrediente_mani,
+        pf:ingrediente_mishquina,
+        pf:ingrediente_oregano,
+        pf:ingrediente_sacha_culantro ;
+    pf:tipoDePlato "fondo" .
 
 pf:plato_arroz_chaufa a pf:Plato,
         pf:PlatoAltoEnProteinas,
@@ -229,12 +300,12 @@ pf:plato_arroz_chaufa a pf:Plato,
         pf:alergeno_huevo,
         pf:alergeno_sesamo,
         pf:alergeno_soya ;
-    pf:fuente "POR VERIFICAR" ;
-    pf:puedeContener pf:alergeno_crustaceos ;
+    pf:fuente "Rodríguez Pastor (2006); PromPerú, peru.travel, Cuisine of Lima; Andina (2024)" ;
+    pf:puedeContener pf:alergeno_crustaceos,
+        pf:alergeno_sesamo ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_salteado ;
-    pf:tieneIngrediente pf:ingrediente_aceite_de_ajonjoli,
-        pf:ingrediente_arroz,
+    pf:tieneIngrediente pf:ingrediente_arroz,
         pf:ingrediente_cebolla_china,
         pf:ingrediente_huevo,
         pf:ingrediente_kion,
@@ -249,7 +320,7 @@ pf:plato_arroz_con_leche a pf:Plato,
     rdfs:label "Arroz con leche"@es ;
     pf:ciudad "Lima" ;
     pf:contieneAlergeno pf:alergeno_leche ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): PromPerú, peru.travel, Cuisine of Lima (una línea)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_arroz,
@@ -271,7 +342,7 @@ pf:plato_arroz_con_mariscos a pf:Plato,
     pf:contieneAlergeno pf:alergeno_crustaceos,
         pf:alergeno_leche,
         pf:alergeno_moluscos ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): PromPerú, peru.travel, Cuisine of Lima (sin ingredientes)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_guisado ;
     pf:tieneIngrediente pf:ingrediente_aceite,
@@ -294,7 +365,7 @@ pf:plato_arroz_con_pato a pf:Plato,
     rdfs:label "Arroz con pato"@es ;
     pf:ciudad "Chiclayo" ;
     pf:contieneAlergeno pf:alergeno_gluten ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina, gastronomía lambayecana (2023)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_guisado ;
     pf:tieneIngrediente pf:ingrediente_aji_amarillo,
@@ -314,7 +385,7 @@ pf:plato_arroz_con_pollo a pf:Plato,
     rdfs:label "Arroz con pollo"@es ;
     pf:ciudad "Lima" ;
     pf:contieneAlergeno pf:alergeno_gluten ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "INEI cap. 3, p. 105" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_guisado ;
     pf:tieneIngrediente pf:ingrediente_arroz,
@@ -326,13 +397,28 @@ pf:plato_arroz_con_pollo a pf:Plato,
         pf:ingrediente_zanahoria ;
     pf:tipoDePlato "fondo" .
 
+pf:plato_bunuelos_de_yuca a pf:Plato,
+        pf:PlatoVegetariano,
+        owl:NamedIndividual ;
+    rdfs:label "Buñuelos de yuca"@es ;
+    pf:contieneAlergeno pf:alergeno_gluten ;
+    pf:fuente "Andina, Expo Amazónica 2023 (22-09-2023)" ;
+    pf:region pf:Selva ;
+    pf:tecnicaDeCoccion pf:tecnica_frito ;
+    pf:tieneIngrediente pf:ingrediente_aceite,
+        pf:ingrediente_aceite_vegetal,
+        pf:ingrediente_almidon_de_yuca,
+        pf:ingrediente_harina_de_trigo,
+        pf:ingrediente_miel_de_abeja ;
+    pf:tipoDePlato "postre" .
+
 pf:plato_cabrito_a_la_nortena a pf:Plato,
         pf:PlatoAltoEnProteinas,
         pf:PlatoAptoParaMantenimientoDePeso,
         owl:NamedIndividual ;
     rdfs:label "Cabrito a la norteña"@es ;
     pf:ciudad "Trujillo" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "INEI cap. 3, p. 111 (Piura); Panamericana" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_guisado ;
     pf:tieneIngrediente pf:ingrediente_aji_amarillo,
@@ -344,6 +430,31 @@ pf:plato_cabrito_a_la_nortena a pf:Plato,
         pf:ingrediente_yuca ;
     pf:tipoDePlato "fondo" .
 
+pf:plato_caldo_de_cabeza a pf:Plato,
+        pf:PlatoAltoEnProteinas,
+        pf:PlatoAptoParaMantenimientoDePeso,
+        pf:PlatoAptoParaPerdidaDePeso,
+        pf:PlatoBajoEnCalorias,
+        owl:NamedIndividual ;
+    rdfs:label "Caldo de cabeza"@es ;
+    pf:ciudad "Cusco" ;
+    pf:fuente "INEI, Platos típicos regionales (cap. 3), p. 95 (Cusco)" ;
+    pf:region pf:Sierra ;
+    pf:tecnicaDeCoccion pf:tecnica_sancochado ;
+    pf:tieneIngrediente pf:ingrediente_ajo,
+        pf:ingrediente_arroz,
+        pf:ingrediente_carnero,
+        pf:ingrediente_cebolla,
+        pf:ingrediente_cebolla_roja,
+        pf:ingrediente_cordero,
+        pf:ingrediente_moraya,
+        pf:ingrediente_oregano,
+        pf:ingrediente_papa,
+        pf:ingrediente_perejil,
+        pf:ingrediente_yuca,
+        pf:ingrediente_zanahoria ;
+    pf:tipoDePlato "sopa" .
+
 pf:plato_caldo_verde a pf:Plato,
         pf:PlatoAptoParaMantenimientoDePeso,
         pf:PlatoBajoEnCalorias,
@@ -353,7 +464,7 @@ pf:plato_caldo_verde a pf:Plato,
     pf:ciudad "Cajamarca" ;
     pf:contieneAlergeno pf:alergeno_huevo,
         pf:alergeno_leche ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "RPP; Morales en Great British Chefs" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_culantro,
@@ -365,21 +476,6 @@ pf:plato_caldo_verde a pf:Plato,
         pf:ingrediente_queso_fresco ;
     pf:tipoDePlato "sopa" .
 
-pf:plato_cancha_con_queso a pf:Plato,
-        pf:PlatoAptoParaMantenimientoDePeso,
-        pf:PlatoVegetariano,
-        owl:NamedIndividual ;
-    rdfs:label "Cancha con queso"@es ;
-    pf:contieneAlergeno pf:alergeno_leche ;
-    pf:fuente "POR VERIFICAR" ;
-    pf:region pf:Sierra ;
-    pf:tecnicaDeCoccion pf:tecnica_asado ;
-    pf:tieneIngrediente pf:ingrediente_aceite,
-        pf:ingrediente_aceite_vegetal,
-        pf:ingrediente_cancha,
-        pf:ingrediente_queso_fresco ;
-    pf:tipoDePlato "entrada" .
-
 pf:plato_carapulcra a pf:Plato,
         pf:PlatoAltoEnProteinas,
         pf:PlatoAptoParaMantenimientoDePeso,
@@ -387,7 +483,7 @@ pf:plato_carapulcra a pf:Plato,
     rdfs:label "Carapulcra"@es ;
     pf:ciudad "Chincha" ;
     pf:contieneAlergeno pf:alergeno_mani ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "INEI cap. 3, p. 98 (Ica)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_guisado ;
     pf:tieneIngrediente pf:ingrediente_aceite,
@@ -400,32 +496,6 @@ pf:plato_carapulcra a pf:Plato,
         pf:ingrediente_papa_seca ;
     pf:tipoDePlato "fondo" .
 
-pf:plato_causa_de_pescado a pf:Plato,
-        pf:PlatoAltoEnProteinas,
-        pf:PlatoAptoParaMantenimientoDePeso,
-        pf:PlatoAptoParaPerdidaDePeso,
-        pf:PlatoBajoEnCalorias,
-        owl:NamedIndividual ;
-    rdfs:label "Causa de pescado"@es ;
-    pf:ciudad "Trujillo" ;
-    pf:contieneAlergeno pf:alergeno_huevo,
-        pf:alergeno_pescado ;
-    pf:fuente "POR VERIFICAR" ;
-    pf:region pf:Costa ;
-    pf:tecnicaDeCoccion pf:tecnica_sancochado ;
-    pf:tieneIngrediente pf:ingrediente_aceite_vegetal,
-        pf:ingrediente_aceituna,
-        pf:ingrediente_aceituna_de_botija,
-        pf:ingrediente_aji_amarillo,
-        pf:ingrediente_huevo,
-        pf:ingrediente_limon,
-        pf:ingrediente_mayonesa,
-        pf:ingrediente_palta,
-        pf:ingrediente_papa,
-        pf:ingrediente_pescado,
-        pf:ingrediente_pescado_blanco ;
-    pf:tipoDePlato "entrada" .
-
 pf:plato_causa_limena a pf:Plato,
         pf:PlatoAltoEnProteinas,
         pf:PlatoAptoParaMantenimientoDePeso,
@@ -435,7 +505,7 @@ pf:plato_causa_limena a pf:Plato,
     rdfs:label "Causa limeña"@es ;
     pf:ciudad "Lima" ;
     pf:contieneAlergeno pf:alergeno_huevo ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): Wikipedia (no leída)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_aceite_vegetal,
@@ -450,23 +520,23 @@ pf:plato_causa_limena a pf:Plato,
         pf:ingrediente_pollo ;
     pf:tipoDePlato "entrada" .
 
-pf:plato_cebiche_de_cocona a pf:Plato,
+pf:plato_cebiche_amazonico a pf:Plato,
+        pf:PlatoAltoEnProteinas,
         pf:PlatoAptoParaMantenimientoDePeso,
+        pf:PlatoAptoParaPerdidaDePeso,
         pf:PlatoBajoEnCalorias,
-        pf:PlatoVegano,
-        pf:PlatoVegetariano,
         owl:NamedIndividual ;
-    rdfs:label "Cebiche de cocona"@es ;
-    pf:ciudad "Tarapoto" ;
-    pf:fuente "POR VERIFICAR" ;
+    rdfs:label "Cebiche amazónico"@es ;
+    pf:contieneAlergeno pf:alergeno_pescado ;
+    pf:fuente "Andina, Expo Amazónica 2023 (22-09-2023)" ;
     pf:region pf:Selva ;
-    pf:tecnicaDeCoccion pf:tecnica_crudo ;
+    pf:tecnicaDeCoccion pf:tecnica_marinado ;
     pf:tieneIngrediente pf:ingrediente_aji_charapita,
+        pf:ingrediente_camu_camu,
         pf:ingrediente_cebolla,
         pf:ingrediente_cebolla_roja,
-        pf:ingrediente_cocona,
         pf:ingrediente_limon,
-        pf:ingrediente_sacha_culantro ;
+        pf:ingrediente_paiche ;
     pf:tipoDePlato "entrada" .
 
 pf:plato_ceviche_de_conchas_negras a pf:Plato,
@@ -478,7 +548,7 @@ pf:plato_ceviche_de_conchas_negras a pf:Plato,
     rdfs:label "Ceviche de conchas negras"@es ;
     pf:ciudad "Tumbes" ;
     pf:contieneAlergeno pf:alergeno_moluscos ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "RPP (3 notas, una con receta de Acurio)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_marinado ;
     pf:tieneIngrediente pf:ingrediente_aji_limo,
@@ -501,7 +571,7 @@ pf:plato_ceviche_de_pescado a pf:Plato,
     pf:contieneAlergeno pf:alergeno_crustaceos,
         pf:alergeno_moluscos,
         pf:alergeno_pescado ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "INC, RDN 241/INC (2004); PromPerú, peru.travel, costa norte; INEI (Tumbes)" ;
     pf:puedeContener pf:alergeno_crustaceos,
         pf:alergeno_moluscos ;
     pf:region pf:Costa ;
@@ -518,28 +588,6 @@ pf:plato_ceviche_de_pescado a pf:Plato,
         pf:ingrediente_pescado_blanco ;
     pf:tipoDePlato "fondo" .
 
-pf:plato_ceviche_de_trucha a pf:Plato,
-        pf:PlatoAltoEnProteinas,
-        pf:PlatoAptoParaMantenimientoDePeso,
-        pf:PlatoAptoParaPerdidaDePeso,
-        pf:PlatoBajoEnCalorias,
-        owl:NamedIndividual ;
-    rdfs:label "Ceviche de trucha"@es ;
-    pf:ciudad "Puno" ;
-    pf:contieneAlergeno pf:alergeno_pescado ;
-    pf:fuente "POR VERIFICAR" ;
-    pf:region pf:Sierra ;
-    pf:tecnicaDeCoccion pf:tecnica_marinado ;
-    pf:tieneIngrediente pf:ingrediente_camote,
-        pf:ingrediente_cancha,
-        pf:ingrediente_cebolla,
-        pf:ingrediente_cebolla_roja,
-        pf:ingrediente_choclo,
-        pf:ingrediente_limon,
-        pf:ingrediente_rocoto,
-        pf:ingrediente_trucha ;
-    pf:tipoDePlato "entrada" .
-
 pf:plato_chairo a pf:Plato,
         pf:PlatoAltoEnProteinas,
         pf:PlatoAptoParaMantenimientoDePeso,
@@ -549,7 +597,7 @@ pf:plato_chairo a pf:Plato,
     rdfs:label "Chairo"@es ;
     pf:ciudad "Puno" ;
     pf:contieneAlergeno pf:alergeno_gluten ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Marca Perú, platos de Puno; INEI cap. 3, p. 112 (chayro)" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_charqui,
@@ -564,17 +612,19 @@ pf:plato_chairo a pf:Plato,
     pf:tipoDePlato "sopa" .
 
 pf:plato_chapo a pf:Plato,
-        pf:PlatoVegano,
         pf:PlatoVegetariano,
         owl:NamedIndividual ;
     rdfs:label "Chapo"@es ;
     pf:ciudad "Iquitos" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:contieneAlergeno pf:alergeno_leche ;
+    pf:fuente "INEI cap. 3, p. 108 (Madre de Dios); Andina, Expo Amazónica 2023" ;
     pf:region pf:Selva ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_azucar,
         pf:ingrediente_canela,
         pf:ingrediente_clavo,
+        pf:ingrediente_leche,
+        pf:ingrediente_leche_evaporada,
         pf:ingrediente_platano_maduro ;
     pf:tipoDePlato "bebida" .
 
@@ -585,8 +635,10 @@ pf:plato_chaufa_de_cecina a pf:Plato,
     pf:ciudad "Tarapoto" ;
     pf:contieneAlergeno pf:alergeno_gluten,
         pf:alergeno_huevo,
+        pf:alergeno_pescado,
         pf:alergeno_soya ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): Panamericana (2014), receta de autor; food52" ;
+    pf:puedeContener pf:alergeno_pescado ;
     pf:region pf:Selva ;
     pf:tecnicaDeCoccion pf:tecnica_salteado ;
     pf:tieneIngrediente pf:ingrediente_aceite,
@@ -600,13 +652,37 @@ pf:plato_chaufa_de_cecina a pf:Plato,
         pf:ingrediente_sillao ;
     pf:tipoDePlato "fondo" .
 
+pf:plato_chayro a pf:Plato,
+        pf:PlatoAltoEnProteinas,
+        pf:PlatoAptoParaMantenimientoDePeso,
+        pf:PlatoAptoParaPerdidaDePeso,
+        pf:PlatoBajoEnCalorias,
+        owl:NamedIndividual ;
+    rdfs:label "Chayro"@es ;
+    pf:ciudad "Puno" ;
+    pf:fuente "INEI, Platos típicos regionales (cap. 3), p. 112 (Puno)" ;
+    pf:region pf:Sierra ;
+    pf:tecnicaDeCoccion pf:tecnica_sancochado ;
+    pf:tieneIngrediente pf:ingrediente_aji_amarillo,
+        pf:ingrediente_carne_de_res,
+        pf:ingrediente_charqui,
+        pf:ingrediente_choclo,
+        pf:ingrediente_chuno,
+        pf:ingrediente_cordero,
+        pf:ingrediente_haba,
+        pf:ingrediente_papa,
+        pf:ingrediente_repollo,
+        pf:ingrediente_zanahoria,
+        pf:ingrediente_zapallo ;
+    pf:tipoDePlato "sopa" .
+
 pf:plato_chicha_de_jora a pf:Plato,
         pf:PlatoVegano,
         pf:PlatoVegetariano,
         owl:NamedIndividual ;
     rdfs:label "Chicha de jora"@es ;
     pf:ciudad "Trujillo" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "PromPerú, peru.travel, costa norte; Dialnet" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_canela,
@@ -622,7 +698,7 @@ pf:plato_chicha_morada a pf:Plato,
         owl:NamedIndividual ;
     rdfs:label "Chicha morada"@es ;
     pf:ciudad "Lima" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): PromPerú, peru.travel, Cuisine of Lima" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_azucar,
@@ -638,7 +714,7 @@ pf:plato_chicharron_cusqueno a pf:Plato,
         owl:NamedIndividual ;
     rdfs:label "Chicharrón cusqueño"@es ;
     pf:ciudad "Cusco" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "INEI cap. 3, p. 95 (Cusco); Andina" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_frito ;
     pf:tieneIngrediente pf:ingrediente_cebolla,
@@ -658,10 +734,12 @@ pf:plato_chicharron_de_pescado a pf:Plato,
     pf:ciudad "Trujillo" ;
     pf:contieneAlergeno pf:alergeno_crustaceos,
         pf:alergeno_gluten,
+        pf:alergeno_huevo,
         pf:alergeno_moluscos,
         pf:alergeno_pescado ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): Perú21 (2019); Infobae (2026), solo resúmenes" ;
     pf:puedeContener pf:alergeno_crustaceos,
+        pf:alergeno_huevo,
         pf:alergeno_moluscos ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_frito ;
@@ -687,7 +765,7 @@ pf:plato_chilcano_de_pescado a pf:Plato,
     rdfs:label "Chilcano de pescado"@es ;
     pf:ciudad "Lima" ;
     pf:contieneAlergeno pf:alergeno_pescado ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): Arcaya de Deliot (2009), solo título; Cookpad" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_cabeza_de_pescado,
@@ -707,7 +785,7 @@ pf:plato_chinguirito a pf:Plato,
     rdfs:label "Chinguirito"@es ;
     pf:ciudad "Chiclayo" ;
     pf:contieneAlergeno pf:alergeno_pescado ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina, gastronomía lambayecana (2023)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_marinado ;
     pf:tieneIngrediente pf:ingrediente_aji_limo,
@@ -729,7 +807,7 @@ pf:plato_chiri_uchu a pf:Plato,
         pf:alergeno_huevo,
         pf:alergeno_leche,
         pf:alergeno_pescado ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina, chiriuchu; RPP" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_asado ;
     pf:tieneIngrediente pf:ingrediente_cecina,
@@ -755,7 +833,7 @@ pf:plato_choritos_a_la_chalaca a pf:Plato,
     rdfs:label "Choritos a la chalaca"@es ;
     pf:ciudad "Callao" ;
     pf:contieneAlergeno pf:alergeno_moluscos ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Custer (2000); PromPerú, peru.travel, Cuisine of Lima" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_aji_limo,
@@ -769,22 +847,6 @@ pf:plato_choritos_a_la_chalaca a pf:Plato,
         pf:ingrediente_tomate ;
     pf:tipoDePlato "entrada" .
 
-pf:plato_chorizo_regional_con_yuca a pf:Plato,
-        pf:PlatoAltoEnProteinas,
-        owl:NamedIndividual ;
-    rdfs:label "Chorizo regional con yuca"@es ;
-    pf:ciudad "Tarapoto" ;
-    pf:fuente "POR VERIFICAR" ;
-    pf:region pf:Selva ;
-    pf:tecnicaDeCoccion pf:tecnica_frito ;
-    pf:tieneIngrediente pf:ingrediente_cebolla,
-        pf:ingrediente_cebolla_roja,
-        pf:ingrediente_chorizo,
-        pf:ingrediente_platano_maduro,
-        pf:ingrediente_tomate,
-        pf:ingrediente_yuca ;
-    pf:tipoDePlato "fondo" .
-
 pf:plato_chupe_de_camarones a pf:Plato,
         pf:PlatoAltoEnProteinas,
         pf:PlatoAptoParaMantenimientoDePeso,
@@ -794,7 +856,7 @@ pf:plato_chupe_de_camarones a pf:Plato,
     pf:contieneAlergeno pf:alergeno_crustaceos,
         pf:alergeno_huevo,
         pf:alergeno_leche ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina, Manjares al pie del Misti" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_aji_panca,
@@ -809,6 +871,38 @@ pf:plato_chupe_de_camarones a pf:Plato,
         pf:ingrediente_queso_fresco ;
     pf:tipoDePlato "sopa" .
 
+pf:plato_chupe_de_pallares_verdes a pf:Plato,
+        pf:PlatoAltoEnProteinas,
+        pf:PlatoAptoParaMantenimientoDePeso,
+        pf:PlatoAptoParaPerdidaDePeso,
+        pf:PlatoBajoEnCalorias,
+        owl:NamedIndividual ;
+    rdfs:label "Chupe de pallares verdes"@es ;
+    pf:ciudad "Ica" ;
+    pf:contieneAlergeno pf:alergeno_crustaceos,
+        pf:alergeno_huevo,
+        pf:alergeno_leche,
+        pf:alergeno_pescado ;
+    pf:fuente "INEI, Platos típicos regionales (cap. 3), p. 98 (Ica)" ;
+    pf:region pf:Costa ;
+    pf:tecnicaDeCoccion pf:tecnica_sancochado ;
+    pf:tieneIngrediente pf:ingrediente_ajo,
+        pf:ingrediente_arroz,
+        pf:ingrediente_camaron,
+        pf:ingrediente_camarones,
+        pf:ingrediente_cebolla,
+        pf:ingrediente_cebolla_roja,
+        pf:ingrediente_choclo,
+        pf:ingrediente_corvina,
+        pf:ingrediente_huevo,
+        pf:ingrediente_leche,
+        pf:ingrediente_leche_evaporada,
+        pf:ingrediente_oregano,
+        pf:ingrediente_pallar,
+        pf:ingrediente_pescado_blanco,
+        pf:ingrediente_zapallo ;
+    pf:tipoDePlato "sopa" .
+
 pf:plato_cuy_al_horno a pf:Plato,
         pf:PlatoAltoEnProteinas,
         pf:PlatoAptoParaMantenimientoDePeso,
@@ -817,7 +911,7 @@ pf:plato_cuy_al_horno a pf:Plato,
         owl:NamedIndividual ;
     rdfs:label "Cuy al horno"@es ;
     pf:ciudad "Cusco" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): Andina, Cusco (2023), solo mención" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_al_horno ;
     pf:tieneIngrediente pf:ingrediente_aceite,
@@ -834,7 +928,7 @@ pf:plato_cuy_chactado a pf:Plato,
         owl:NamedIndividual ;
     rdfs:label "Cuy chactado"@es ;
     pf:ciudad "Arequipa" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina, Manjares al pie del Misti" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_frito ;
     pf:tieneIngrediente pf:ingrediente_aceite,
@@ -852,7 +946,7 @@ pf:plato_emoliente a pf:Plato,
     rdfs:label "Emoliente"@es ;
     pf:ciudad "Lima" ;
     pf:contieneAlergeno pf:alergeno_gluten ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): USIL (proyecto académico)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_azucar,
@@ -870,7 +964,7 @@ pf:plato_ensalada_de_chonta a pf:Plato,
         owl:NamedIndividual ;
     rdfs:label "Ensalada de chonta"@es ;
     pf:ciudad "Pucallpa" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina, Expo Amazónica 2023; Infobae" ;
     pf:region pf:Selva ;
     pf:tecnicaDeCoccion pf:tecnica_crudo ;
     pf:tieneIngrediente pf:ingrediente_aceite_de_oliva,
@@ -893,7 +987,7 @@ pf:plato_ensalada_de_pallares a pf:Plato,
         owl:NamedIndividual ;
     rdfs:label "Ensalada de pallares"@es ;
     pf:ciudad "Ica" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina (2025, Ica)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_crudo ;
     pf:tieneIngrediente pf:ingrediente_aceite_de_oliva,
@@ -905,26 +999,31 @@ pf:plato_ensalada_de_pallares a pf:Plato,
         pf:ingrediente_tomate ;
     pf:tipoDePlato "entrada" .
 
-pf:plato_ensalada_de_quinua a pf:Plato,
-        pf:PlatoAptoParaMantenimientoDePeso,
-        pf:PlatoBajoEnCalorias,
-        pf:PlatoVegano,
-        pf:PlatoVegetariano,
+pf:plato_escabeche_de_pescado a pf:Plato,
+        pf:PlatoAltoEnProteinas,
         owl:NamedIndividual ;
-    rdfs:label "Ensalada de quinua"@es ;
-    pf:fuente "POR VERIFICAR" ;
-    pf:region pf:Sierra ;
-    pf:tecnicaDeCoccion pf:tecnica_crudo ;
-    pf:tieneIngrediente pf:ingrediente_cebolla,
+    rdfs:label "Escabeche de pescado"@es ;
+    pf:contieneAlergeno pf:alergeno_gluten,
+        pf:alergeno_huevo,
+        pf:alergeno_pescado ;
+    pf:fuente "INEI, Platos típicos regionales (cap. 3), p. 88 (Áncash)" ;
+    pf:region pf:Costa ;
+    pf:tecnicaDeCoccion pf:tecnica_frito ;
+    pf:tieneIngrediente pf:ingrediente_aceite,
+        pf:ingrediente_aceite_vegetal,
+        pf:ingrediente_aceituna,
+        pf:ingrediente_aceituna_de_botija,
+        pf:ingrediente_aji_panca,
+        pf:ingrediente_cebolla,
         pf:ingrediente_cebolla_roja,
-        pf:ingrediente_cilantro,
-        pf:ingrediente_culantro,
-        pf:ingrediente_limon,
-        pf:ingrediente_palta,
-        pf:ingrediente_quinoa,
-        pf:ingrediente_quinua,
-        pf:ingrediente_tomate ;
-    pf:tipoDePlato "entrada" .
+        pf:ingrediente_choclo,
+        pf:ingrediente_harina_de_trigo,
+        pf:ingrediente_huevo,
+        pf:ingrediente_lechuga,
+        pf:ingrediente_pescado,
+        pf:ingrediente_pescado_blanco,
+        pf:ingrediente_vinagre ;
+    pf:tipoDePlato "fondo" .
 
 pf:plato_espesado a pf:Plato,
         pf:PlatoAltoEnProteinas,
@@ -932,7 +1031,7 @@ pf:plato_espesado a pf:Plato,
         owl:NamedIndividual ;
     rdfs:label "Espesado"@es ;
     pf:ciudad "Chiclayo" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina, gastronomía lambayecana (2023); RPP, podcast de Acurio" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_guisado ;
     pf:tieneIngrediente pf:ingrediente_arroz,
@@ -951,7 +1050,7 @@ pf:plato_frejol_colado a pf:Plato,
     pf:ciudad "Chincha" ;
     pf:contieneAlergeno pf:alergeno_leche,
         pf:alergeno_sesamo ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): Arcaya de Deliot (2009), solo título; Living in Peru" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_ajonjoli,
@@ -961,12 +1060,33 @@ pf:plato_frejol_colado a pf:Plato,
         pf:ingrediente_leche_evaporada ;
     pf:tipoDePlato "postre" .
 
+pf:plato_fricase a pf:Plato,
+        pf:PlatoAltoEnProteinas,
+        pf:PlatoAptoParaMantenimientoDePeso,
+        owl:NamedIndividual ;
+    rdfs:label "Fricasé"@es ;
+    pf:ciudad "Puno" ;
+    pf:contieneAlergeno pf:alergeno_gluten ;
+    pf:fuente "INEI, Platos típicos regionales (cap. 3), p. 112 (Puno)" ;
+    pf:region pf:Sierra ;
+    pf:tecnicaDeCoccion pf:tecnica_guisado ;
+    pf:tieneIngrediente pf:ingrediente_aji_amarillo,
+        pf:ingrediente_ajo,
+        pf:ingrediente_cebolla,
+        pf:ingrediente_cebolla_china,
+        pf:ingrediente_cebolla_roja,
+        pf:ingrediente_cerdo,
+        pf:ingrediente_comino,
+        pf:ingrediente_oregano,
+        pf:ingrediente_pan ;
+    pf:tipoDePlato "fondo" .
+
 pf:plato_frito_trujillano a pf:Plato,
         pf:PlatoAltoEnProteinas,
         owl:NamedIndividual ;
     rdfs:label "Frito trujillano"@es ;
     pf:ciudad "Trujillo" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): Diario Correo; Infobae (2022)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_frito ;
     pf:tieneIngrediente pf:ingrediente_aji_panca,
@@ -983,7 +1103,7 @@ pf:plato_humitas a pf:Plato,
     rdfs:label "Humitas"@es ;
     pf:ciudad "Lima" ;
     pf:contieneAlergeno pf:alergeno_leche ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina, gastronomía lambayecana (2023) (humitas verdes)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_al_vapor ;
     pf:tieneIngrediente pf:ingrediente_anis,
@@ -1001,7 +1121,7 @@ pf:plato_inchicapi a pf:Plato,
     rdfs:label "Inchicapi"@es ;
     pf:ciudad "Iquitos" ;
     pf:contieneAlergeno pf:alergeno_mani ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "INEI cap. 3, p. 107 (Loreto); Andina, Expo Amazónica 2023" ;
     pf:region pf:Selva ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_ajo,
@@ -1019,9 +1139,11 @@ pf:plato_jalea_mixta a pf:Plato,
     pf:ciudad "Trujillo" ;
     pf:contieneAlergeno pf:alergeno_crustaceos,
         pf:alergeno_gluten,
+        pf:alergeno_huevo,
         pf:alergeno_moluscos,
         pf:alergeno_pescado ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): Custer (2000), extracto en ckbk" ;
+    pf:puedeContener pf:alergeno_huevo ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_frito ;
     pf:tieneIngrediente pf:ingrediente_aceite,
@@ -1050,7 +1172,7 @@ pf:plato_juane_de_gallina a pf:Plato,
     rdfs:label "Juane de gallina"@es ;
     pf:ciudad "Tarapoto" ;
     pf:contieneAlergeno pf:alergeno_huevo ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Promperú (2022); Andina, Expo Amazónica 2023" ;
     pf:region pf:Selva ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_aceituna,
@@ -1072,7 +1194,7 @@ pf:plato_juane_de_yuca a pf:Plato,
     rdfs:label "Juane de yuca"@es ;
     pf:ciudad "Iquitos" ;
     pf:contieneAlergeno pf:alergeno_pescado ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "INEI cap. 3, p. 87 (Amazonas); Andina, Expo Amazónica 2023; Andina, Tarapoto (2024)" ;
     pf:region pf:Selva ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_aceite,
@@ -1094,9 +1216,8 @@ pf:plato_king_kong a pf:Plato,
         pf:alergeno_huevo,
         pf:alergeno_leche,
         pf:alergeno_mani ;
-    pf:fuente "POR VERIFICAR" ;
-    pf:puedeContener pf:alergeno_frutos_secos,
-        pf:alergeno_mani ;
+    pf:fuente "Andina, gastronomía lambayecana (2023)" ;
+    pf:puedeContener pf:alergeno_frutos_secos ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_al_horno ;
     pf:tieneIngrediente pf:ingrediente_azucar,
@@ -1104,6 +1225,7 @@ pf:plato_king_kong a pf:Plato,
         pf:ingrediente_harina_de_trigo,
         pf:ingrediente_huevo,
         pf:ingrediente_leche_evaporada,
+        pf:ingrediente_mani,
         pf:ingrediente_manjar_blanco,
         pf:ingrediente_mantequilla,
         pf:ingrediente_pina,
@@ -1117,17 +1239,18 @@ pf:plato_leche_de_tigre a pf:Plato,
     rdfs:label "Leche de tigre"@es ;
     pf:ciudad "Lima" ;
     pf:contieneAlergeno pf:alergeno_pescado ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): Andina (2019), solo mención" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_marinado ;
     pf:tieneIngrediente pf:ingrediente_aji_limo,
         pf:ingrediente_apio,
         pf:ingrediente_cancha,
         pf:ingrediente_canchita,
+        pf:ingrediente_cebolla,
         pf:ingrediente_cebolla_roja,
         pf:ingrediente_choclo,
-        pf:ingrediente_leche_de_tigre,
         pf:ingrediente_limon,
+        pf:ingrediente_pescado,
         pf:ingrediente_pescado_blanco ;
     pf:tipoDePlato "bebida" .
 
@@ -1139,7 +1262,7 @@ pf:plato_lomo_saltado a pf:Plato,
     pf:ciudad "Lima" ;
     pf:contieneAlergeno pf:alergeno_gluten,
         pf:alergeno_soya ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "INEI cap. 3, p. 102 (Lima y Callao)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_salteado ;
     pf:tieneIngrediente pf:ingrediente_aceite_vegetal,
@@ -1157,27 +1280,12 @@ pf:plato_lomo_saltado a pf:Plato,
         pf:ingrediente_vinagre ;
     pf:tipoDePlato "fondo" .
 
-pf:plato_maduro_con_queso a pf:Plato,
-        pf:PlatoAptoParaMantenimientoDePeso,
-        pf:PlatoBajoEnCalorias,
-        pf:PlatoVegetariano,
-        owl:NamedIndividual ;
-    rdfs:label "Maduro con queso"@es ;
-    pf:ciudad "Pucallpa" ;
-    pf:contieneAlergeno pf:alergeno_leche ;
-    pf:fuente "POR VERIFICAR" ;
-    pf:region pf:Selva ;
-    pf:tecnicaDeCoccion pf:tecnica_a_la_parrilla ;
-    pf:tieneIngrediente pf:ingrediente_platano_maduro,
-        pf:ingrediente_queso_fresco ;
-    pf:tipoDePlato "entrada" .
-
 pf:plato_majado_de_yuca a pf:Plato,
         pf:PlatoAltoEnProteinas,
         owl:NamedIndividual ;
     rdfs:label "Majado de yuca"@es ;
     pf:ciudad "Trujillo" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "El Tiempo, Piura (2023)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_frito ;
     pf:tieneIngrediente pf:ingrediente_ajo,
@@ -1192,23 +1300,42 @@ pf:plato_majado_de_yuca a pf:Plato,
 pf:plato_malarrabia a pf:Plato,
         pf:PlatoAltoEnProteinas,
         pf:PlatoAptoParaMantenimientoDePeso,
-        pf:PlatoVegetariano,
         owl:NamedIndividual ;
     rdfs:label "Malarrabia"@es ;
     pf:ciudad "Piura" ;
-    pf:contieneAlergeno pf:alergeno_leche ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:contieneAlergeno pf:alergeno_leche,
+        pf:alergeno_pescado ;
+    pf:fuente "RPP; UDEP (2024); Diario Correo (ETG)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_guisado ;
     pf:tieneIngrediente pf:ingrediente_aceite,
         pf:ingrediente_aceite_vegetal,
         pf:ingrediente_aji_amarillo,
+        pf:ingrediente_arroz,
         pf:ingrediente_cebolla,
         pf:ingrediente_cebolla_roja,
         pf:ingrediente_frijol,
+        pf:ingrediente_pescado,
+        pf:ingrediente_pescado_blanco,
         pf:ingrediente_platano_maduro,
         pf:ingrediente_queso_fresco ;
     pf:tipoDePlato "fondo" .
+
+pf:plato_manjar_blanco a pf:Plato,
+        pf:PlatoVegetariano,
+        owl:NamedIndividual ;
+    rdfs:label "Manjar blanco"@es ;
+    pf:ciudad "Cajamarca" ;
+    pf:contieneAlergeno pf:alergeno_leche ;
+    pf:fuente "INEI, Platos típicos regionales (cap. 3), p. 94 (Cajamarca)" ;
+    pf:region pf:Sierra ;
+    pf:tecnicaDeCoccion pf:tecnica_sancochado ;
+    pf:tieneIngrediente pf:ingrediente_azucar,
+        pf:ingrediente_canela,
+        pf:ingrediente_chuno,
+        pf:ingrediente_leche,
+        pf:ingrediente_leche_evaporada ;
+    pf:tipoDePlato "postre" .
 
 pf:plato_masato a pf:Plato,
         pf:PlatoVegano,
@@ -1216,7 +1343,7 @@ pf:plato_masato a pf:Plato,
         owl:NamedIndividual ;
     rdfs:label "Masato"@es ;
     pf:ciudad "Pucallpa" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina, Expo Amazónica 2023" ;
     pf:region pf:Selva ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_azucar,
@@ -1224,20 +1351,19 @@ pf:plato_masato a pf:Plato,
         pf:ingrediente_yuca ;
     pf:tipoDePlato "bebida" .
 
-pf:plato_mazamorra_de_quinua a pf:Plato,
+pf:plato_mazamorra_de_tocosh a pf:Plato,
+        pf:PlatoVegano,
         pf:PlatoVegetariano,
         owl:NamedIndividual ;
-    rdfs:label "Mazamorra de quinua"@es ;
-    pf:contieneAlergeno pf:alergeno_leche ;
-    pf:fuente "POR VERIFICAR" ;
+    rdfs:label "Mazamorra de tocosh"@es ;
+    pf:ciudad "Huánuco" ;
+    pf:fuente "INEI, Platos típicos regionales (cap. 3), p. 97 (Huánuco)" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
-    pf:tieneIngrediente pf:ingrediente_azucar,
-        pf:ingrediente_canela,
+    pf:tieneIngrediente pf:ingrediente_canela,
+        pf:ingrediente_chancaca,
         pf:ingrediente_clavo,
-        pf:ingrediente_leche,
-        pf:ingrediente_leche_evaporada,
-        pf:ingrediente_quinua ;
+        pf:ingrediente_tocosh ;
     pf:tipoDePlato "postre" .
 
 pf:plato_mazamorra_morada a pf:Plato,
@@ -1246,7 +1372,7 @@ pf:plato_mazamorra_morada a pf:Plato,
         owl:NamedIndividual ;
     rdfs:label "Mazamorra morada"@es ;
     pf:ciudad "Lima" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "El Peruano (28 jul. 2026)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_azucar,
@@ -1266,7 +1392,7 @@ pf:plato_ninajuane a pf:Plato,
     rdfs:label "Ninajuane"@es ;
     pf:ciudad "Tarapoto" ;
     pf:contieneAlergeno pf:alergeno_huevo ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): Andina, Expo Amazónica 2023, Andina, Tarapoto (2024) (solo mención)" ;
     pf:region pf:Selva ;
     pf:tecnicaDeCoccion pf:tecnica_al_vapor ;
     pf:tieneIngrediente pf:ingrediente_ajo,
@@ -1282,7 +1408,7 @@ pf:plato_olluquito_con_charqui a pf:Plato,
         pf:PlatoAptoParaMantenimientoDePeso,
         owl:NamedIndividual ;
     rdfs:label "Olluquito con charqui"@es ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): Morales (2015), p. 104 (solo índice)" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_guisado ;
     pf:tieneIngrediente pf:ingrediente_aji_panca,
@@ -1301,7 +1427,7 @@ pf:plato_pachamanca a pf:Plato,
     rdfs:label "Pachamanca"@es ;
     pf:ciudad "Huancayo" ;
     pf:contieneAlergeno pf:alergeno_leche ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina, RDN 471/2003-INC; RM 0577-2015-MINAGRI" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_al_horno ;
     pf:tieneIngrediente pf:ingrediente_camote,
@@ -1318,50 +1444,13 @@ pf:plato_pachamanca a pf:Plato,
         pf:ingrediente_queso_fresco ;
     pf:tipoDePlato "fondo" .
 
-pf:plato_paiche_a_la_parrilla a pf:Plato,
-        pf:PlatoAltoEnProteinas,
-        pf:PlatoAptoParaMantenimientoDePeso,
-        pf:PlatoAptoParaPerdidaDePeso,
-        pf:PlatoBajoEnCalorias,
-        owl:NamedIndividual ;
-    rdfs:label "Paiche a la parrilla"@es ;
-    pf:ciudad "Iquitos" ;
-    pf:contieneAlergeno pf:alergeno_pescado ;
-    pf:fuente "POR VERIFICAR" ;
-    pf:region pf:Selva ;
-    pf:tecnicaDeCoccion pf:tecnica_a_la_parrilla ;
-    pf:tieneIngrediente pf:ingrediente_lechuga,
-        pf:ingrediente_limon,
-        pf:ingrediente_paiche,
-        pf:ingrediente_tomate,
-        pf:ingrediente_yuca ;
-    pf:tipoDePlato "fondo" .
-
-pf:plato_paiche_frito a pf:Plato,
-        pf:PlatoAltoEnProteinas,
-        owl:NamedIndividual ;
-    rdfs:label "Paiche frito"@es ;
-    pf:ciudad "Iquitos" ;
-    pf:contieneAlergeno pf:alergeno_pescado ;
-    pf:fuente "POR VERIFICAR" ;
-    pf:region pf:Selva ;
-    pf:tecnicaDeCoccion pf:tecnica_frito ;
-    pf:tieneIngrediente pf:ingrediente_aceite,
-        pf:ingrediente_aceite_vegetal,
-        pf:ingrediente_farina,
-        pf:ingrediente_harina_de_yuca,
-        pf:ingrediente_limon,
-        pf:ingrediente_paiche,
-        pf:ingrediente_yuca ;
-    pf:tipoDePlato "fondo" .
-
 pf:plato_pan_con_chicharron a pf:Plato,
         pf:PlatoAltoEnProteinas,
         owl:NamedIndividual ;
     rdfs:label "Pan con chicharrón"@es ;
     pf:ciudad "Lima" ;
     pf:contieneAlergeno pf:alergeno_gluten ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): El Comercio, Perú21 y Exitosa (solo resúmenes)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_frito ;
     pf:tieneIngrediente pf:ingrediente_aji_limo,
@@ -1385,7 +1474,7 @@ pf:plato_papa_a_la_huancaina a pf:Plato,
     pf:contieneAlergeno pf:alergeno_gluten,
         pf:alergeno_huevo,
         pf:alergeno_leche ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "INEI cap. 3, p. 99 (Junín)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_aceite_vegetal,
@@ -1412,7 +1501,7 @@ pf:plato_papa_a_la_ocopa a pf:Plato,
         pf:alergeno_huevo,
         pf:alergeno_leche,
         pf:alergeno_mani ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina, Manjares al pie del Misti" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_aceite_vegetal,
@@ -1437,7 +1526,7 @@ pf:plato_papa_rellena a pf:Plato,
     pf:ciudad "Lima" ;
     pf:contieneAlergeno pf:alergeno_gluten,
         pf:alergeno_huevo ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "peru.travel (2020)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_frito ;
     pf:tieneIngrediente pf:ingrediente_aceite,
@@ -1465,7 +1554,7 @@ pf:plato_pastel_de_papa a pf:Plato,
     pf:ciudad "Arequipa" ;
     pf:contieneAlergeno pf:alergeno_huevo,
         pf:alergeno_leche ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina, Manjares al pie del Misti" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_al_horno ;
     pf:tieneIngrediente pf:ingrediente_huevo,
@@ -1477,6 +1566,39 @@ pf:plato_pastel_de_papa a pf:Plato,
         pf:ingrediente_queso_fresco ;
     pf:tipoDePlato "fondo" .
 
+pf:plato_patachi a pf:Plato,
+        pf:PlatoAltoEnProteinas,
+        owl:NamedIndividual ;
+    rdfs:label "Patachi"@es ;
+    pf:ciudad "Huancavelica" ;
+    pf:contieneAlergeno pf:alergeno_gluten ;
+    pf:fuente "INEI, Platos típicos regionales (cap. 3), p. 96 (Huancavelica)" ;
+    pf:region pf:Sierra ;
+    pf:tecnicaDeCoccion pf:tecnica_sancochado ;
+    pf:tieneIngrediente pf:ingrediente_aceite,
+        pf:ingrediente_aceite_vegetal,
+        pf:ingrediente_aji_amarillo,
+        pf:ingrediente_ajo,
+        pf:ingrediente_arveja,
+        pf:ingrediente_carne_de_res,
+        pf:ingrediente_cebolla,
+        pf:ingrediente_cebolla_roja,
+        pf:ingrediente_cerdo,
+        pf:ingrediente_charqui,
+        pf:ingrediente_chochoca,
+        pf:ingrediente_chuno,
+        pf:ingrediente_comino,
+        pf:ingrediente_frijol,
+        pf:ingrediente_haba,
+        pf:ingrediente_hierbabuena,
+        pf:ingrediente_oregano,
+        pf:ingrediente_palillo,
+        pf:ingrediente_papa,
+        pf:ingrediente_tocino,
+        pf:ingrediente_trigo,
+        pf:ingrediente_trigo_pelado ;
+    pf:tipoDePlato "sopa" .
+
 pf:plato_patarashca a pf:Plato,
         pf:PlatoAltoEnProteinas,
         pf:PlatoAptoParaMantenimientoDePeso,
@@ -1486,7 +1608,7 @@ pf:plato_patarashca a pf:Plato,
     rdfs:label "Patarashca"@es ;
     pf:ciudad "Iquitos" ;
     pf:contieneAlergeno pf:alergeno_pescado ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina, Expo Amazónica 2023; Infobae" ;
     pf:region pf:Selva ;
     pf:tecnicaDeCoccion pf:tecnica_a_la_parrilla ;
     pf:tieneIngrediente pf:ingrediente_aji_dulce,
@@ -1506,7 +1628,7 @@ pf:plato_patasca a pf:Plato,
         pf:PlatoBajoEnCalorias,
         owl:NamedIndividual ;
     rdfs:label "Patasca"@es ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina, Moquegua" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_ajo,
@@ -1518,13 +1640,38 @@ pf:plato_patasca a pf:Plato,
         pf:ingrediente_mote ;
     pf:tipoDePlato "sopa" .
 
+pf:plato_pato_a_la_ucayalina a pf:Plato,
+        pf:PlatoAltoEnProteinas,
+        owl:NamedIndividual ;
+    rdfs:label "Pato a la ucayalina"@es ;
+    pf:contieneAlergeno pf:alergeno_gluten,
+        pf:alergeno_soya ;
+    pf:fuente "INEI, Platos típicos regionales (cap. 3), p. 116 (Ucayali)" ;
+    pf:region pf:Selva ;
+    pf:tecnicaDeCoccion pf:tecnica_guisado ;
+    pf:tieneIngrediente pf:ingrediente_aceite,
+        pf:ingrediente_aceite_vegetal,
+        pf:ingrediente_achiote,
+        pf:ingrediente_aji_panca,
+        pf:ingrediente_ajo,
+        pf:ingrediente_arroz,
+        pf:ingrediente_azucar,
+        pf:ingrediente_cebolla,
+        pf:ingrediente_cebolla_roja,
+        pf:ingrediente_comino,
+        pf:ingrediente_limon,
+        pf:ingrediente_pato,
+        pf:ingrediente_sillao,
+        pf:ingrediente_yuca ;
+    pf:tipoDePlato "fondo" .
+
 pf:plato_pepian_de_pava a pf:Plato,
         pf:PlatoAltoEnProteinas,
         pf:PlatoAptoParaMantenimientoDePeso,
         owl:NamedIndividual ;
     rdfs:label "Pepián de pava"@es ;
     pf:ciudad "Trujillo" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): tesis UNT, García Paucar (2018); Custer (2000)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_guisado ;
     pf:tieneIngrediente pf:ingrediente_aji_amarillo,
@@ -1546,17 +1693,21 @@ pf:plato_pescado_a_lo_macho a pf:Plato,
         pf:alergeno_leche,
         pf:alergeno_moluscos,
         pf:alergeno_pescado ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Arcaya de Deliot (2009)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_frito ;
     pf:tieneIngrediente pf:ingrediente_aceite,
         pf:ingrediente_aceite_vegetal,
         pf:ingrediente_aji_panca,
+        pf:ingrediente_almeja,
+        pf:ingrediente_almejas,
         pf:ingrediente_arroz,
         pf:ingrediente_calamar,
+        pf:ingrediente_choros,
         pf:ingrediente_crema_de_leche,
         pf:ingrediente_harina_de_trigo,
         pf:ingrediente_langostino,
+        pf:ingrediente_mejillon,
         pf:ingrediente_pescado,
         pf:ingrediente_pescado_blanco ;
     pf:tipoDePlato "fondo" .
@@ -1568,7 +1719,7 @@ pf:plato_pesque_de_quinua a pf:Plato,
     rdfs:label "Pesque de quinua"@es ;
     pf:ciudad "Puno" ;
     pf:contieneAlergeno pf:alergeno_leche ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Marca Perú, platos de Puno" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_leche,
@@ -1586,7 +1737,7 @@ pf:plato_picadillo_de_paiche a pf:Plato,
     pf:ciudad "Iquitos" ;
     pf:contieneAlergeno pf:alergeno_huevo,
         pf:alergeno_pescado ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "INEI cap. 3, p. 116 (Ucayali)" ;
     pf:region pf:Selva ;
     pf:tecnicaDeCoccion pf:tecnica_salteado ;
     pf:tieneIngrediente pf:ingrediente_aceite,
@@ -1606,7 +1757,7 @@ pf:plato_picante_de_cuy a pf:Plato,
     rdfs:label "Picante de cuy"@es ;
     pf:ciudad "Huaraz" ;
     pf:contieneAlergeno pf:alergeno_mani ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "peru.travel (receta); Infobae" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_guisado ;
     pf:tieneIngrediente pf:ingrediente_aceite,
@@ -1625,7 +1776,7 @@ pf:plato_picarones a pf:Plato,
     rdfs:label "Picarones"@es ;
     pf:ciudad "Lima" ;
     pf:contieneAlergeno pf:alergeno_gluten ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): Andina (2024); RPP, Olivas Weston (resumen)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_frito ;
     pf:tieneIngrediente pf:ingrediente_aceite,
@@ -1639,20 +1790,6 @@ pf:plato_picarones a pf:Plato,
         pf:ingrediente_zapallo ;
     pf:tipoDePlato "postre" .
 
-pf:plato_pijuayo_sancochado a pf:Plato,
-        pf:PlatoAptoParaMantenimientoDePeso,
-        pf:PlatoBajoEnCalorias,
-        pf:PlatoVegano,
-        pf:PlatoVegetariano,
-        owl:NamedIndividual ;
-    rdfs:label "Pijuayo sancochado"@es ;
-    pf:ciudad "Iquitos" ;
-    pf:fuente "POR VERIFICAR" ;
-    pf:region pf:Selva ;
-    pf:tecnicaDeCoccion pf:tecnica_sancochado ;
-    pf:tieneIngrediente pf:ingrediente_pijuayo ;
-    pf:tipoDePlato "entrada" .
-
 pf:plato_pollo_a_la_brasa a pf:Plato,
         pf:PlatoAltoEnProteinas,
         pf:PlatoAptoParaMantenimientoDePeso,
@@ -1661,7 +1798,7 @@ pf:plato_pollo_a_la_brasa a pf:Plato,
     pf:ciudad "Lima" ;
     pf:contieneAlergeno pf:alergeno_gluten,
         pf:alergeno_soya ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "INEI (Lima y Callao); RPP; Andina" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_asado ;
     pf:tieneIngrediente pf:ingrediente_aceite_vegetal,
@@ -1678,30 +1815,13 @@ pf:plato_pollo_a_la_brasa a pf:Plato,
         pf:ingrediente_tomate ;
     pf:tipoDePlato "fondo" .
 
-pf:plato_ponche_de_habas a pf:Plato,
-        pf:PlatoVegetariano,
-        owl:NamedIndividual ;
-    rdfs:label "Ponche de habas"@es ;
-    pf:ciudad "Cusco" ;
-    pf:contieneAlergeno pf:alergeno_leche ;
-    pf:fuente "POR VERIFICAR" ;
-    pf:region pf:Sierra ;
-    pf:tecnicaDeCoccion pf:tecnica_sancochado ;
-    pf:tieneIngrediente pf:ingrediente_azucar,
-        pf:ingrediente_canela,
-        pf:ingrediente_clavo,
-        pf:ingrediente_haba,
-        pf:ingrediente_leche,
-        pf:ingrediente_leche_evaporada ;
-    pf:tipoDePlato "bebida" .
-
 pf:plato_puca_picante a pf:Plato,
         pf:PlatoAltoEnProteinas,
         owl:NamedIndividual ;
     rdfs:label "Puca picante"@es ;
     pf:ciudad "Ayacucho" ;
     pf:contieneAlergeno pf:alergeno_mani ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "INEI cap. 3, p. 93 (índice); Trome; Explore Parts Unknown" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_guisado ;
     pf:tieneIngrediente pf:ingrediente_aji_panca,
@@ -1721,7 +1841,7 @@ pf:plato_qapchi a pf:Plato,
     rdfs:label "Qapchi"@es ;
     pf:ciudad "Ayacucho" ;
     pf:contieneAlergeno pf:alergeno_leche ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina, Día del Queso (2019)" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_crudo ;
     pf:tieneIngrediente pf:ingrediente_cebolla,
@@ -1741,7 +1861,7 @@ pf:plato_queso_helado a pf:Plato,
     pf:ciudad "Arequipa" ;
     pf:contieneAlergeno pf:alergeno_frutos_secos,
         pf:alergeno_leche ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina, Manjares al pie del Misti; El Peruano" ;
     pf:puedeContener pf:alergeno_frutos_secos ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_crudo ;
@@ -1760,7 +1880,7 @@ pf:plato_refresco_de_camu_camu a pf:Plato,
         owl:NamedIndividual ;
     rdfs:label "Refresco de camu camu"@es ;
     pf:ciudad "Pucallpa" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): Andina, Expo Amazónica 2023 (solo como acompañamiento)" ;
     pf:region pf:Selva ;
     pf:tecnicaDeCoccion pf:tecnica_crudo ;
     pf:tieneIngrediente pf:ingrediente_azucar,
@@ -1776,7 +1896,7 @@ pf:plato_rocoto_relleno a pf:Plato,
     pf:contieneAlergeno pf:alergeno_huevo,
         pf:alergeno_leche,
         pf:alergeno_mani ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina, Manjares al pie del Misti" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_al_horno ;
     pf:tieneIngrediente pf:ingrediente_aceituna,
@@ -1793,13 +1913,28 @@ pf:plato_rocoto_relleno a pf:Plato,
         pf:ingrediente_rocoto ;
     pf:tipoDePlato "fondo" .
 
+pf:plato_sara_juane a pf:Plato,
+        pf:PlatoAltoEnProteinas,
+        pf:PlatoAptoParaMantenimientoDePeso,
+        owl:NamedIndividual ;
+    rdfs:label "Sara juane"@es ;
+    pf:contieneAlergeno pf:alergeno_mani ;
+    pf:fuente "Andina, Expo Amazónica 2023 (22-09-2023)" ;
+    pf:region pf:Selva ;
+    pf:tecnicaDeCoccion pf:tecnica_sancochado ;
+    pf:tieneIngrediente pf:ingrediente_harina_de_maiz,
+        pf:ingrediente_mani,
+        pf:ingrediente_pollo,
+        pf:ingrediente_sacha_culantro ;
+    pf:tipoDePlato "fondo" .
+
 pf:plato_seco_de_chabelo a pf:Plato,
         pf:PlatoAltoEnProteinas,
         pf:PlatoAptoParaMantenimientoDePeso,
         owl:NamedIndividual ;
     rdfs:label "Seco de chabelo"@es ;
     pf:ciudad "Piura" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Indecopi, ETG; El Peruano; Diario Correo" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_guisado ;
     pf:tieneIngrediente pf:ingrediente_aceite,
@@ -1819,7 +1954,7 @@ pf:plato_seco_de_res a pf:Plato,
         owl:NamedIndividual ;
     rdfs:label "Seco de res"@es ;
     pf:ciudad "Lima" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Cuadra y Escardó (2014)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_guisado ;
     pf:tieneIngrediente pf:ingrediente_aji_amarillo,
@@ -1836,7 +1971,7 @@ pf:plato_shambar a pf:Plato,
     rdfs:label "Shambar"@es ;
     pf:ciudad "Trujillo" ;
     pf:contieneAlergeno pf:alergeno_gluten ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "INEI cap. 3, p. 100 (La Libertad); revista UNMSM" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_alverja,
@@ -1865,7 +2000,7 @@ pf:plato_solterito a pf:Plato,
     rdfs:label "Solterito arequipeño"@es ;
     pf:ciudad "Arequipa" ;
     pf:contieneAlergeno pf:alergeno_leche ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina, Manjares al pie del Misti" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_crudo ;
     pf:tieneIngrediente pf:ingrediente_aceite_de_oliva,
@@ -1881,28 +2016,6 @@ pf:plato_solterito a pf:Plato,
         pf:ingrediente_tomate ;
     pf:tipoDePlato "entrada" .
 
-pf:plato_sopa_de_choros a pf:Plato,
-        pf:PlatoAltoEnProteinas,
-        pf:PlatoAptoParaMantenimientoDePeso,
-        pf:PlatoAptoParaPerdidaDePeso,
-        pf:PlatoBajoEnCalorias,
-        owl:NamedIndividual ;
-    rdfs:label "Sopa de choros"@es ;
-    pf:ciudad "Trujillo" ;
-    pf:contieneAlergeno pf:alergeno_moluscos ;
-    pf:fuente "POR VERIFICAR" ;
-    pf:region pf:Costa ;
-    pf:tecnicaDeCoccion pf:tecnica_sancochado ;
-    pf:tieneIngrediente pf:ingrediente_aji_amarillo,
-        pf:ingrediente_arroz,
-        pf:ingrediente_cebolla,
-        pf:ingrediente_cebolla_roja,
-        pf:ingrediente_choros,
-        pf:ingrediente_culantro,
-        pf:ingrediente_mejillon,
-        pf:ingrediente_papa ;
-    pf:tipoDePlato "sopa" .
-
 pf:plato_sopa_de_quinua a pf:Plato,
         pf:PlatoAltoEnProteinas,
         pf:PlatoAptoParaMantenimientoDePeso,
@@ -1912,7 +2025,11 @@ pf:plato_sopa_de_quinua a pf:Plato,
         pf:PlatoVegetariano,
         owl:NamedIndividual ;
     rdfs:label "Sopa de quinua"@es ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:contieneAlergeno pf:alergeno_crustaceos,
+        pf:alergeno_pescado ;
+    pf:fuente "FAO (2014), p. 55 (puñuchi, Perú)" ;
+    pf:puedeContener pf:alergeno_crustaceos,
+        pf:alergeno_pescado ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_ajo,
@@ -1932,8 +2049,10 @@ pf:plato_sopa_teologa a pf:Plato,
     rdfs:label "Sopa teóloga"@es ;
     pf:ciudad "Trujillo" ;
     pf:contieneAlergeno pf:alergeno_gluten,
+        pf:alergeno_huevo,
         pf:alergeno_leche ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "INEI cap. 3, p. 100 (La Libertad); RPP (Moche)" ;
+    pf:puedeContener pf:alergeno_huevo ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_aji_amarillo,
@@ -1944,6 +2063,26 @@ pf:plato_sopa_teologa a pf:Plato,
         pf:ingrediente_queso_fresco ;
     pf:tipoDePlato "sopa" .
 
+pf:plato_sudado_de_doncella a pf:Plato,
+        pf:PlatoAltoEnProteinas,
+        pf:PlatoAptoParaMantenimientoDePeso,
+        owl:NamedIndividual ;
+    rdfs:label "Sudado de doncella"@es ;
+    pf:contieneAlergeno pf:alergeno_pescado ;
+    pf:fuente "Andina, Expo Amazónica 2023 (22-09-2023)" ;
+    pf:region pf:Selva ;
+    pf:tecnicaDeCoccion pf:tecnica_guisado ;
+    pf:tieneIngrediente pf:ingrediente_aji_dulce,
+        pf:ingrediente_ajo,
+        pf:ingrediente_arroz,
+        pf:ingrediente_cebolla,
+        pf:ingrediente_cebolla_roja,
+        pf:ingrediente_chicha_de_jora,
+        pf:ingrediente_doncella,
+        pf:ingrediente_pescado_amazonico,
+        pf:ingrediente_yuca ;
+    pf:tipoDePlato "fondo" .
+
 pf:plato_sudado_de_pescado a pf:Plato,
         pf:PlatoAltoEnProteinas,
         pf:PlatoAptoParaMantenimientoDePeso,
@@ -1951,7 +2090,7 @@ pf:plato_sudado_de_pescado a pf:Plato,
     rdfs:label "Sudado de pescado"@es ;
     pf:ciudad "Trujillo" ;
     pf:contieneAlergeno pf:alergeno_pescado ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): PromPerú, peru.travel, costa norte (sin ingredientes)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_guisado ;
     pf:tieneIngrediente pf:ingrediente_aji_amarillo,
@@ -1972,11 +2111,12 @@ pf:plato_suspiro_a_la_limena a pf:Plato,
     pf:ciudad "Lima" ;
     pf:contieneAlergeno pf:alergeno_huevo,
         pf:alergeno_leche ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "El Peruano (28 jul. 2026)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_azucar,
         pf:ingrediente_canela,
+        pf:ingrediente_clara_de_huevo,
         pf:ingrediente_huevo,
         pf:ingrediente_leche_condensada,
         pf:ingrediente_leche_evaporada,
@@ -1990,7 +2130,7 @@ pf:plato_tacacho_con_cecina a pf:Plato,
         owl:NamedIndividual ;
     rdfs:label "Tacacho con cecina"@es ;
     pf:ciudad "Tarapoto" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "INEI cap. 3, p. 107 (Loreto); Andina, Expo Amazónica 2023; Infobae" ;
     pf:region pf:Selva ;
     pf:tecnicaDeCoccion pf:tecnica_frito ;
     pf:tieneIngrediente pf:ingrediente_cecina,
@@ -2007,7 +2147,7 @@ pf:plato_tacu_tacu a pf:Plato,
         owl:NamedIndividual ;
     rdfs:label "Tacu tacu"@es ;
     pf:ciudad "Lima" ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "RPP (2020), receta de Acurio" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_frito ;
     pf:tieneIngrediente pf:ingrediente_aceite,
@@ -2026,7 +2166,7 @@ pf:plato_tamal_criollo a pf:Plato,
     pf:ciudad "Lima" ;
     pf:contieneAlergeno pf:alergeno_huevo,
         pf:alergeno_mani ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "PromPerú, peru.travel, Cuisine of Lima; Custer (2000)" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_al_vapor ;
     pf:tieneIngrediente pf:ingrediente_aceituna,
@@ -2049,8 +2189,10 @@ pf:plato_timbuche a pf:Plato,
         owl:NamedIndividual ;
     rdfs:label "Timbuche"@es ;
     pf:ciudad "Iquitos" ;
-    pf:contieneAlergeno pf:alergeno_pescado ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:contieneAlergeno pf:alergeno_huevo,
+        pf:alergeno_pescado ;
+    pf:fuente "INEI cap. 3, p. 108 (Madre de Dios); Infobae; Andina, Expo Amazónica 2023" ;
+    pf:puedeContener pf:alergeno_huevo ;
     pf:region pf:Selva ;
     pf:tecnicaDeCoccion pf:tecnica_sancochado ;
     pf:tieneIngrediente pf:ingrediente_aji_dulce,
@@ -2070,7 +2212,7 @@ pf:plato_tiradito a pf:Plato,
     rdfs:label "Tiradito de pescado"@es ;
     pf:ciudad "Lima" ;
     pf:contieneAlergeno pf:alergeno_pescado ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Andina (2019), origen nikkei" ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_marinado ;
     pf:tieneIngrediente pf:ingrediente_aji_amarillo,
@@ -2087,7 +2229,7 @@ pf:plato_trucha_frita a pf:Plato,
     pf:ciudad "Puno" ;
     pf:contieneAlergeno pf:alergeno_gluten,
         pf:alergeno_pescado ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "Marca Perú, platos de Puno" ;
     pf:region pf:Sierra ;
     pf:tecnicaDeCoccion pf:tecnica_frito ;
     pf:tieneIngrediente pf:ingrediente_aceite,
@@ -2108,7 +2250,7 @@ pf:plato_wantan_frito a pf:Plato,
     pf:contieneAlergeno pf:alergeno_crustaceos,
         pf:alergeno_gluten,
         pf:alergeno_huevo ;
-    pf:fuente "POR VERIFICAR" ;
+    pf:fuente "POR VERIFICAR (fuente débil): Rodríguez Pastor (2006); Andina (2024)" ;
     pf:puedeContener pf:alergeno_crustaceos ;
     pf:region pf:Costa ;
     pf:tecnicaDeCoccion pf:tecnica_frito ;
@@ -2157,11 +2299,10 @@ pf:tipoDePlato a owl:DatatypeProperty ;
 pf:RestriccionAlimentaria a owl:Class ;
     rdfs:label "Restricción alimentaria"@es .
 
-pf:ingrediente_aceite_de_ajonjoli a pf:InsumoGeneral,
+pf:ingrediente_achiote a pf:InsumoAmazonico,
         owl:NamedIndividual ;
-    rdfs:label "Aceite de ajonjolí"@es ;
-    pf:contieneAlergeno pf:alergeno_sesamo ;
-    pf:tipoDeAlimento "grasa" .
+    rdfs:label "Achiote"@es ;
+    pf:tipoDeAlimento "condimento" .
 
 pf:ingrediente_aguaje a pf:InsumoAmazonico,
         owl:NamedIndividual ;
@@ -2172,6 +2313,16 @@ pf:ingrediente_aji_charapita a pf:InsumoAmazonico,
         owl:NamedIndividual ;
     rdfs:label "Ají charapita"@es ;
     pf:tipoDeAlimento "condimento" .
+
+pf:ingrediente_almejas a pf:Ingrediente,
+        owl:NamedIndividual ;
+    rdfs:label "almejas"@es ;
+    pf:sinonimoDe pf:ingrediente_almeja .
+
+pf:ingrediente_almidon_de_yuca a pf:InsumoAmazonico,
+        owl:NamedIndividual ;
+    rdfs:label "Almidón de yuca"@es ;
+    pf:tipoDeAlimento "tuberculo" .
 
 pf:ingrediente_alverja a pf:Ingrediente,
         owl:NamedIndividual ;
@@ -2193,16 +2344,6 @@ pf:ingrediente_cabrito a pf:InsumoGeneral,
     rdfs:label "Cabrito"@es ;
     pf:tipoDeAlimento "carne" .
 
-pf:ingrediente_camarones a pf:Ingrediente,
-        owl:NamedIndividual ;
-    rdfs:label "camarones"@es ;
-    pf:sinonimoDe pf:ingrediente_camaron .
-
-pf:ingrediente_camu_camu a pf:InsumoAmazonico,
-        owl:NamedIndividual ;
-    rdfs:label "Camu camu"@es ;
-    pf:tipoDeAlimento "fruta" .
-
 pf:ingrediente_carne_de_alpaca a pf:InsumoAndino,
         owl:NamedIndividual ;
     rdfs:label "Carne de alpaca"@es ;
@@ -2213,21 +2354,26 @@ pf:ingrediente_carne_seca a pf:Ingrediente,
     rdfs:label "carne seca"@es ;
     pf:sinonimoDe pf:ingrediente_charqui .
 
+pf:ingrediente_carnero a pf:Ingrediente,
+        owl:NamedIndividual ;
+    rdfs:label "carnero"@es ;
+    pf:sinonimoDe pf:ingrediente_cordero .
+
 pf:ingrediente_cebada a pf:InsumoAndino,
         owl:NamedIndividual ;
     rdfs:label "Cebada tostada"@es ;
     pf:contieneAlergeno pf:alergeno_gluten ;
     pf:tipoDeAlimento "cereal" .
 
-pf:ingrediente_chuno a pf:InsumoAndino,
+pf:ingrediente_chorizo a pf:InsumoGeneral,
         owl:NamedIndividual ;
-    rdfs:label "Chuño"@es ;
-    pf:tipoDeAlimento "tuberculo" .
+    rdfs:label "Chorizo"@es ;
+    pf:tipoDeAlimento "carne_grasa" .
 
-pf:ingrediente_cilantro a pf:Ingrediente,
+pf:ingrediente_clara_de_huevo a pf:Ingrediente,
         owl:NamedIndividual ;
-    rdfs:label "cilantro"@es ;
-    pf:sinonimoDe pf:ingrediente_culantro .
+    rdfs:label "clara de huevo"@es ;
+    pf:sinonimoDe pf:ingrediente_huevo .
 
 pf:ingrediente_cochayuyo a pf:InsumoMarino,
         owl:NamedIndividual ;
@@ -2255,21 +2401,11 @@ pf:ingrediente_corazon_de_res a pf:InsumoGeneral,
     rdfs:label "Corazón de res"@es ;
     pf:tipoDeAlimento "carne" .
 
-pf:ingrediente_corvina a pf:Ingrediente,
-        owl:NamedIndividual ;
-    rdfs:label "corvina"@es ;
-    pf:sinonimoDe pf:ingrediente_pescado_blanco .
-
 pf:ingrediente_crema_de_leche a pf:InsumoGeneral,
         owl:NamedIndividual ;
     rdfs:label "Crema de leche"@es ;
     pf:contieneAlergeno pf:alergeno_leche ;
     pf:tipoDeAlimento "lacteo" .
-
-pf:ingrediente_doncella a pf:Ingrediente,
-        owl:NamedIndividual ;
-    rdfs:label "doncella"@es ;
-    pf:sinonimoDe pf:ingrediente_pescado_amazonico .
 
 pf:ingrediente_dulce_de_pina a pf:InsumoGeneral,
         owl:NamedIndividual ;
@@ -2277,6 +2413,11 @@ pf:ingrediente_dulce_de_pina a pf:InsumoGeneral,
     pf:tieneComponente pf:ingrediente_azucar,
         pf:ingrediente_pina ;
     pf:tipoDeAlimento "preparado" .
+
+pf:ingrediente_farina a pf:InsumoAmazonico,
+        owl:NamedIndividual ;
+    rdfs:label "Fariña"@es ;
+    pf:tipoDeAlimento "tuberculo" .
 
 pf:ingrediente_frejol a pf:Ingrediente,
         owl:NamedIndividual ;
@@ -2303,11 +2444,6 @@ pf:ingrediente_harina_de_camote a pf:InsumoAndino,
     rdfs:label "Harina de camote"@es ;
     pf:tipoDeAlimento "tuberculo" .
 
-pf:ingrediente_harina_de_yuca a pf:Ingrediente,
-        owl:NamedIndividual ;
-    rdfs:label "harina de yuca"@es ;
-    pf:sinonimoDe pf:ingrediente_farina .
-
 pf:ingrediente_huevera a pf:InsumoMarino,
         owl:NamedIndividual ;
     rdfs:label "Huevera (hueva de pescado)"@es ;
@@ -2331,16 +2467,6 @@ pf:ingrediente_jora a pf:Ingrediente,
         owl:NamedIndividual ;
     rdfs:label "jora"@es ;
     pf:sinonimoDe pf:ingrediente_maiz_de_jora .
-
-pf:ingrediente_leche_de_tigre a pf:InsumoMarino,
-        owl:NamedIndividual ;
-    rdfs:label "Leche de tigre"@es ;
-    pf:tieneComponente pf:ingrediente_aji_limo,
-        pf:ingrediente_apio,
-        pf:ingrediente_cebolla_roja,
-        pf:ingrediente_limon,
-        pf:ingrediente_pescado_blanco ;
-    pf:tipoDeAlimento "preparado" .
 
 pf:ingrediente_lenguado a pf:Ingrediente,
         owl:NamedIndividual ;
@@ -2381,10 +2507,22 @@ pf:ingrediente_masa_wantan a pf:InsumoGeneral,
         pf:ingrediente_huevo ;
     pf:tipoDeAlimento "preparado" .
 
+pf:ingrediente_mayonesa a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Mayonesa"@es ;
+    pf:tieneComponente pf:ingrediente_aceite_vegetal,
+        pf:ingrediente_huevo ;
+    pf:tipoDeAlimento "preparado" .
+
 pf:ingrediente_miel_de_chancaca a pf:Ingrediente,
         owl:NamedIndividual ;
     rdfs:label "miel de chancaca"@es ;
     pf:sinonimoDe pf:ingrediente_chancaca .
+
+pf:ingrediente_mishquina a pf:InsumoAmazonico,
+        owl:NamedIndividual ;
+    rdfs:label "Mishquina"@es ;
+    pf:tipoDeAlimento "condimento" .
 
 pf:ingrediente_mondongo a pf:InsumoGeneral,
         owl:NamedIndividual ;
@@ -2406,11 +2544,6 @@ pf:ingrediente_paico a pf:InsumoAndino,
     rdfs:label "Paico"@es ;
     pf:tipoDeAlimento "condimento" .
 
-pf:ingrediente_pallar a pf:InsumoGeneral,
-        owl:NamedIndividual ;
-    rdfs:label "Pallar"@es ;
-    pf:tipoDeAlimento "legumbre" .
-
 pf:ingrediente_palmito a pf:Ingrediente,
         owl:NamedIndividual ;
     rdfs:label "palmito"@es ;
@@ -2425,11 +2558,6 @@ pf:ingrediente_papa_seca a pf:InsumoAndino,
         owl:NamedIndividual ;
     rdfs:label "Papa seca"@es ;
     pf:tipoDeAlimento "tuberculo" .
-
-pf:ingrediente_pato a pf:InsumoGeneral,
-        owl:NamedIndividual ;
-    rdfs:label "Pato"@es ;
-    pf:tipoDeAlimento "ave" .
 
 pf:ingrediente_pava a pf:Ingrediente,
         owl:NamedIndividual ;
@@ -2446,16 +2574,6 @@ pf:ingrediente_pellejo_de_cerdo a pf:InsumoGeneral,
     rdfs:label "Pellejo de cerdo"@es ;
     pf:tipoDeAlimento "carne_grasa" .
 
-pf:ingrediente_perejil a pf:InsumoGeneral,
-        owl:NamedIndividual ;
-    rdfs:label "Perejil"@es ;
-    pf:tipoDeAlimento "condimento" .
-
-pf:ingrediente_pijuayo a pf:InsumoAmazonico,
-        owl:NamedIndividual ;
-    rdfs:label "Pijuayo"@es ;
-    pf:tipoDeAlimento "fruta" .
-
 pf:ingrediente_pimiento a pf:InsumoGeneral,
         owl:NamedIndividual ;
     rdfs:label "Pimiento"@es ;
@@ -2471,11 +2589,6 @@ pf:ingrediente_queso a pf:Ingrediente,
     rdfs:label "queso"@es ;
     pf:sinonimoDe pf:ingrediente_queso_fresco .
 
-pf:ingrediente_quinoa a pf:Ingrediente,
-        owl:NamedIndividual ;
-    rdfs:label "quinoa"@es ;
-    pf:sinonimoDe pf:ingrediente_quinua .
-
 pf:ingrediente_salsa_ocopa a pf:InsumoAndino,
         owl:NamedIndividual ;
     rdfs:label "Salsa ocopa"@es ;
@@ -2488,6 +2601,11 @@ pf:ingrediente_salsa_ocopa a pf:InsumoAndino,
         pf:ingrediente_queso_fresco ;
     pf:tipoDeAlimento "preparado" .
 
+pf:ingrediente_tocosh a pf:InsumoAndino,
+        owl:NamedIndividual ;
+    rdfs:label "Tocosh"@es ;
+    pf:tipoDeAlimento "tuberculo" .
+
 pf:ingrediente_torreja_de_maiz a pf:InsumoAndino,
         owl:NamedIndividual ;
     rdfs:label "Torreja de maíz"@es ;
@@ -2496,10 +2614,11 @@ pf:ingrediente_torreja_de_maiz a pf:InsumoAndino,
         pf:ingrediente_huevo ;
     pf:tipoDeAlimento "preparado" .
 
-pf:ingrediente_zapallo a pf:InsumoAndino,
+pf:ingrediente_trucha a pf:InsumoAndino,
         owl:NamedIndividual ;
-    rdfs:label "Zapallo"@es ;
-    pf:tipoDeAlimento "verdura" .
+    rdfs:label "Trucha"@es ;
+    pf:contieneAlergeno pf:alergeno_pescado ;
+    pf:tipoDeAlimento "pescado" .
 
 pf:ingrediente_zapallo_loche a pf:Ingrediente,
         owl:NamedIndividual ;
@@ -2529,6 +2648,12 @@ pf:ingrediente_ajonjoli a pf:InsumoGeneral,
     pf:contieneAlergeno pf:alergeno_sesamo ;
     pf:tipoDeAlimento "semilla" .
 
+pf:ingrediente_almeja a pf:InsumoMarino,
+        owl:NamedIndividual ;
+    rdfs:label "Almeja"@es ;
+    pf:contieneAlergeno pf:alergeno_moluscos ;
+    pf:tipoDeAlimento "marisco" .
+
 pf:ingrediente_anis a pf:InsumoGeneral,
         owl:NamedIndividual ;
     rdfs:label "Anís"@es ;
@@ -2544,11 +2669,15 @@ pf:ingrediente_boquichico a pf:Ingrediente,
     rdfs:label "boquichico"@es ;
     pf:sinonimoDe pf:ingrediente_pescado_amazonico .
 
-pf:ingrediente_camaron a pf:InsumoMarino,
+pf:ingrediente_camarones a pf:Ingrediente,
         owl:NamedIndividual ;
-    rdfs:label "Camarón de río"@es ;
-    pf:contieneAlergeno pf:alergeno_crustaceos ;
-    pf:tipoDeAlimento "marisco" .
+    rdfs:label "camarones"@es ;
+    pf:sinonimoDe pf:ingrediente_camaron .
+
+pf:ingrediente_camu_camu a pf:InsumoAmazonico,
+        owl:NamedIndividual ;
+    rdfs:label "Camu camu"@es ;
+    pf:tipoDeAlimento "fruta" .
 
 pf:ingrediente_carne_molida a pf:Ingrediente,
         owl:NamedIndividual ;
@@ -2562,52 +2691,66 @@ pf:ingrediente_chicharron a pf:InsumoGeneral,
         pf:ingrediente_manteca_de_cerdo ;
     pf:tipoDeAlimento "preparado" .
 
+pf:ingrediente_chochoca a pf:InsumoAndino,
+        owl:NamedIndividual ;
+    rdfs:label "Chochoca"@es ;
+    pf:tipoDeAlimento "cereal" .
+
 pf:ingrediente_chonta a pf:InsumoAmazonico,
         owl:NamedIndividual ;
     rdfs:label "Chonta"@es ;
     pf:tipoDeAlimento "verdura" .
 
-pf:ingrediente_chorizo a pf:InsumoGeneral,
+pf:ingrediente_cocona a pf:InsumoAmazonico,
         owl:NamedIndividual ;
-    rdfs:label "Chorizo"@es ;
-    pf:tipoDeAlimento "carne_grasa" .
+    rdfs:label "Cocona"@es ;
+    pf:tipoDeAlimento "fruta" .
 
-pf:ingrediente_cordero a pf:InsumoAndino,
+pf:ingrediente_corvina a pf:Ingrediente,
         owl:NamedIndividual ;
-    rdfs:label "Cordero"@es ;
-    pf:tipoDeAlimento "carne" .
+    rdfs:label "corvina"@es ;
+    pf:sinonimoDe pf:ingrediente_pescado_blanco .
 
-pf:ingrediente_farina a pf:InsumoAmazonico,
+pf:ingrediente_doncella a pf:Ingrediente,
         owl:NamedIndividual ;
-    rdfs:label "Fariña"@es ;
-    pf:tipoDeAlimento "tuberculo" .
-
-pf:ingrediente_harina_de_maiz a pf:InsumoAndino,
-        owl:NamedIndividual ;
-    rdfs:label "Harina de maíz"@es ;
-    pf:tipoDeAlimento "cereal" .
+    rdfs:label "doncella"@es ;
+    pf:sinonimoDe pf:ingrediente_pescado_amazonico .
 
 pf:ingrediente_maiz_de_jora a pf:InsumoAndino,
         owl:NamedIndividual ;
     rdfs:label "Maíz de jora"@es ;
     pf:tipoDeAlimento "cereal" .
 
-pf:ingrediente_mayonesa a pf:InsumoGeneral,
+pf:ingrediente_maiz_morado a pf:InsumoAndino,
         owl:NamedIndividual ;
-    rdfs:label "Mayonesa"@es ;
-    pf:tieneComponente pf:ingrediente_aceite_vegetal,
-        pf:ingrediente_huevo ;
-    pf:tipoDeAlimento "preparado" .
+    rdfs:label "Maíz morado"@es ;
+    pf:tipoDeAlimento "cereal" .
 
 pf:ingrediente_membrillo a pf:InsumoGeneral,
         owl:NamedIndividual ;
     rdfs:label "Membrillo"@es ;
     pf:tipoDeAlimento "fruta" .
 
-pf:ingrediente_palillo a pf:InsumoAmazonico,
+pf:ingrediente_miel_de_abeja a pf:InsumoGeneral,
         owl:NamedIndividual ;
-    rdfs:label "Palillo (cúrcuma)"@es ;
-    pf:tipoDeAlimento "condimento" .
+    rdfs:label "Miel de abeja"@es ;
+    pf:tipoDeAlimento "miel" .
+
+pf:ingrediente_moraya a pf:InsumoAndino,
+        owl:NamedIndividual ;
+    rdfs:label "Moraya"@es ;
+    pf:tipoDeAlimento "tuberculo" .
+
+pf:ingrediente_paiche a pf:InsumoAmazonico,
+        owl:NamedIndividual ;
+    rdfs:label "Paiche"@es ;
+    pf:contieneAlergeno pf:alergeno_pescado ;
+    pf:tipoDeAlimento "pescado" .
+
+pf:ingrediente_pallar a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Pallar"@es ;
+    pf:tipoDeAlimento "legumbre" .
 
 pf:ingrediente_papas_fritas a pf:Ingrediente,
         owl:NamedIndividual ;
@@ -2619,16 +2762,31 @@ pf:ingrediente_parmesano a pf:Ingrediente,
     rdfs:label "parmesano"@es ;
     pf:sinonimoDe pf:ingrediente_queso_parmesano .
 
+pf:ingrediente_pato a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Pato"@es ;
+    pf:tipoDeAlimento "ave" .
+
 pf:ingrediente_pavo a pf:InsumoGeneral,
         owl:NamedIndividual ;
     rdfs:label "Pavo"@es ;
     pf:tipoDeAlimento "ave" .
+
+pf:ingrediente_perejil a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Perejil"@es ;
+    pf:tipoDeAlimento "condimento" .
 
 pf:ingrediente_raya_seca a pf:InsumoMarino,
         owl:NamedIndividual ;
     rdfs:label "Raya seca"@es ;
     pf:contieneAlergeno pf:alergeno_pescado ;
     pf:tipoDeAlimento "pescado" .
+
+pf:ingrediente_repollo a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Repollo"@es ;
+    pf:tipoDeAlimento "verdura" .
 
 pf:ingrediente_salsa_huancaina a pf:InsumoAndino,
         owl:NamedIndividual ;
@@ -2640,16 +2798,10 @@ pf:ingrediente_salsa_huancaina a pf:InsumoAndino,
         pf:ingrediente_queso_fresco ;
     pf:tipoDeAlimento "preparado" .
 
-pf:ingrediente_trigo a pf:Ingrediente,
+pf:ingrediente_tocino a pf:InsumoGeneral,
         owl:NamedIndividual ;
-    rdfs:label "trigo"@es ;
-    pf:sinonimoDe pf:ingrediente_trigo_pelado .
-
-pf:ingrediente_trucha a pf:InsumoAndino,
-        owl:NamedIndividual ;
-    rdfs:label "Trucha"@es ;
-    pf:contieneAlergeno pf:alergeno_pescado ;
-    pf:tipoDeAlimento "pescado" .
+    rdfs:label "Tocino"@es ;
+    pf:tipoDeAlimento "carne_grasa" .
 
 pf:ingrediente_vino_oporto a pf:InsumoGeneral,
         owl:NamedIndividual ;
@@ -2661,15 +2813,15 @@ pf:ingrediente_yema a pf:Ingrediente,
     rdfs:label "yema"@es ;
     pf:sinonimoDe pf:ingrediente_huevo .
 
+pf:tecnica_asado a pf:TecnicaDeCoccion,
+        owl:NamedIndividual ;
+    rdfs:label "Asado"@es ;
+    pf:esTecnicaSaludable false .
+
 pf:ingrediente_aceite_de_oliva a pf:InsumoGeneral,
         owl:NamedIndividual ;
     rdfs:label "Aceite de oliva"@es ;
     pf:tipoDeAlimento "grasa" .
-
-pf:ingrediente_aji_dulce a pf:InsumoAmazonico,
-        owl:NamedIndividual ;
-    rdfs:label "Ají dulce"@es ;
-    pf:tipoDeAlimento "condimento" .
 
 pf:ingrediente_calamar a pf:InsumoMarino,
         owl:NamedIndividual ;
@@ -2677,15 +2829,16 @@ pf:ingrediente_calamar a pf:InsumoMarino,
     pf:contieneAlergeno pf:alergeno_moluscos ;
     pf:tipoDeAlimento "marisco" .
 
+pf:ingrediente_camaron a pf:InsumoMarino,
+        owl:NamedIndividual ;
+    rdfs:label "Camarón de río"@es ;
+    pf:contieneAlergeno pf:alergeno_crustaceos ;
+    pf:tipoDeAlimento "marisco" .
+
 pf:ingrediente_canchita a pf:Ingrediente,
         owl:NamedIndividual ;
     rdfs:label "canchita"@es ;
     pf:sinonimoDe pf:ingrediente_cancha .
-
-pf:ingrediente_cebolla_china a pf:InsumoGeneral,
-        owl:NamedIndividual ;
-    rdfs:label "Cebolla china"@es ;
-    pf:tipoDeAlimento "verdura" .
 
 pf:ingrediente_cecina a pf:InsumoAmazonico,
         owl:NamedIndividual ;
@@ -2697,11 +2850,6 @@ pf:ingrediente_cerveza_negra a pf:InsumoGeneral,
     rdfs:label "Cerveza negra"@es ;
     pf:contieneAlergeno pf:alergeno_gluten ;
     pf:tipoDeAlimento "bebida" .
-
-pf:ingrediente_cocona a pf:InsumoAmazonico,
-        owl:NamedIndividual ;
-    rdfs:label "Cocona"@es ;
-    pf:tipoDeAlimento "fruta" .
 
 pf:ingrediente_langostino a pf:InsumoMarino,
         owl:NamedIndividual ;
@@ -2722,22 +2870,21 @@ pf:ingrediente_loche a pf:InsumoAndino,
     rdfs:label "Zapallo loche"@es ;
     pf:tipoDeAlimento "verdura" .
 
-pf:ingrediente_maiz_morado a pf:InsumoAndino,
-        owl:NamedIndividual ;
-    rdfs:label "Maíz morado"@es ;
-    pf:tipoDeAlimento "cereal" .
-
 pf:ingrediente_mantequilla a pf:InsumoGeneral,
         owl:NamedIndividual ;
     rdfs:label "Mantequilla"@es ;
     pf:contieneAlergeno pf:alergeno_leche ;
     pf:tipoDeAlimento "lacteo" .
 
-pf:ingrediente_paiche a pf:InsumoAmazonico,
+pf:ingrediente_palillo a pf:InsumoAmazonico,
         owl:NamedIndividual ;
-    rdfs:label "Paiche"@es ;
-    pf:contieneAlergeno pf:alergeno_pescado ;
-    pf:tipoDeAlimento "pescado" .
+    rdfs:label "Palillo (cúrcuma)"@es ;
+    pf:tipoDeAlimento "condimento" .
+
+pf:ingrediente_palta a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Palta"@es ;
+    pf:tipoDeAlimento "fruta" .
 
 pf:ingrediente_papa_frita a pf:InsumoGeneral,
         owl:NamedIndividual ;
@@ -2757,32 +2904,41 @@ pf:ingrediente_pecana a pf:InsumoGeneral,
     pf:contieneAlergeno pf:alergeno_frutos_secos ;
     pf:tipoDeAlimento "fruto_seco" .
 
+pf:ingrediente_platano_maduro a pf:InsumoAmazonico,
+        owl:NamedIndividual ;
+    rdfs:label "Plátano maduro"@es ;
+    pf:tipoDeAlimento "fruta" .
+
 pf:ingrediente_queso_parmesano a pf:InsumoGeneral,
         owl:NamedIndividual ;
     rdfs:label "Queso parmesano"@es ;
     pf:contieneAlergeno pf:alergeno_leche ;
     pf:tipoDeAlimento "lacteo" .
 
-pf:ingrediente_trigo_pelado a pf:InsumoAndino,
+pf:ingrediente_quinua a pf:InsumoAndino,
         owl:NamedIndividual ;
-    rdfs:label "Trigo pelado"@es ;
-    pf:contieneAlergeno pf:alergeno_gluten ;
+    rdfs:label "Quinua"@es ;
     pf:tipoDeAlimento "cereal" .
 
-pf:ingrediente_vinagre a pf:InsumoGeneral,
+pf:ingrediente_trigo a pf:Ingrediente,
         owl:NamedIndividual ;
-    rdfs:label "Vinagre"@es ;
-    pf:tipoDeAlimento "condimento" .
+    rdfs:label "trigo"@es ;
+    pf:sinonimoDe pf:ingrediente_trigo_pelado .
+
+pf:ingrediente_zapallo a pf:InsumoAndino,
+        owl:NamedIndividual ;
+    rdfs:label "Zapallo"@es ;
+    pf:tipoDeAlimento "verdura" .
+
+pf:tecnica_a_la_parrilla a pf:TecnicaDeCoccion,
+        owl:NamedIndividual ;
+    rdfs:label "A la parrilla"@es ;
+    pf:esTecnicaSaludable true .
 
 pf:tecnica_al_vapor a pf:TecnicaDeCoccion,
         owl:NamedIndividual ;
     rdfs:label "Al vapor"@es ;
     pf:esTecnicaSaludable true .
-
-pf:tecnica_asado a pf:TecnicaDeCoccion,
-        owl:NamedIndividual ;
-    rdfs:label "Asado"@es ;
-    pf:esTecnicaSaludable false .
 
 pf:PerfilNutricionalCualitativo a owl:Class ;
     rdfs:label "Perfil nutricional cualitativo"@es .
@@ -2790,24 +2946,30 @@ pf:PerfilNutricionalCualitativo a owl:Class ;
 pf:RegionGastronomica a owl:Class ;
     rdfs:label "Región gastronómica"@es .
 
-pf:alergeno_sesamo a pf:Alergeno,
+pf:ingrediente_aji_dulce a pf:InsumoAmazonico,
         owl:NamedIndividual ;
-    rdfs:label "Sésamo y sus productos"@es .
+    rdfs:label "Ají dulce"@es ;
+    pf:tipoDeAlimento "condimento" .
 
-pf:ingrediente_chancaca a pf:InsumoGeneral,
+pf:ingrediente_cancha a pf:InsumoAndino,
         owl:NamedIndividual ;
-    rdfs:label "Chancaca"@es ;
-    pf:tipoDeAlimento "azucar" .
+    rdfs:label "Cancha serrana"@es ;
+    pf:tipoDeAlimento "cereal" .
 
-pf:ingrediente_charqui a pf:InsumoAndino,
+pf:ingrediente_cebolla_china a pf:InsumoGeneral,
         owl:NamedIndividual ;
-    rdfs:label "Charqui"@es ;
-    pf:tipoDeAlimento "carne" .
+    rdfs:label "Cebolla china"@es ;
+    pf:tipoDeAlimento "verdura" .
 
 pf:ingrediente_choros a pf:Ingrediente,
         owl:NamedIndividual ;
     rdfs:label "choros"@es ;
     pf:sinonimoDe pf:ingrediente_mejillon .
+
+pf:ingrediente_chuno a pf:InsumoAndino,
+        owl:NamedIndividual ;
+    rdfs:label "Chuño"@es ;
+    pf:tipoDeAlimento "tuberculo" .
 
 pf:ingrediente_cuy a pf:InsumoAndino,
         owl:NamedIndividual ;
@@ -2820,6 +2982,11 @@ pf:ingrediente_galleta_soda a pf:InsumoGeneral,
     pf:contieneAlergeno pf:alergeno_gluten ;
     pf:tipoDeAlimento "cereal" .
 
+pf:ingrediente_harina_de_maiz a pf:InsumoAndino,
+        owl:NamedIndividual ;
+    rdfs:label "Harina de maíz"@es ;
+    pf:tipoDeAlimento "cereal" .
+
 pf:ingrediente_kion a pf:InsumoGeneral,
         owl:NamedIndividual ;
     rdfs:label "Kion"@es ;
@@ -2830,86 +2997,66 @@ pf:ingrediente_mote a pf:InsumoAndino,
     rdfs:label "Mote"@es ;
     pf:tipoDeAlimento "cereal" .
 
-pf:ingrediente_pan a pf:InsumoGeneral,
-        owl:NamedIndividual ;
-    rdfs:label "Pan"@es ;
-    pf:contieneAlergeno pf:alergeno_gluten ;
-    pf:tipoDeAlimento "cereal" .
-
 pf:ingrediente_pina a pf:InsumoAmazonico,
         owl:NamedIndividual ;
     rdfs:label "Piña"@es ;
     pf:tipoDeAlimento "fruta" .
+
+pf:ingrediente_rocoto a pf:InsumoAndino,
+        owl:NamedIndividual ;
+    rdfs:label "Rocoto"@es ;
+    pf:tipoDeAlimento "verdura" .
 
 pf:ingrediente_salsa_de_soya a pf:Ingrediente,
         owl:NamedIndividual ;
     rdfs:label "salsa de soya"@es ;
     pf:sinonimoDe pf:ingrediente_sillao .
 
-pf:ingrediente_zanahoria a pf:InsumoGeneral,
+pf:ingrediente_trigo_pelado a pf:InsumoAndino,
         owl:NamedIndividual ;
-    rdfs:label "Zanahoria"@es ;
-    pf:tipoDeAlimento "verdura" .
+    rdfs:label "Trigo pelado"@es ;
+    pf:contieneAlergeno pf:alergeno_gluten ;
+    pf:tipoDeAlimento "cereal" .
+
+pf:ingrediente_vinagre a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Vinagre"@es ;
+    pf:tipoDeAlimento "condimento" .
 
 pf:tecnica_salteado a pf:TecnicaDeCoccion,
         owl:NamedIndividual ;
     rdfs:label "Salteado"@es ;
     pf:esTecnicaSaludable false .
 
-pf:alergeno_soya a pf:Alergeno,
+pf:alergeno_sesamo a pf:Alergeno,
         owl:NamedIndividual ;
-    rdfs:label "Soya y sus productos"@es .
+    rdfs:label "Sésamo y sus productos"@es .
 
-pf:ingrediente_chicha_de_jora a pf:InsumoAndino,
+pf:ingrediente_chancaca a pf:InsumoGeneral,
         owl:NamedIndividual ;
-    rdfs:label "Chicha de jora"@es ;
-    pf:tipoDeAlimento "bebida" .
+    rdfs:label "Chancaca"@es ;
+    pf:tipoDeAlimento "azucar" .
 
-pf:ingrediente_haba a pf:InsumoAndino,
+pf:ingrediente_cordero a pf:InsumoAndino,
         owl:NamedIndividual ;
-    rdfs:label "Haba"@es ;
-    pf:tipoDeAlimento "legumbre" .
+    rdfs:label "Cordero"@es ;
+    pf:tipoDeAlimento "carne" .
 
-pf:ingrediente_hierbabuena a pf:InsumoGeneral,
+pf:ingrediente_oregano a pf:InsumoGeneral,
         owl:NamedIndividual ;
-    rdfs:label "Hierbabuena"@es ;
+    rdfs:label "Orégano"@es ;
     pf:tipoDeAlimento "condimento" .
 
-pf:ingrediente_palta a pf:InsumoGeneral,
+pf:ingrediente_pan a pf:InsumoGeneral,
         owl:NamedIndividual ;
-    rdfs:label "Palta"@es ;
-    pf:tipoDeAlimento "fruta" .
-
-pf:ingrediente_pescado a pf:Ingrediente,
-        owl:NamedIndividual ;
-    rdfs:label "pescado"@es ;
-    pf:sinonimoDe pf:ingrediente_pescado_blanco .
-
-pf:ingrediente_pescado_amazonico a pf:InsumoAmazonico,
-        owl:NamedIndividual ;
-    rdfs:label "Pescado amazónico"@es ;
-    pf:contieneAlergeno pf:alergeno_pescado ;
-    pf:tipoDeAlimento "pescado" .
-
-pf:ingrediente_platano_maduro a pf:InsumoAmazonico,
-        owl:NamedIndividual ;
-    rdfs:label "Plátano maduro"@es ;
-    pf:tipoDeAlimento "fruta" .
+    rdfs:label "Pan"@es ;
+    pf:contieneAlergeno pf:alergeno_gluten ;
+    pf:tipoDeAlimento "cereal" .
 
 pf:ingrediente_platano_verde a pf:InsumoAmazonico,
         owl:NamedIndividual ;
     rdfs:label "Plátano verde"@es ;
     pf:tipoDeAlimento "fruta" .
-
-pf:ingrediente_quinua a pf:InsumoAndino,
-        owl:NamedIndividual ;
-    rdfs:label "Quinua"@es ;
-    pf:tipoDeAlimento "cereal" .
-
-pf:ingrediente_rocoto a pf:InsumoAndino,
-        owl:NamedIndividual ;
-    rdfs:label "Rocoto"@es ;
-    pf:tipoDeAlimento "verdura" .
 
 pf:ingrediente_salsa_criolla a pf:InsumoGeneral,
         owl:NamedIndividual ;
@@ -2920,18 +3067,6 @@ pf:ingrediente_salsa_criolla a pf:InsumoGeneral,
         pf:ingrediente_limon ;
     pf:tipoDeAlimento "preparado" .
 
-pf:ingrediente_sillao a pf:InsumoGeneral,
-        owl:NamedIndividual ;
-    rdfs:label "Sillao"@es ;
-    pf:contieneAlergeno pf:alergeno_gluten,
-        pf:alergeno_soya ;
-    pf:tipoDeAlimento "condimento" .
-
-pf:tecnica_a_la_parrilla a pf:TecnicaDeCoccion,
-        owl:NamedIndividual ;
-    rdfs:label "A la parrilla"@es ;
-    pf:esTecnicaSaludable true .
-
 pf:tecnica_al_horno a pf:TecnicaDeCoccion,
         owl:NamedIndividual ;
     rdfs:label "Al horno"@es ;
@@ -2941,14 +3076,33 @@ pf:alergeno_frutos_secos a pf:Alergeno,
         owl:NamedIndividual ;
     rdfs:label "Frutos secos de árbol y sus productos"@es .
 
-pf:ingrediente_cancha a pf:InsumoAndino,
+pf:alergeno_soya a pf:Alergeno,
         owl:NamedIndividual ;
-    rdfs:label "Cancha serrana"@es ;
-    pf:tipoDeAlimento "cereal" .
+    rdfs:label "Soya y sus productos"@es .
 
-pf:ingrediente_comino a pf:InsumoGeneral,
+pf:ingrediente_charqui a pf:InsumoAndino,
         owl:NamedIndividual ;
-    rdfs:label "Comino"@es ;
+    rdfs:label "Charqui"@es ;
+    pf:tipoDeAlimento "carne" .
+
+pf:ingrediente_chicha_de_jora a pf:InsumoAndino,
+        owl:NamedIndividual ;
+    rdfs:label "Chicha de jora"@es ;
+    pf:tipoDeAlimento "bebida" .
+
+pf:ingrediente_clavo a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Clavo de olor"@es ;
+    pf:tipoDeAlimento "condimento" .
+
+pf:ingrediente_haba a pf:InsumoAndino,
+        owl:NamedIndividual ;
+    rdfs:label "Haba"@es ;
+    pf:tipoDeAlimento "legumbre" .
+
+pf:ingrediente_hierbabuena a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Hierbabuena"@es ;
     pf:tipoDeAlimento "condimento" .
 
 pf:ingrediente_lechuga a pf:InsumoGeneral,
@@ -2967,20 +3121,28 @@ pf:ingrediente_mejillon a pf:InsumoMarino,
     pf:contieneAlergeno pf:alergeno_moluscos ;
     pf:tipoDeAlimento "marisco" .
 
-pf:ingrediente_pollo a pf:InsumoGeneral,
+pf:ingrediente_pescado_amazonico a pf:InsumoAmazonico,
         owl:NamedIndividual ;
-    rdfs:label "Pollo"@es ;
-    pf:tipoDeAlimento "ave" .
+    rdfs:label "Pescado amazónico"@es ;
+    pf:contieneAlergeno pf:alergeno_pescado ;
+    pf:tipoDeAlimento "pescado" .
+
+pf:ingrediente_sillao a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Sillao"@es ;
+    pf:contieneAlergeno pf:alergeno_gluten,
+        pf:alergeno_soya ;
+    pf:tipoDeAlimento "condimento" .
+
+pf:ingrediente_zanahoria a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Zanahoria"@es ;
+    pf:tipoDeAlimento "verdura" .
 
 pf:tecnica_marinado a pf:TecnicaDeCoccion,
         owl:NamedIndividual ;
     rdfs:label "Marinado en crudo (cítrico)"@es ;
     pf:esTecnicaSaludable true .
-
-pf:ingrediente_arveja a pf:InsumoAndino,
-        owl:NamedIndividual ;
-    rdfs:label "Arveja"@es ;
-    pf:tipoDeAlimento "legumbre" .
 
 pf:ingrediente_gallina a pf:InsumoGeneral,
         owl:NamedIndividual ;
@@ -2992,41 +3154,60 @@ pf:ingrediente_huacatay a pf:InsumoAndino,
     rdfs:label "Huacatay"@es ;
     pf:tipoDeAlimento "condimento" .
 
-pf:ingrediente_carne_de_res a pf:InsumoGeneral,
+pf:ingrediente_pescado a pf:Ingrediente,
         owl:NamedIndividual ;
-    rdfs:label "Carne de res"@es ;
-    pf:tipoDeAlimento "carne" .
+    rdfs:label "pescado"@es ;
+    pf:sinonimoDe pf:ingrediente_pescado_blanco .
 
-pf:ingrediente_clavo a pf:InsumoGeneral,
+pf:ingrediente_pollo a pf:InsumoGeneral,
         owl:NamedIndividual ;
-    rdfs:label "Clavo de olor"@es ;
-    pf:tipoDeAlimento "condimento" .
+    rdfs:label "Pollo"@es ;
+    pf:tipoDeAlimento "ave" .
 
-pf:ingrediente_mani a pf:InsumoGeneral,
+pf:tecnica_crudo a pf:TecnicaDeCoccion,
         owl:NamedIndividual ;
-    rdfs:label "Maní"@es ;
-    pf:contieneAlergeno pf:alergeno_mani ;
+    rdfs:label "Crudo o en ensalada"@es ;
+    pf:esTecnicaSaludable true .
+
+pf:ingrediente_arveja a pf:InsumoAndino,
+        owl:NamedIndividual ;
+    rdfs:label "Arveja"@es ;
     pf:tipoDeAlimento "legumbre" .
-
-pf:ingrediente_sacha_culantro a pf:InsumoAmazonico,
-        owl:NamedIndividual ;
-    rdfs:label "Sacha culantro"@es ;
-    pf:tipoDeAlimento "condimento" .
 
 pf:ingrediente_camote a pf:InsumoAndino,
         owl:NamedIndividual ;
     rdfs:label "Camote"@es ;
     pf:tipoDeAlimento "tuberculo" .
 
+pf:ingrediente_canela a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Canela"@es ;
+    pf:tipoDeAlimento "condimento" .
+
+pf:ingrediente_sacha_culantro a pf:InsumoAmazonico,
+        owl:NamedIndividual ;
+    rdfs:label "Sacha culantro"@es ;
+    pf:tipoDeAlimento "condimento" .
+
+pf:ingrediente_aceituna a pf:Ingrediente,
+        owl:NamedIndividual ;
+    rdfs:label "aceituna"@es ;
+    pf:sinonimoDe pf:ingrediente_aceituna_de_botija .
+
+pf:ingrediente_carne_de_res a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Carne de res"@es ;
+    pf:tipoDeAlimento "carne" .
+
+pf:ingrediente_comino a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Comino"@es ;
+    pf:tipoDeAlimento "condimento" .
+
 pf:ingrediente_frijol a pf:InsumoGeneral,
         owl:NamedIndividual ;
     rdfs:label "Frijol"@es ;
     pf:tipoDeAlimento "legumbre" .
-
-pf:tecnica_crudo a pf:TecnicaDeCoccion,
-        owl:NamedIndividual ;
-    rdfs:label "Crudo o en ensalada"@es ;
-    pf:esTecnicaSaludable true .
 
 pf:InsumoMarino a owl:Class ;
     rdfs:label "Insumo marino"@es ;
@@ -3035,21 +3216,6 @@ pf:InsumoMarino a owl:Class ;
 pf:alergeno_mani a pf:Alergeno,
         owl:NamedIndividual ;
     rdfs:label "Maní y sus productos"@es .
-
-pf:ingrediente_aceituna a pf:Ingrediente,
-        owl:NamedIndividual ;
-    rdfs:label "aceituna"@es ;
-    pf:sinonimoDe pf:ingrediente_aceituna_de_botija .
-
-pf:ingrediente_canela a pf:InsumoGeneral,
-        owl:NamedIndividual ;
-    rdfs:label "Canela"@es ;
-    pf:tipoDeAlimento "condimento" .
-
-pf:ingrediente_leche a pf:Ingrediente,
-        owl:NamedIndividual ;
-    rdfs:label "leche"@es ;
-    pf:sinonimoDe pf:ingrediente_leche_evaporada .
 
 pf:ingrediente_aceituna_de_botija a pf:InsumoGeneral,
         owl:NamedIndividual ;
@@ -3061,14 +3227,51 @@ pf:ingrediente_aji_limo a pf:InsumoGeneral,
     rdfs:label "Ají limo"@es ;
     pf:tipoDeAlimento "condimento" .
 
+pf:ingrediente_leche a pf:Ingrediente,
+        owl:NamedIndividual ;
+    rdfs:label "leche"@es ;
+    pf:sinonimoDe pf:ingrediente_leche_evaporada .
+
+pf:ingrediente_mani a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Maní"@es ;
+    pf:contieneAlergeno pf:alergeno_mani ;
+    pf:tipoDeAlimento "legumbre" .
+
+pf:ingrediente_tomate a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Tomate"@es ;
+    pf:tipoDeAlimento "verdura" .
+
+pf:TecnicaDeCoccion a owl:Class ;
+    rdfs:label "Técnica de cocción"@es .
+
+pf:ingrediente_manteca_de_cerdo a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Manteca de cerdo"@es ;
+    pf:tipoDeAlimento "grasa_animal" .
+
+pf:Alergeno a owl:Class ;
+    rdfs:label "Alérgeno"@es .
+
+pf:PlatoVegano a owl:Class ;
+    rdfs:label "Plato vegano"@es ;
+    rdfs:subClassOf pf:PlatoVegetariano .
+
+pf:alergeno_moluscos a pf:Alergeno,
+        owl:NamedIndividual ;
+    rdfs:label "Moluscos y sus productos"@es .
+
 pf:ingrediente_harina_de_trigo a pf:InsumoGeneral,
         owl:NamedIndividual ;
     rdfs:label "Harina de trigo"@es ;
     pf:contieneAlergeno pf:alergeno_gluten ;
     pf:tipoDeAlimento "cereal" .
 
-pf:TecnicaDeCoccion a owl:Class ;
-    rdfs:label "Técnica de cocción"@es .
+pf:ingrediente_yuca a pf:InsumoAmazonico,
+        owl:NamedIndividual ;
+    rdfs:label "Yuca"@es ;
+    pf:tipoDeAlimento "tuberculo" .
 
 pf:ingrediente_aji_panca a pf:InsumoAndino,
         owl:NamedIndividual ;
@@ -3080,26 +3283,10 @@ pf:ingrediente_cerdo a pf:InsumoGeneral,
     rdfs:label "Cerdo"@es ;
     pf:tipoDeAlimento "carne" .
 
-pf:ingrediente_manteca_de_cerdo a pf:InsumoGeneral,
+pf:ingrediente_aji_amarillo a pf:InsumoAndino,
         owl:NamedIndividual ;
-    rdfs:label "Manteca de cerdo"@es ;
-    pf:tipoDeAlimento "grasa_animal" .
-
-pf:Alergeno a owl:Class ;
-    rdfs:label "Alérgeno"@es .
-
-pf:alergeno_moluscos a pf:Alergeno,
-        owl:NamedIndividual ;
-    rdfs:label "Moluscos y sus productos"@es .
-
-pf:ingrediente_yuca a pf:InsumoAmazonico,
-        owl:NamedIndividual ;
-    rdfs:label "Yuca"@es ;
-    pf:tipoDeAlimento "tuberculo" .
-
-pf:alergeno_crustaceos a pf:Alergeno,
-        owl:NamedIndividual ;
-    rdfs:label "Crustáceos y sus productos"@es .
+    rdfs:label "Ají amarillo"@es ;
+    pf:tipoDeAlimento "condimento" .
 
 pf:ingrediente_pescado_blanco a pf:InsumoMarino,
         owl:NamedIndividual ;
@@ -3107,56 +3294,23 @@ pf:ingrediente_pescado_blanco a pf:InsumoMarino,
     pf:contieneAlergeno pf:alergeno_pescado ;
     pf:tipoDeAlimento "pescado" .
 
-pf:ingrediente_tomate a pf:InsumoGeneral,
-        owl:NamedIndividual ;
-    rdfs:label "Tomate"@es ;
-    pf:tipoDeAlimento "verdura" .
-
-pf:ingrediente_aji_amarillo a pf:InsumoAndino,
-        owl:NamedIndividual ;
-    rdfs:label "Ají amarillo"@es ;
-    pf:tipoDeAlimento "condimento" .
-
-pf:ingrediente_choclo a pf:InsumoAndino,
-        owl:NamedIndividual ;
-    rdfs:label "Choclo"@es ;
-    pf:tipoDeAlimento "cereal" .
-
 pf:tecnica_frito a pf:TecnicaDeCoccion,
         owl:NamedIndividual ;
     rdfs:label "Frito"@es ;
     pf:esTecnicaSaludable false .
 
-pf:tecnica_guisado a pf:TecnicaDeCoccion,
+pf:alergeno_crustaceos a pf:Alergeno,
         owl:NamedIndividual ;
-    rdfs:label "Guisado"@es ;
-    pf:esTecnicaSaludable false .
-
-pf:InsumoAmazonico a owl:Class ;
-    rdfs:label "Insumo amazónico"@es ;
-    rdfs:subClassOf pf:Ingrediente .
-
-pf:PlatoVegano a owl:Class ;
-    rdfs:label "Plato vegano"@es ;
-    rdfs:subClassOf pf:PlatoVegetariano .
-
-pf:ingrediente_ajo a pf:InsumoGeneral,
-        owl:NamedIndividual ;
-    rdfs:label "Ajo"@es ;
-    pf:tipoDeAlimento "condimento" .
+    rdfs:label "Crustáceos y sus productos"@es .
 
 pf:ingrediente_azucar a pf:InsumoGeneral,
         owl:NamedIndividual ;
     rdfs:label "Azúcar"@es ;
     pf:tipoDeAlimento "azucar" .
 
-pf:Selva a pf:RegionGastronomica,
+pf:ingrediente_choclo a pf:InsumoAndino,
         owl:NamedIndividual ;
-    rdfs:label "Selva"@es .
-
-pf:ingrediente_arroz a pf:InsumoGeneral,
-        owl:NamedIndividual ;
-    rdfs:label "Arroz"@es ;
+    rdfs:label "Choclo"@es ;
     pf:tipoDeAlimento "cereal" .
 
 pf:ingrediente_queso_fresco a pf:InsumoGeneral,
@@ -3165,14 +3319,18 @@ pf:ingrediente_queso_fresco a pf:InsumoGeneral,
     pf:contieneAlergeno pf:alergeno_leche ;
     pf:tipoDeAlimento "lacteo" .
 
-pf:alergeno_huevo a pf:Alergeno,
-        owl:NamedIndividual ;
-    rdfs:label "Huevos y productos de los huevos"@es .
+pf:InsumoAmazonico a owl:Class ;
+    rdfs:label "Insumo amazónico"@es ;
+    rdfs:subClassOf pf:Ingrediente .
 
-pf:ingrediente_aceite a pf:Ingrediente,
+pf:Selva a pf:RegionGastronomica,
         owl:NamedIndividual ;
-    rdfs:label "aceite"@es ;
-    pf:sinonimoDe pf:ingrediente_aceite_vegetal .
+    rdfs:label "Selva"@es .
+
+pf:tecnica_guisado a pf:TecnicaDeCoccion,
+        owl:NamedIndividual ;
+    rdfs:label "Guisado"@es ;
+    pf:esTecnicaSaludable false .
 
 pf:ingrediente_leche_evaporada a pf:InsumoGeneral,
         owl:NamedIndividual ;
@@ -3180,9 +3338,35 @@ pf:ingrediente_leche_evaporada a pf:InsumoGeneral,
     pf:contieneAlergeno pf:alergeno_leche ;
     pf:tipoDeAlimento "lacteo" .
 
+pf:ingrediente_limon a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Limón"@es ;
+    pf:tipoDeAlimento "fruta" .
+
+pf:ingrediente_aceite a pf:Ingrediente,
+        owl:NamedIndividual ;
+    rdfs:label "aceite"@es ;
+    pf:sinonimoDe pf:ingrediente_aceite_vegetal .
+
 pf:ingrediente_culantro a pf:InsumoGeneral,
         owl:NamedIndividual ;
     rdfs:label "Culantro"@es ;
+    pf:tipoDeAlimento "condimento" .
+
+pf:ingrediente_arroz a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Arroz"@es ;
+    pf:tipoDeAlimento "cereal" .
+
+pf:PlatoAptoParaPerdidaDePeso a owl:Class ;
+    rdfs:label "Plato apto para pérdida de peso"@es ;
+    rdfs:subClassOf pf:PerfilNutricionalCualitativo ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( pf:PlatoBajoEnCalorias pf:PlatoAltoEnProteinas ) ] .
+
+pf:ingrediente_ajo a pf:InsumoGeneral,
+        owl:NamedIndividual ;
+    rdfs:label "Ajo"@es ;
     pf:tipoDeAlimento "condimento" .
 
 pf:ingrediente_huevo a pf:InsumoGeneral,
@@ -3191,25 +3375,15 @@ pf:ingrediente_huevo a pf:InsumoGeneral,
     pf:contieneAlergeno pf:alergeno_huevo ;
     pf:tipoDeAlimento "huevo" .
 
-pf:PlatoAptoParaPerdidaDePeso a owl:Class ;
-    rdfs:label "Plato apto para pérdida de peso"@es ;
-    rdfs:subClassOf pf:PerfilNutricionalCualitativo ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:intersectionOf ( pf:PlatoBajoEnCalorias pf:PlatoAltoEnProteinas ) ] .
+pf:PlatoBajoEnCalorias a owl:Class ;
+    rdfs:label "Plato bajo en calorías"@es ;
+    rdfs:subClassOf pf:PerfilNutricionalCualitativo,
+        pf:Plato .
 
-pf:alergeno_pescado a pf:Alergeno,
-        owl:NamedIndividual ;
-    rdfs:label "Pescado y productos pesqueros"@es .
-
-pf:ingrediente_cebolla a pf:Ingrediente,
-        owl:NamedIndividual ;
-    rdfs:label "cebolla"@es ;
-    pf:sinonimoDe pf:ingrediente_cebolla_roja .
-
-pf:ingrediente_limon a pf:InsumoGeneral,
-        owl:NamedIndividual ;
-    rdfs:label "Limón"@es ;
-    pf:tipoDeAlimento "fruta" .
+pf:PlatoVegetariano a owl:Class ;
+    rdfs:label "Plato vegetariano"@es ;
+    rdfs:subClassOf pf:Plato,
+        pf:RestriccionAlimentaria .
 
 pf:ingrediente_papa a pf:InsumoAndino,
         owl:NamedIndividual ;
@@ -3220,9 +3394,18 @@ pf:Sierra a pf:RegionGastronomica,
         owl:NamedIndividual ;
     rdfs:label "Sierra"@es .
 
-pf:alergeno_gluten a pf:Alergeno,
+pf:alergeno_huevo a pf:Alergeno,
         owl:NamedIndividual ;
-    rdfs:label "Cereales que contienen gluten (trigo, cebada, centeno, avena)"@es .
+    rdfs:label "Huevos y productos de los huevos"@es .
+
+pf:alergeno_pescado a pf:Alergeno,
+        owl:NamedIndividual ;
+    rdfs:label "Pescado y productos pesqueros"@es .
+
+pf:ingrediente_cebolla a pf:Ingrediente,
+        owl:NamedIndividual ;
+    rdfs:label "cebolla"@es ;
+    pf:sinonimoDe pf:ingrediente_cebolla_roja .
 
 pf:alergeno_leche a pf:Alergeno,
         owl:NamedIndividual ;
@@ -3232,11 +3415,6 @@ pf:ingrediente_aceite_vegetal a pf:InsumoGeneral,
         owl:NamedIndividual ;
     rdfs:label "Aceite vegetal"@es ;
     pf:tipoDeAlimento "grasa" .
-
-pf:PlatoBajoEnCalorias a owl:Class ;
-    rdfs:label "Plato bajo en calorías"@es ;
-    rdfs:subClassOf pf:PerfilNutricionalCualitativo,
-        pf:Plato .
 
 pf:tecnica_sancochado a pf:TecnicaDeCoccion,
         owl:NamedIndividual ;
@@ -3248,14 +3426,13 @@ pf:ingrediente_cebolla_roja a pf:InsumoGeneral,
     rdfs:label "Cebolla roja"@es ;
     pf:tipoDeAlimento "verdura" .
 
-pf:PlatoVegetariano a owl:Class ;
-    rdfs:label "Plato vegetariano"@es ;
-    rdfs:subClassOf pf:Plato,
-        pf:RestriccionAlimentaria .
-
 pf:InsumoAndino a owl:Class ;
     rdfs:label "Insumo andino"@es ;
     rdfs:subClassOf pf:Ingrediente .
+
+pf:alergeno_gluten a pf:Alergeno,
+        owl:NamedIndividual ;
+    rdfs:label "Cereales que contienen gluten (trigo, cebada, centeno)"@es .
 
 pf:Costa a pf:RegionGastronomica,
         owl:NamedIndividual ;
@@ -3269,14 +3446,14 @@ pf:PlatoAptoParaMantenimientoDePeso a owl:Class ;
 pf:Ingrediente a owl:Class ;
     rdfs:label "Ingrediente"@es .
 
+pf:InsumoGeneral a owl:Class ;
+    rdfs:label "Insumo general"@es ;
+    rdfs:subClassOf pf:Ingrediente .
+
 pf:PlatoAltoEnProteinas a owl:Class ;
     rdfs:label "Plato alto en proteínas"@es ;
     rdfs:subClassOf pf:PerfilNutricionalCualitativo,
         pf:Plato .
-
-pf:InsumoGeneral a owl:Class ;
-    rdfs:label "Insumo general"@es ;
-    rdfs:subClassOf pf:Ingrediente .
 
 pf:Plato a owl:Class ;
     rdfs:label "Plato"@es ;

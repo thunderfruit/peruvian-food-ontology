@@ -91,6 +91,8 @@ def build_abox(g):
         if r["technique"] not in techniques:
             errors.append(f"plato {r['id']}: técnica desconocida '{r['technique']}'")
         g.add((node, PF.tecnicaDeCoccion, iri("tecnica", r["technique"])))
+        if not r["source"]:
+            errors.append(f"plato {r['id']}: sin fuente")
         for field, prop in (("city", PF.ciudad), ("dish_type", PF.tipoDePlato), ("source", PF.fuente)):
             if r[field]:
                 g.add((node, prop, Literal(r[field])))
