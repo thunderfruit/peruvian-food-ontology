@@ -15,7 +15,8 @@ Ontología OWL 2 de platos de la cocina peruana (costa, sierra y selva, con énf
 | `queries/` | Consultas SPARQL y conjunto esperado (gold standard) |
 | `scripts/` | Programas en Python: poblado de la ontología y evaluación |
 | `results/` | Resultados por consulta y versión, estadísticos y gráficos |
-| `deploy/` | Despliegue de Apache Jena Fuseki en Google Cloud |
+| `deploy/` | Despliegue de Apache Jena Fuseki en Render |
+| `prototype/` | Interfaz web del recomendador (`recommender.html`), consulta el servicio desplegado |
 | `report/` | Informe en LaTeX (formato IEEE) |
 
 ## Uso

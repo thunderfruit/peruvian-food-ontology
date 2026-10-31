@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recomendador de platos peruanos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2a1838;--muted:#6b5b78;--paper:#f5f4f8;--card:#fff;--line:#d9d4e3;--aji:#e9a100;--costa:#1f6f8b;--sierra:#8a5a2b;--selva:#2f7d4f;--err:#a3202f;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--ink:#f1ecf6;--muted:#b4a7c0;--paper:#1b1223;--card:#271a31;--line:#47385a;--aji:#f2b632;--costa:#6bc0dc;--sierra:#d9a569;--selva:#76c795;--err:#ff8a97;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 "Bricolage Grotesque",system-ui,sans-serif}
+header{padding:2.2rem 1.2rem 1.4rem;max-width:1080px;margin:0 auto}
+h1{font-size:clamp(2rem,6vw,3.6rem);line-height:1.02;margin:0 0 .6rem;font-weight:800;letter-spacing:-.02em}
+header p{margin:0;max-width:60ch;color:var(--muted)}
+main{max-width:1080px;margin:0 auto;padding:0 1.2rem 3rem;display:grid;grid-template-columns:320px 1fr;gap:1.6rem;align-items:start}
+@media(max-width:820px){main{grid-template-columns:1fr}}
+form{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.1rem}
+fieldset{border:0;margin:0 0 1rem;padding:0}
+legend{font-weight:600;margin-bottom:.35rem;padding:0}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:.2rem .6rem}
+label{display:flex;gap:.45rem;align-items:center;cursor:pointer}
+select,input[type=text]{width:100%;padding:.5rem;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--ink);font:inherit}
+.row{display:flex;gap:.6rem;margin-top:1rem}
+button{font:inherit;font-weight:600;padding:.65rem 1rem;border-radius:6px;border:1px solid var(--ink);cursor:pointer;background:var(--ink);color:var(--paper)}
+button.sec{background:transparent;color:var(--ink)}
+button:disabled{opacity:.55;cursor:wait}
+:focus-visible{outline:3px solid var(--aji);outline-offset:2px}
+details{margin-top:1rem;color:var(--muted);font-size:.9rem}
+summary{cursor:pointer}
+pre{white-space:pre-wrap;word-break:break-word;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:.7rem;font-size:.8rem;color:var(--ink)}
+#status{min-height:1.6rem;margin:0 0 .8rem;color:var(--muted)}
+#status.error{color:var(--err);font-weight:600}
+ul{list-style:none;margin:0;padding:0}
+li.plato{padding:.85rem 0;border-bottom:1px solid var(--line)}
+.linea{display:flex;align-items:baseline;gap:.6rem}
+.nombre{font-size:1.2rem;font-weight:600}
+.guia{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-.25rem)}
+.region{font-weight:800}
+.region.costa{color:var(--costa)}.region.sierra{color:var(--sierra)}.region.selva{color:var(--selva)}
+.datos{color:var(--muted);font-size:.9rem;margin-top:.1rem}
+.datos span{margin-right:1rem}
+.aviso{margin-top:1.4rem;font-size:.85rem;color:var(--muted);border-left:4px solid var(--aji);padding-left:.8rem}
+.vacio{padding:2rem 0;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+<h1>¿Qué puedo pedir hoy?</h1>
+<p>Marca tus alergias, tu dieta y tu objetivo. El sistema consulta la ontología de la cocina peruana y lista solo los platos compatibles.</p>
+</header>
+<main>
+<form id="f">
+<fieldset><legend>No debe contener</legend><div class="checks" id="allergens"></div></fieldset>
+<fieldset><legend><label for="diet" style="display:block;font-weight:600">Dieta</label></legend>
+<select id="diet"><option value="">Sin restricción</option><option value="PlatoVegetariano">Vegetariana</option><option value="PlatoVegano">Vegana</option></select></fieldset>
+<fieldset><legend><label for="profile" style="display:block;font-weight:600">Objetivo de peso</label></legend>
+<select id="profile"><option value="">Sin preferencia</option><option value="PlatoBajoEnCalorias">Bajo en calorías</option><option value="PlatoAltoEnProteinas">Alto en proteínas</option><option value="PlatoAptoParaPerdidaDePeso">Apto para perder peso</option><option value="PlatoAptoParaMantenimientoDePeso">Apto para mantener peso</option></select></fieldset>
+<fieldset><legend><label for="region" style="display:block;font-weight:600">Región</label></legend>
+<select id="region"><option value="">Costa, sierra y selva</option><option value="Costa">Costa</option><option value="Sierra">Sierra</option><option value="Selva">Selva</option></select>
+<label style="margin-top:.5rem"><input type="checkbox" id="trujillo"> Solo platos de Trujillo</label></fieldset>
+<div class="row"><button type="submit" id="search">Buscar platos</button><button type="button" class="sec" id="clear">Limpiar</button></div>
+<details><summary>Conexión con el servidor</summary>
+<p><label for="url" style="display:block">Dirección del servicio</label><input type="text" id="url" value="https://peruvian-food-ontology.onrender.com"></p>
+<p><label for="version" style="display:block">Versión del motor</label><select id="version"><option value="refined">Refinada</option><option value="base">Base</option></select></p></details>
+</form>
+<section aria-labelledby="t">
+<h2 id="t" style="margin:0 0 .3rem;font-size:1.3rem">Platos compatibles</h2>
+<p id="status" role="status" aria-live="polite">Elige tus filtros y pulsa Buscar platos.</p>
+<ul id="results"></ul>
+<details><summary>Ver la consulta SPARQL generada</summary><pre id="sparql">Aún no hay consulta.</pre></details>
+<p class="aviso">Prototipo académico. Confirma siempre los ingredientes con el restaurante: este resultado no reemplaza la indicación de un profesional de la salud.</p>
+</section>
+</main>
+<script>
+const PF="http://unitru.edu.pe/ai2/peruvian-food#";
+const ALLERGENS=[["pescado","Pescado"],["leche","Leche"],["gluten","Gluten"],["crustaceos","Crustáceos"],["mani","Maní"],["huevo","Huevo"],["moluscos","Moluscos"],["soya","Soya"],["frutos_secos","Frutos secos"],["sesamo","Sésamo"]];
+const $=s=>document.querySelector(s);
+$("#allergens").innerHTML=ALLERGENS.map(([v,t])=>`<label><input type="checkbox" name="alg" value="${v}"> ${t}</label>`).join("");
+
+function buildQuery(){
+  const l=[`PREFIX pf: <${PF}>`,"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>",
+    "SELECT DISTINCT ?nombre ?region ?ciudad ?tipo ?tecnica WHERE {",
+    "  ?plato a pf:Plato ; rdfs:label ?nombre .",
+    "  OPTIONAL { ?plato pf:region ?region }","  OPTIONAL { ?plato pf:ciudad ?ciudad }",
+    "  OPTIONAL { ?plato pf:tipoDePlato ?tipo }","  OPTIONAL { ?plato pf:tecnicaDeCoccion ?tecnica }"];
+  if($("#region").value) l.push(`  ?plato pf:region pf:${$("#region").value} .`);
+  if($("#trujillo").checked) l.push('  ?plato pf:ciudad "Trujillo" .');
+  if($("#diet").value) l.push(`  ?plato a pf:${$("#diet").value} .`);
+  if($("#profile").value) l.push(`  ?plato a pf:${$("#profile").value} .`);
+  const a=[...document.querySelectorAll("input[name=alg]:checked")].map(x=>"pf:alergeno_"+x.value);
+  if(a.length) l.push(`  FILTER NOT EXISTS { ?plato pf:contieneAlergeno ?a . VALUES ?a { ${a.join(" ")} } }`);
+  l.push("} ORDER BY ?nombre");
+  return l.join("\n");
+}
+const localName=v=>v?v.value.split("#").pop():"";
+const escapeHtml=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+async function search(e){
+  e.preventDefault();
+  const q=buildQuery(); $("#sparql").textContent=q;
+  const baseUrl=$("#url").value.trim().replace(/\/+$/,""); const url=`${baseUrl}/${$("#version").value}/query`;
+  const status=$("#status"), button=$("#search"), start=performance.now();
+  status.className=""; status.textContent="Consultando… el servicio gratuito puede tardar cerca de un minuto si estaba dormido."; button.disabled=true; $("#results").innerHTML="";
+  const controller=new AbortController(); const timer=setTimeout(()=>controller.abort(),90000);
+  try{
+    const r=await fetch(url,{method:"POST",signal:controller.signal,headers:{"Content-Type":"application/x-www-form-urlencoded","Accept":"application/sparql-results+json"},body:"query="+encodeURIComponent(q)});
+    if(!r.ok) throw new Error("El servidor respondió con el código "+r.status+".");
+    const rows=(await r.json()).results.bindings;
+    const elapsedMs=Math.round(performance.now()-start);
+    if(!rows.length){ status.textContent=`0 platos en ${elapsedMs} ms.`; $("#results").innerHTML='<li class="vacio">Ningún plato cumple todos los filtros. Quita una restricción para ampliar la búsqueda.</li>'; return; }
+    status.textContent=`${rows.length} platos compatibles (versión ${$("#version").value==="base"?"base":"refinada"}, ${elapsedMs} ms).`;
+    $("#results").innerHTML=rows.map(b=>{const region_=localName(b.region).toLowerCase();
+      const technique=localName(b.tecnica).replace(/^tecnica_/,"").replace(/_/g," ");
+      return `<li class="plato"><div class="linea"><span class="nombre">${escapeHtml(b.nombre.value)}</span><span class="guia"></span><span class="region ${escapeHtml(region_)}">${escapeHtml(region_.charAt(0).toUpperCase()+region_.slice(1))}</span></div>
+      <div class="datos">${b.ciudad?`<span>Ciudad: ${escapeHtml(b.ciudad.value)}</span>`:""}${b.tipo?`<span>Tipo: ${escapeHtml(b.tipo.value)}</span>`:""}${technique?`<span>Cocción: ${escapeHtml(technique)}</span>`:""}</div></li>`}).join("");
+  }catch(err){
+    status.className="error";
+    status.textContent=err.name==="AbortError"?"El servidor no respondió en 90 segundos. Abre la dirección del servicio en otra pestaña, espera a que cargue y vuelve a buscar."
+      :`No se pudo consultar ${url}. ${err.message} Revisa la dirección en "Conexión con el servidor" y abre el servicio en otra pestaña para despertarlo.`;
+  }finally{clearTimeout(timer);button.disabled=false}
+}
+$("#f").addEventListener("submit",search);
+$("#clear").addEventListener("click",()=>{$("#f").reset();$("#results").innerHTML="";$("#status").className="";$("#status").textContent="Elige tus filtros y pulsa Buscar platos.";});
+</script>
+</body>
+</html>

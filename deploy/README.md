@@ -1,7 +1,9 @@
-# Despliegue en Google Cloud (Cloud Run)
+# Despliegue en Render
 
 Fuseki sirve las dos versiones de la ontología en modo solo lectura:
-`/base/query` y `/refined/query`. Las ontologías van dentro de la imagen; tras cada `build.py`, se reconstruye y se vuelve a desplegar.
+`/base/query` y `/refined/query`. Las ontologías van dentro de la imagen; tras cada `build.py` se hace commit y push, y Render reconstruye y vuelve a desplegar.
+
+Servicio: https://peruvian-food-ontology.onrender.com (interfaz de Fuseki en esa misma dirección).
 
 ## Local
 
@@ -13,31 +15,30 @@ python scripts/evaluate.py --endpoint 'http://localhost:8080/{version}/query'
 
 Interfaz de Fuseki: http://localhost:8080
 
-## Cloud Run
+## Render
 
-Requisitos: proyecto de Google Cloud con facturación (Cloud Run tiene capa gratuita) y `gcloud` instalado.
+1. En https://dashboard.render.com: **New > Web Service** y conectar el repositorio de GitHub.
+2. Configuración:
+   - Language: **Docker**
+   - Branch: `main`
+   - Root Directory: vacío (la raíz del repositorio)
+   - Dockerfile Path: `deploy/Dockerfile`
+   - Docker Build Context: `.`
+   - Instance Type: **Free**
+3. **Create Web Service**. Render define la variable `PORT` y el `Dockerfile` la usa.
 
-```bash
-PROJECT=<id-del-proyecto>
-REGION=southamerica-west1
-IMAGE=$REGION-docker.pkg.dev/$PROJECT/peruvian-food/fuseki
+Con la capa gratuita, el servicio se duerme tras unos 15 minutos sin consultas; la primera consulta después tarda cerca de un minuto en despertarlo.
 
-gcloud config set project $PROJECT
-gcloud services enable run.googleapis.com artifactregistry.googleapis.com
-gcloud artifacts repositories create peruvian-food --repository-format=docker --location=$REGION
-
-gcloud auth print-access-token | podman login -u oauth2accesstoken --password-stdin https://$REGION-docker.pkg.dev
-podman build -f deploy/Dockerfile -t $IMAGE .
-podman push $IMAGE
-
-gcloud run deploy peruvian-food-fuseki --image $IMAGE --region $REGION \
-  --allow-unauthenticated --memory 512Mi --max-instances 1
-```
-
-El último comando imprime la URL del servicio. Evaluación contra la nube:
+Evaluación contra la nube:
 
 ```bash
-python scripts/evaluate.py --endpoint 'https://<url-del-servicio>/{version}/query'
+python scripts/evaluate.py --endpoint 'https://peruvian-food-ontology.onrender.com/{version}/query'
 ```
 
-Evidencias para el informe: captura de la consola de Cloud Run, de la interfaz de Fuseki con una consulta y de la salida de `evaluate.py` contra la URL pública.
+Comprobación rápida (debe responder 200; una operación de actualización, 405):
+
+```bash
+curl -s -o /dev/null -w '%{http_code}\n' https://peruvian-food-ontology.onrender.com/\$/ping
+```
+
+Evidencias para el informe: captura del panel de Render, de la interfaz de Fuseki con una consulta, del prototipo (`prototype/recommender.html`) y de la salida de `evaluate.py` contra la URL pública.

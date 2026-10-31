@@ -1,2 +1,3 @@
 rdflib
 scipy
+owlready2
