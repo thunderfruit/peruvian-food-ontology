@@ -1,0 +1,11 @@
+id,label,healthy
+sancochado,Sancochado (hervido),1
+al_vapor,Al vapor,1
+a_la_parrilla,A la parrilla,1
+marinado,Marinado en crudo (cítrico),1
+crudo,Crudo o en ensalada,1
+al_horno,Al horno,1
+guisado,Guisado,0
+salteado,Salteado,0
+asado,Asado,0
+frito,Frito,0

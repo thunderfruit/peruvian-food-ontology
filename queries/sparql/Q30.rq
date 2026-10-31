@@ -1,0 +1,6 @@
+PREFIX pf: <http://unitru.edu.pe/ai2/peruvian-food#>
+SELECT DISTINCT ?plato WHERE {
+  ?plato a pf:Plato .
+  ?plato pf:region pf:Selva .
+  FILTER NOT EXISTS { ?plato pf:contieneAlergeno ?a . VALUES ?a { pf:alergeno_gluten pf:alergeno_soya pf:alergeno_huevo } }
+}

@@ -1,0 +1,7 @@
+PREFIX pf: <http://unitru.edu.pe/ai2/peruvian-food#>
+SELECT DISTINCT ?plato WHERE {
+  ?plato a pf:Plato .
+  ?plato pf:ciudad "Trujillo" .
+  ?plato a pf:PlatoAptoParaMantenimientoDePeso .
+  FILTER NOT EXISTS { ?plato pf:contieneAlergeno ?a . VALUES ?a { pf:alergeno_mani pf:alergeno_frutos_secos } }
+}

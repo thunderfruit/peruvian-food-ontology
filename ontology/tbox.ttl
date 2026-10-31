@@ -1,0 +1,75 @@
+@prefix pf:   <http://unitru.edu.pe/ai2/peruvian-food#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<http://unitru.edu.pe/ai2/peruvian-food> a owl:Ontology ;
+    rdfs:label "Ontología gastronómica peruana (Trujillo, 2026)"@es .
+
+# Clases principales
+pf:Plato a owl:Class ; rdfs:label "Plato"@es .
+pf:Ingrediente a owl:Class ; rdfs:label "Ingrediente"@es .
+pf:Alergeno a owl:Class ; rdfs:label "Alérgeno"@es .
+pf:TecnicaDeCoccion a owl:Class ; rdfs:label "Técnica de cocción"@es .
+pf:RegionGastronomica a owl:Class ; rdfs:label "Región gastronómica"@es .
+pf:RestriccionAlimentaria a owl:Class ; rdfs:label "Restricción alimentaria"@es .
+pf:PerfilNutricionalCualitativo a owl:Class ; rdfs:label "Perfil nutricional cualitativo"@es .
+
+pf:Plato owl:disjointWith pf:Ingrediente, pf:Alergeno .
+
+# Ingredientes por origen
+pf:InsumoAndino rdfs:subClassOf pf:Ingrediente ; a owl:Class ; rdfs:label "Insumo andino"@es .
+pf:InsumoMarino rdfs:subClassOf pf:Ingrediente ; a owl:Class ; rdfs:label "Insumo marino"@es .
+pf:InsumoAmazonico rdfs:subClassOf pf:Ingrediente ; a owl:Class ; rdfs:label "Insumo amazónico"@es .
+pf:InsumoGeneral rdfs:subClassOf pf:Ingrediente ; a owl:Class ; rdfs:label "Insumo general"@es .
+
+# Platos según restricción alimentaria (pertenencia inferida por reglas)
+pf:PlatoVegetariano a owl:Class ; rdfs:subClassOf pf:Plato, pf:RestriccionAlimentaria ;
+    rdfs:label "Plato vegetariano"@es .
+pf:PlatoVegano a owl:Class ; rdfs:subClassOf pf:PlatoVegetariano ; rdfs:label "Plato vegano"@es .
+
+# Perfiles nutricionales cualitativos (pertenencia inferida por reglas)
+pf:PlatoBajoEnCalorias a owl:Class ; rdfs:subClassOf pf:Plato, pf:PerfilNutricionalCualitativo ;
+    rdfs:label "Plato bajo en calorías"@es .
+pf:PlatoAltoEnProteinas a owl:Class ; rdfs:subClassOf pf:Plato, pf:PerfilNutricionalCualitativo ;
+    rdfs:label "Plato alto en proteínas"@es .
+pf:PlatoAptoParaPerdidaDePeso a owl:Class ;
+    owl:equivalentClass [ a owl:Class ; owl:intersectionOf ( pf:PlatoBajoEnCalorias pf:PlatoAltoEnProteinas ) ] ;
+    rdfs:subClassOf pf:PerfilNutricionalCualitativo ;
+    rdfs:label "Plato apto para pérdida de peso"@es .
+pf:PlatoAptoParaMantenimientoDePeso a owl:Class ; rdfs:subClassOf pf:Plato, pf:PerfilNutricionalCualitativo ;
+    rdfs:label "Plato apto para mantenimiento de peso"@es .
+
+# Regiones
+pf:Costa a pf:RegionGastronomica, owl:NamedIndividual ; rdfs:label "Costa"@es .
+pf:Sierra a pf:RegionGastronomica, owl:NamedIndividual ; rdfs:label "Sierra"@es .
+pf:Selva a pf:RegionGastronomica, owl:NamedIndividual ; rdfs:label "Selva"@es .
+
+# Propiedades de objeto
+pf:tieneIngrediente a owl:ObjectProperty ; rdfs:domain pf:Plato ; rdfs:range pf:Ingrediente ;
+    # Un plato contiene también los componentes de sus ingredientes (regla refine/20_components.ru)
+    owl:propertyChainAxiom ( pf:tieneIngrediente pf:tieneComponente ) ;
+    rdfs:label "tiene ingrediente"@es .
+pf:tieneComponente a owl:ObjectProperty, owl:TransitiveProperty ;
+    rdfs:domain pf:Ingrediente ; rdfs:range pf:Ingrediente ;
+    rdfs:label "tiene componente"@es .
+pf:sinonimoDe a owl:ObjectProperty ; rdfs:domain pf:Ingrediente ; rdfs:range pf:Ingrediente ;
+    rdfs:label "sinónimo de"@es .
+pf:contieneAlergeno a owl:ObjectProperty ; rdfs:range pf:Alergeno ; rdfs:label "contiene alérgeno"@es .
+pf:puedeContener a owl:ObjectProperty ; rdfs:domain pf:Plato ; rdfs:range pf:Alergeno ;
+    rdfs:comment "Contaminación cruzada declarada (equipo o superficie compartida)."@es ;
+    rdfs:label "puede contener"@es .
+pf:tecnicaDeCoccion a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:domain pf:Plato ; rdfs:range pf:TecnicaDeCoccion ; rdfs:label "técnica de cocción"@es .
+pf:region a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:domain pf:Plato ; rdfs:range pf:RegionGastronomica ; rdfs:label "región"@es .
+
+# Propiedades de datos
+pf:ciudad a owl:DatatypeProperty ; rdfs:domain pf:Plato ; rdfs:range xsd:string ; rdfs:label "ciudad"@es .
+pf:tipoDePlato a owl:DatatypeProperty ; rdfs:domain pf:Plato ; rdfs:range xsd:string ; rdfs:label "tipo de plato"@es .
+pf:fuente a owl:DatatypeProperty ; rdfs:domain pf:Plato ; rdfs:range xsd:string ; rdfs:label "fuente"@es .
+pf:tipoDeAlimento a owl:DatatypeProperty ; rdfs:domain pf:Ingrediente ; rdfs:range xsd:string ;
+    rdfs:label "tipo de alimento"@es .
+pf:esTecnicaSaludable a owl:DatatypeProperty ; rdfs:domain pf:TecnicaDeCoccion ; rdfs:range xsd:boolean ;
+    rdfs:label "es técnica saludable"@es .

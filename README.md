@@ -16,6 +16,29 @@ Ontología OWL 2 de platos de la cocina peruana (costa, sierra y selva, con énf
 | `deploy/` | Despliegue de Apache Jena Fuseki en Google Cloud |
 | `report/` | Informe en LaTeX (formato IEEE) |
 
+## Uso
+
+```bash
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+.venv/bin/python scripts/build.py base       # ontology/peruvian_food_base.ttl
+.venv/bin/python scripts/build.py refined    # ontology/peruvian_food_refined.ttl
+.venv/bin/python scripts/evaluate.py         # results/metrics_*.csv y results/summary.md
+.venv/bin/python scripts/check_consistency.py  # HermiT (necesita Java): results/consistency.txt
+.venv/bin/python scripts/figures.py          # report/figures/*.pdf
+cd report && pdflatex -output-directory=build main.tex  # dos veces, por las referencias
+```
+
+Despliegue: `deploy/README.md`.
+
+## Cómo funciona
+
+- `data/*.csv` es la única fuente de datos. `build.py` la valida, la convierte en individuos OWL sobre `ontology/tbox.ttl` y aplica las reglas de inferencia (SPARQL Update), con lo que el resultado queda materializado.
+- **Base** = `rules/core` (alérgenos de los ingredientes, dietas) + `rules/profiles_base` (perfiles solo por técnica y categorías directas).
+- **Refinada** = `rules/refine` (sinónimos regionales, ingredientes derivados con la cadena `tieneIngrediente o tieneComponente`, contaminación cruzada) + `rules/core` + `rules/profiles_refined` (perfiles que además tienen en cuenta azúcar, grasa animal, maní y frutos secos, varios lácteos y la fuente proteica principal).
+- Las consultas (`queries/queries.csv`) son las mismas para ambas versiones. El gold standard sale de `data/gold_dishes.csv`, que se anota a mano, plato por plato, sin mirar la ontología, y lo valida el nutricionista.
+- Datos: 100 platos (50 costa, 30 sierra, 20 selva; 13 de Trujillo), 135 ingredientes con 51 sinónimos, 30 consultas (12, 12 y 6 criterios).
+- **Pendiente del equipo:** la columna `source` de `dishes.csv` dice `POR VERIFICAR` (falta registrar la fuente de cada plato), y `gold_dishes.csv` es un borrador que debe validar el nutricionista. Si cambian los datos, se vuelven a correr todos los scripts y se actualizan las cifras del informe.
+
 ## Autores
 
 - Avila Sanchez Ulises Medardo

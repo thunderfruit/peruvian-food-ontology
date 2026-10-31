@@ -1,0 +1,23 @@
+PREFIX fuseki: <http://jena.apache.org/fuseki#>
+PREFIX ja:     <http://jena.hpl.hp.com/2005/11/Assembler#>
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+# Two read-only datasets: /base/query and /refined/query (the public endpoint cannot be modified).
+
+<#service_base> rdf:type fuseki:Service ;
+    fuseki:name "base" ;
+    fuseki:endpoint [ fuseki:operation fuseki:query ; fuseki:name "query" ] ;
+    fuseki:endpoint [ fuseki:operation fuseki:query ] ;
+    fuseki:dataset <#dataset_base> .
+
+<#dataset_base> rdf:type ja:MemoryDataset ;
+    ja:data "/data/peruvian_food_base.ttl" .
+
+<#service_refined> rdf:type fuseki:Service ;
+    fuseki:name "refined" ;
+    fuseki:endpoint [ fuseki:operation fuseki:query ; fuseki:name "query" ] ;
+    fuseki:endpoint [ fuseki:operation fuseki:query ] ;
+    fuseki:dataset <#dataset_refined> .
+
+<#dataset_refined> rdf:type ja:MemoryDataset ;
+    ja:data "/data/peruvian_food_refined.ttl" .
