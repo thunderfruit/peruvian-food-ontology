@@ -4,6 +4,8 @@ Proyecto de investigación formativa del curso Inteligencia Artificial II (UNT, 
 
 Ontología OWL 2 de platos de la cocina peruana (costa, sierra y selva, con énfasis en Trujillo) que recomienda platos según alergias, restricciones alimentarias y perfiles nutricionales cualitativos de control de peso. Se evalúa con Precision, Recall y F1 sobre consultas SPARQL, comparando una versión base y una versión refinada del motor de inferencia.
 
+**Informe (PDF):** [`report/AI2_U2_Research_Activity.pdf`](report/AI2_U2_Research_Activity.pdf)
+
 ## Estructura
 
 | Carpeta | Contenido |
@@ -38,9 +40,3 @@ Despliegue: `deploy/README.md`.
 - Las consultas (`queries/queries.csv`) son las mismas para ambas versiones. El gold standard sale de `data/gold_dishes.csv`, que se anota a mano, plato por plato, sin mirar la ontología, y lo valida el nutricionista.
 - Datos: 100 platos (50 costa, 30 sierra, 20 selva; 13 de Trujillo), 135 ingredientes con 51 sinónimos, 30 consultas (12, 12 y 6 criterios).
 - **Pendiente del equipo:** la columna `source` de `dishes.csv` dice `POR VERIFICAR` (falta registrar la fuente de cada plato), y `gold_dishes.csv` es un borrador que debe validar el nutricionista. Si cambian los datos, se vuelven a correr todos los scripts y se actualizan las cifras del informe.
-
-## Autores
-
-- Avila Sanchez Ulises Medardo
-- Quispe Ishuiza Cristopher
-- Reyes Casana Valentino
