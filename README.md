@@ -4,6 +4,8 @@ Proyecto de investigación formativa del curso Inteligencia Artificial II (UNT, 
 
 Ontología OWL 2 de platos de la cocina peruana (costa, sierra y selva, con énfasis en Trujillo) que recomienda platos según alergias, restricciones alimentarias y perfiles nutricionales cualitativos de control de peso. Se evalúa con Precision, Recall y F1 sobre consultas SPARQL, comparando una versión base y una versión refinada del motor de inferencia.
 
+**Prototipo:** https://thunderfruit.github.io/peruvian-food-ontology/prototype/recommender.html
+
 **Informe (PDF):** [`report/AI2_U2_Research_Activity.pdf`](report/AI2_U2_Research_Activity.pdf)
 
 ## Estructura
@@ -18,7 +20,7 @@ Ontología OWL 2 de platos de la cocina peruana (costa, sierra y selva, con énf
 | `deploy/` | Despliegue de Apache Jena Fuseki en Render |
 | `prototype/` | Interfaz web del recomendador (`recommender.html`), consulta el servicio desplegado |
 | `report/` | Informe en LaTeX (formato IEEE) |
-| `docs/` | Plan del proyecto |
+| `docs/` | Plan del proyecto y cuestionario de usabilidad (SUS) |
 
 ## Uso
 
