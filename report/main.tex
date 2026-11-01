@@ -268,7 +268,14 @@ INSERT { ?dish pf:tieneIngrediente ?part }
 WHERE  { ?dish pf:tieneIngrediente/pf:tieneComponente+ ?part }
 \end{lstlisting}
 
-La Tabla~\ref{tab:metrics} presenta las métricas estructurales. Ambas versiones comparten 18 clases, 7 propiedades de objeto, 5 de datos y 332 individuos (100 platos, 205 ingredientes y sinónimos, 10 alérgenos, 14 técnicas y 3 regiones); difieren en los triples inferidos (2938 frente a 3111). El razonador HermiT, ejecutado mediante owlready2, clasificó ambas versiones como consistentes y sin clases insatisfacibles \pendiente{agregar captura de Protégé con HermiT}.
+La Tabla~\ref{tab:metrics} presenta las métricas estructurales. Ambas versiones comparten 18 clases, 7 propiedades de objeto, 5 de datos y 332 individuos (100 platos, 205 ingredientes y sinónimos, 10 alérgenos, 14 técnicas y 3 regiones); difieren en los triples inferidos (2938 frente a 3111). El razonador HermiT, ejecutado mediante owlready2, clasificó ambas versiones como consistentes y sin clases insatisfacibles. La Fig.~\ref{fig:protege} muestra la versión refinada en Protégé con HermiT activo: en la jerarquía inferida, \texttt{PlatoVegetariano} queda clasificada como subclase de \texttt{Plato} y de \texttt{RestriccionAlimentaria}, y el razonador le asigna como instancias los platos que cumplen su definición.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{protege_hermit}
+\caption{Versión refinada de la ontología en Protégé con el razonador HermiT activo: jerarquía de clases inferida e instancias inferidas de \texttt{PlatoVegetariano}.}
+\label{fig:protege}
+\end{figure}
 
 \begin{table}[t]
 \centering
