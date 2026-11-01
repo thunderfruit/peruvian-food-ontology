@@ -34,11 +34,13 @@ Escala: 1 = totalmente en desacuerdo, 2 = en desacuerdo, 3 = ni de acuerdo ni en
 
 ## Registro y cálculo
 
-Cada participante es una fila de `results/sus_responses.csv` (`participant,q1,...,q10`, valores de 1 a 5). Luego:
+Con Google Forms: un formulario con las 10 afirmaciones en el mismo orden, cada una como "Escala lineal" de 1 a 5. En la pestaña Respuestas, "Descargar respuestas (.csv)" y luego:
 
 ```bash
-python3 scripts/sus_score.py   # results/sus_summary.md
+python3 scripts/sus_score.py ~/Downloads/<archivo>.csv   # copia a results/sus_responses.csv y escribe results/sus_summary.md
 ```
+
+Sin formulario: cada participante es una fila de `results/sus_responses.csv` (`participant,q1,...,q10`, valores de 1 a 5) y se corre `python3 scripts/sus_score.py`.
 
 El puntaje va de 0 a 100: los ítems impares suman (respuesta - 1), los pares (5 - respuesta), y la suma se multiplica por 2,5. Un puntaje de 68 es el promedio de la escala.
 
