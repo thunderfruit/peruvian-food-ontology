@@ -39,7 +39,7 @@
 \maketitle
 
 \begin{abstract}
-Los comensales con alergias, restricciones alimentarias u objetivos de control de peso deciden con información incompleta, porque la composición de los platos rara vez está estructurada. Este trabajo construye una ontología OWL 2 de la cocina peruana, con énfasis en Trujillo, que sirve de base a un sistema de recomendación basado en conocimiento. Se elaboró un conjunto de datos de 100 platos (50 de la costa, 30 de la sierra y 20 de la selva) y 146 ingredientes normalizados con 59 sinónimos regionales; se modeló la ontología, se pobló automáticamente, se verificó su consistencia con el razonador HermiT y se desplegó, junto con su motor de reglas, en Apache Jena Fuseki sobre la plataforma en la nube Render. En una evaluación comparativa con 30 consultas SPARQL (3000 pares consulta--plato), la versión refinada del motor elevó la Precision media de 0,676 a 0,913, el Recall de 0,909 a 0,987 y la medida F$_1$ de 0,738 a 0,938, diferencias significativas según la prueba de Wilcoxon ($p<0{,}05$). Las consultas sobre alérgenos y dietas alcanzaron Precision 1,0, mientras que los errores residuales se concentran en los perfiles nutricionales cualitativos.
+Los comensales con alergias, restricciones alimentarias u objetivos de control de peso deciden con información incompleta, porque la composición de los platos rara vez está estructurada. Este trabajo construye una ontología OWL 2 de la cocina peruana, con énfasis en Trujillo, que sirve de base a un sistema de recomendación basado en conocimiento. Se elaboró un conjunto de datos de 100 platos (50 de la costa, 30 de la sierra y 20 de la selva) y 146 ingredientes normalizados con 59 sinónimos regionales; se modeló la ontología, se pobló automáticamente, se verificó su consistencia con el razonador HermiT y se desplegó, junto con su motor de reglas, en Apache Jena Fuseki sobre la plataforma en la nube Render. En una evaluación comparativa con 30 consultas SPARQL (3000 pares consulta--plato), la versión refinada del motor elevó la Precision media de 0,668 a 0,918, el Recall de 0,909 a 0,987 y la medida F$_1$ de 0,735 a 0,942, diferencias significativas según la prueba de Wilcoxon ($p<0{,}05$). Las consultas sobre alérgenos y dietas alcanzaron Precision 1,0, mientras que los errores residuales se concentran en los perfiles nutricionales cualitativos.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -154,9 +154,9 @@ Los resultados se presentan en cuatro secciones, una por cada objetivo específi
 
 \subsection{Construcción del conjunto de datos}
 
-El conjunto de datos se construyó en cinco pasos. Primero, se definieron los catálogos controlados: 10 alérgenos (los ocho grupos del Codex Alimentarius, que se tratan como cereales con gluten, crustáceos, huevo, pescado, maní, soya, leche y frutos secos, más moluscos y sésamo, incluidos en la normativa europea) y 14 técnicas de cocción, cada una marcada como saludable o no. Segundo, se seleccionaron los platos por cuotas regionales a partir de fuentes publicadas, principalmente el capítulo de platos típicos regionales del INEI \cite{inei2012}, la agencia de noticias Andina \cite{andina2023} y PromPerú \cite{promperu}; los platos sin fuente localizable se reemplazaron por otros de la misma región con receta publicada, y la fuente de cada plato se registra en el repositorio del proyecto. De los 100 platos, 24 se apoyan solo en fuentes periodísticas o secundarias, lo que se reconoce como una limitación del conjunto de datos. Tercero, se registró cada plato con su región, su ciudad de origen, su tipo, su técnica de cocción, su lista de ingredientes tal como se escribe en la carta y los alérgenos que puede contener por contaminación cruzada. Cuarto, se normalizó el vocabulario de ingredientes: cada ingrediente canónico tiene un identificador, su grupo de origen, su tipo de alimento y sus alérgenos, y se registraron sus sinónimos regionales (por ejemplo, «lenguado» y «corvina» para \emph{pescado blanco}, «canchita» para \emph{cancha serrana}, «platano bellaco» para \emph{plátano verde}) y, para las preparaciones compuestas, sus componentes (por ejemplo, la salsa huancaína se compone de ají amarillo, queso fresco, leche evaporada, galleta de soda y aceite). Quinto, un programa de validación rechaza cualquier alérgeno, técnica, región o componente que no exista en los catálogos rechaza los platos sin fuente y avisa de los ingredientes no registrados, lo que garantiza la integridad referencial antes de poblar la ontología.
+El conjunto de datos se construyó en cinco pasos. Primero, se definieron los catálogos controlados: 10 alérgenos (los ocho grupos del Codex Alimentarius, que se tratan como cereales con gluten, crustáceos, huevo, pescado, maní, soya, leche y frutos secos, más moluscos y sésamo, incluidos en la normativa europea) y 14 técnicas de cocción, cada una marcada como saludable o no. Segundo, se seleccionaron los platos por cuotas regionales a partir de fuentes publicadas, principalmente el capítulo de platos típicos regionales del INEI \cite{inei2012}, la agencia de noticias Andina \cite{andina2023} y PromPerú \cite{promperu}; los platos sin fuente localizable se reemplazaron por otros de la misma región con receta publicada, y la fuente de cada plato se registra en el repositorio del proyecto. Todos los platos tienen al menos una fuente institucional (INEI, PromPerú, la agencia Andina, el Ministerio de Cultura, el INS o TV Perú); como la mayoría son publicaciones de difusión y no recetarios académicos, y las recetas varían entre fuentes, se adoptó como criterio que la receta citada define los ingredientes del plato, lo que se reconoce como una limitación del conjunto de datos. Tercero, se registró cada plato con su región, su ciudad de origen, su tipo, su técnica de cocción, su lista de ingredientes tal como se escribe en la carta y los alérgenos que puede contener por contaminación cruzada. Cuarto, se normalizó el vocabulario de ingredientes: cada ingrediente canónico tiene un identificador, su grupo de origen, su tipo de alimento y sus alérgenos, y se registraron sus sinónimos regionales (por ejemplo, «lenguado» y «corvina» para \emph{pescado blanco}, «canchita» para \emph{cancha serrana}, «platano bellaco» para \emph{plátano verde}) y, para las preparaciones compuestas, sus componentes (por ejemplo, la salsa huancaína se compone de ají amarillo, queso fresco, leche evaporada, galleta de soda y aceite). Quinto, un programa de validación rechaza cualquier alérgeno, técnica, región o componente que no exista en los catálogos rechaza los platos sin fuente y avisa de los ingredientes no registrados, lo que garantiza la integridad referencial antes de poblar la ontología.
 
-La Tabla~\ref{tab:dataset} resume el conjunto final. Los 100 platos se distribuyen en 50 de la costa, 30 de la sierra y 20 de la selva, provienen de 22 ciudades y 5 son de Trujillo; otros 24 platos, como los de cebichería o los de alcance nacional, se dejaron sin ciudad porque las fuentes no los atribuyen a una en particular; la Fig.~\ref{fig:dataset} muestra su distribución por tipo y región. Los ingredientes se describen mediante 653 menciones, que se resuelven a 146 ingredientes canónicos (39 andinos, 11 marinos, 20 amazónicos y 76 de uso general) con 59 sinónimos regionales; 13 de ellos son preparaciones compuestas. La Fig.~\ref{fig:allergens} presenta la frecuencia de cada alérgeno según la anotación de referencia: los más frecuentes son el gluten (30 platos), la leche y el huevo (25 cada uno) y el pescado (22), mientras que 27 platos no contienen ningún alérgeno del catálogo. Trece platos declaran alérgenos que pueden estar presentes según la versión de la receta o por contaminación cruzada, principalmente por freidoras y tablas compartidas con mariscos. La técnica más frecuente es el sancochado (35 platos), seguida del guisado (20) y la fritura (14), como muestra la Fig.~\ref{fig:techniques}.
+La Tabla~\ref{tab:dataset} resume el conjunto final. Los 100 platos se distribuyen en 50 de la costa, 30 de la sierra y 20 de la selva, provienen de 22 ciudades y 9 son de Trujillo, atribuidos a la ciudad por las publicaciones de PromPerú y Andina sobre su gastronomía \cite{marcaperu2018trujillo,andina2024trujillo}; otros 22 platos, de alcance nacional o regional, se dejaron sin ciudad porque las fuentes no los atribuyen a una en particular; la Fig.~\ref{fig:dataset} muestra su distribución por tipo y región. Los ingredientes se describen mediante 654 menciones, que se resuelven a 146 ingredientes canónicos (39 andinos, 11 marinos, 20 amazónicos y 76 de uso general) con 59 sinónimos regionales; 13 de ellos son preparaciones compuestas. La Fig.~\ref{fig:allergens} presenta la frecuencia de cada alérgeno según la anotación de referencia: los más frecuentes son el gluten (29 platos), el huevo (27), la leche (25) y el pescado (23), mientras que 26 platos no contienen ningún alérgeno del catálogo. Doce platos declaran alérgenos que pueden estar presentes según la versión de la receta o por contaminación cruzada, principalmente por freidoras y tablas compartidas con mariscos. La técnica más frecuente es el sancochado (34 platos), seguida del guisado (21) y la fritura (14), como muestra la Fig.~\ref{fig:techniques}.
 
 \begin{table}[t]
 \centering
@@ -167,20 +167,20 @@ La Tabla~\ref{tab:dataset} resume el conjunto final. Los 100 platos se distribuy
 Elemento & Cantidad \\
 \midrule
 Platos (costa / sierra / selva) & 100 (50 / 30 / 20) \\
-Platos de Trujillo & 5 \\
-Tipos: fondo / entrada / sopa / bebida / postre & 49 / 18 / 15 / 8 / 10 \\
+Platos de Trujillo & 9 \\
+Tipos: fondo / entrada / sopa / bebida / postre & 50 / 18 / 14 / 8 / 10 \\
 Ingredientes canónicos & 146 \\
 Sinónimos regionales & 59 \\
 Preparaciones compuestas & 13 \\
 Alérgenos del catálogo & 10 \\
 Técnicas de cocción & 14 \\
-Platos con alérgenos posibles declarados & 13 \\
+Platos con alérgenos posibles declarados & 12 \\
 \midrule
 \multicolumn{2}{l}{\emph{Anotación de referencia}} \\
-Platos sin alérgenos & 27 \\
+Platos sin alérgenos & 26 \\
 Vegetarianos / veganos & 28 / 13 \\
 Bajo en calorías / alto en proteínas & 21 / 74 \\
-Pérdida / mantenimiento de peso & 18 / 53 \\
+Pérdida / mantenimiento de peso & 18 / 52 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -268,7 +268,7 @@ INSERT { ?dish pf:tieneIngrediente ?part }
 WHERE  { ?dish pf:tieneIngrediente/pf:tieneComponente+ ?part }
 \end{lstlisting}
 
-La Tabla~\ref{tab:metrics} presenta las métricas estructurales. Ambas versiones comparten 18 clases, 7 propiedades de objeto, 5 de datos y 332 individuos (100 platos, 205 ingredientes y sinónimos, 10 alérgenos, 14 técnicas y 3 regiones); difieren en los triples inferidos (2938 frente a 3111). El razonador HermiT, ejecutado mediante owlready2, clasificó ambas versiones como consistentes y sin clases insatisfacibles. La Fig.~\ref{fig:protege} muestra la versión refinada en Protégé con HermiT activo: en la jerarquía inferida, \texttt{PlatoVegetariano} queda clasificada como subclase de \texttt{Plato} y de \texttt{RestriccionAlimentaria}, y el razonador le asigna como instancias los platos que cumplen su definición.
+La Tabla~\ref{tab:metrics} presenta las métricas estructurales. Ambas versiones comparten 18 clases, 7 propiedades de objeto, 5 de datos y 332 individuos (100 platos, 205 ingredientes y sinónimos, 10 alérgenos, 14 técnicas y 3 regiones); difieren en los triples inferidos (2941 frente a 3115). El razonador HermiT, ejecutado mediante owlready2, clasificó ambas versiones como consistentes y sin clases insatisfacibles. La Fig.~\ref{fig:protege} muestra la versión refinada en Protégé con HermiT activo: en la jerarquía inferida, \texttt{PlatoVegetariano} queda clasificada como subclase de \texttt{Plato} y de \texttt{RestriccionAlimentaria}, y el razonador le asigna como instancias los platos que cumplen su definición.
 
 \begin{figure}[t]
 \centering
@@ -290,7 +290,7 @@ Propiedades de objeto & 7 & 7 \\
 Propiedades de datos & 5 & 5 \\
 Individuos & 332 & 332 \\
 Reglas de inferencia & 3 & 6 \\
-Triples (tras la inferencia) & 2938 & 3111 \\
+Triples (tras la inferencia) & 2941 & 3115 \\
 Consistencia (HermiT) & Sí & Sí \\
 \bottomrule
 \end{tabular}
@@ -306,7 +306,7 @@ Consistencia (HermiT) & Sí & Sí \\
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.9\columnwidth]{fuseki_query}
-\caption{Interfaz de Apache Jena Fuseki: consulta Q24 (platos de Trujillo sin crustáceos) sobre el servicio \texttt{/refined}; la respuesta trae cinco resultados, de los que se muestran los dos primeros.}
+\caption{Interfaz de Apache Jena Fuseki: consulta Q24 (platos de Trujillo sin crustáceos) sobre el servicio \texttt{/refined} y el inicio de su respuesta.}
 \label{fig:fuseki}
 \end{figure}
 
@@ -322,7 +322,7 @@ Consistencia (HermiT) & Sí & Sí \\
 
 La base de conocimiento materializada de cada versión se sirve con Apache Jena Fuseki 5.2.0, empaquetado en una imagen de contenedor que incluye ambas ontologías. El archivo de configuración de Fuseki define dos servicios, \texttt{/base/query} y \texttt{/refined/query}, ambos de solo lectura, de modo que el endpoint público no admite operaciones de modificación. La imagen se despliega como servicio web en Render, que la construye directamente desde el repositorio del proyecto en cada actualización y la publica en \url{https://peruvian-food-ontology.onrender.com}. Se usó la capa gratuita, que suspende el servicio tras unos minutos sin consultas, por lo que la primera consulta después de una pausa tarda cerca de un minuto. La Fig.~\ref{fig:render} muestra el servicio desplegado, y la Fig.~\ref{fig:fuseki}, la interfaz de Fuseki ejecutando la consulta Q24 sobre la versión refinada. Antes del despliegue, el contenedor se verificó localmente: el programa de evaluación, ejecutado contra el endpoint de Fuseki, produjo exactamente las mismas métricas que contra los archivos locales, y un intento de operación de actualización fue rechazado con el código HTTP 405. Tras el despliegue, la evaluación ejecutada contra el endpoint público reprodujo las mismas métricas. El procedimiento completo se documenta en el repositorio.
 
-Para evidenciar el uso del sistema por un consumidor, sobre el endpoint público se construyó un prototipo web (\texttt{prototype/recommender.html}), una sola página sin servidor propio, publicada en GitHub Pages (\url{https://thunderfruit.github.io/peruvian-food-ontology/prototype/recommender.html}). El usuario marca los alérgenos que debe evitar (los 10 del catálogo), elige una dieta (vegetariana o vegana), un objetivo de peso (los cuatro perfiles cualitativos) y, opcionalmente, una región o una ciudad; también dispone de cinco consultas de ejemplo que se ejecutan con un clic. Con esas opciones, el prototipo arma la consulta SPARQL: cada dieta y cada perfil se traduce en un patrón de pertenencia a la clase inferida correspondiente, y los alérgenos, en un filtro \texttt{FILTER NOT EXISTS} sobre \texttt{contieneAlergeno}. Cada plato compatible se muestra con su región, ciudad, tipo y técnica de cocción, y con lo que la ontología infirió de él: sus alérgenos y las clases de dieta y de perfil a las que pertenece, lo que hace explicable la recomendación. La consulta generada puede inspeccionarse en la misma página. Una opción de comparación ejecuta la misma consulta sobre ambas versiones y lista aparte los platos que solo la versión base recomendaba, junto con el alérgeno que la versión refinada detecta en ellos, y los platos compatibles que la versión base omitía; así, la interfaz muestra de forma directa el efecto del refinamiento medido en la evaluación. Como la capa gratuita de Render suspende el servicio, la página lo despierta al cargarse e indica su estado. Además, recuerda al usuario que confirme los ingredientes con el restaurante, porque la recomendación no reemplaza la indicación de un profesional de la salud. La Fig.~\ref{fig:prototype} muestra el prototipo con la consulta de ejemplo ``alto en proteínas, costa, sin gluten'': a la izquierda, los 23 platos compatibles con sus etiquetas; a la derecha, los platos que solo recomendaba la versión base, como el arroz chaufa, en el que la versión refinada detecta gluten y soya por el sillao.
+Para evidenciar el uso del sistema por un consumidor, sobre el endpoint público se construyó un prototipo web (\texttt{prototype/recommender.html}), una sola página sin servidor propio, publicada en GitHub Pages (\url{https://thunderfruit.github.io/peruvian-food-ontology/prototype/recommender.html}). El usuario marca los alérgenos que debe evitar (los 10 del catálogo), elige una dieta (vegetariana o vegana), un objetivo de peso (los cuatro perfiles cualitativos) y, opcionalmente, una región o una ciudad; también dispone de cinco consultas de ejemplo que se ejecutan con un clic. Con esas opciones, el prototipo arma la consulta SPARQL: cada dieta y cada perfil se traduce en un patrón de pertenencia a la clase inferida correspondiente, y los alérgenos, en un filtro \texttt{FILTER NOT EXISTS} sobre \texttt{contieneAlergeno}. Cada plato compatible se muestra con su región, ciudad, tipo y técnica de cocción, y con lo que la ontología infirió de él: sus alérgenos y las clases de dieta y de perfil a las que pertenece, lo que hace explicable la recomendación. La consulta generada puede inspeccionarse en la misma página. Una opción de comparación ejecuta la misma consulta sobre ambas versiones y lista aparte los platos que solo la versión base recomendaba, junto con el alérgeno que la versión refinada detecta en ellos, y los platos compatibles que la versión base omitía; así, la interfaz muestra de forma directa el efecto del refinamiento medido en la evaluación. Como la capa gratuita de Render suspende el servicio, la página lo despierta al cargarse e indica su estado. Además, recuerda al usuario que confirme los ingredientes con el restaurante, porque la recomendación no reemplaza la indicación de un profesional de la salud. La Fig.~\ref{fig:prototype} muestra el prototipo con la consulta de ejemplo ``alto en proteínas, costa, sin gluten'': a la izquierda, los platos compatibles con sus etiquetas; a la derecha, los platos que solo recomendaba la versión base, como el arroz chaufa, en el que la versión refinada detecta gluten y soya por el sillao.
 
 
 
@@ -340,7 +340,7 @@ SELECT DISTINCT ?plato WHERE {
 }
 \end{lstlisting}
 
-La Tabla~\ref{tab:results} resume los resultados sobre las 30 consultas. La versión refinada elevó la Precision media de 0,676 a 0,913, el Recall de 0,909 a 0,987 y la F$_1$ de 0,738 a 0,938, y redujo la dispersión entre consultas (desviación estándar de la F$_1$ de 0,250 a 0,137). La mejora se mantiene en los tres grupos de consultas, según su número de criterios. La Fig.~\ref{fig:precision} muestra la Precision por consulta: la versión refinada iguala o supera a la base en todas ellas.
+La Tabla~\ref{tab:results} resume los resultados sobre las 30 consultas. La versión refinada elevó la Precision media de 0,668 a 0,918, el Recall de 0,909 a 0,987 y la F$_1$ de 0,735 a 0,942, y redujo la dispersión entre consultas (desviación estándar de la F$_1$ de 0,245 a 0,124). La mejora se mantiene en los tres grupos de consultas, según su número de criterios. La Fig.~\ref{fig:precision} muestra la Precision por consulta: la versión refinada iguala o supera a la base en todas ellas.
 
 \begin{table}[t]
 \centering
@@ -350,20 +350,20 @@ La Tabla~\ref{tab:results} resume los resultados sobre las 30 consultas. La vers
 \toprule
 Grupo & Versión & Precision & Recall & F$_1$ \\
 \midrule
-\multirow{2}{*}{Todas (30)} & Base & 0,676 & 0,909 & 0,738 \\
- & Refinada & \textbf{0,913} & \textbf{0,987} & \textbf{0,938} \\
+\multirow{2}{*}{Todas (30)} & Base & 0,668 & 0,909 & 0,735 \\
+ & Refinada & \textbf{0,918} & \textbf{0,987} & \textbf{0,942} \\
 \midrule
-\multirow{2}{*}{1 criterio (12)} & Base & 0,696 & 0,909 & 0,770 \\
- & Refinada & 0,924 & 0,979 & 0,947 \\
-\multirow{2}{*}{2 criterios (12)} & Base & 0,654 & 0,894 & 0,704 \\
- & Refinada & 0,918 & 0,990 & 0,943 \\
-\multirow{2}{*}{3 o más (6)} & Base & 0,677 & 0,942 & 0,745 \\
- & Refinada & 0,881 & 1,000 & 0,907 \\
+\multirow{2}{*}{1 criterio (12)} & Base & 0,696 & 0,908 & 0,769 \\
+ & Refinada & 0,927 & 0,978 & 0,949 \\
+\multirow{2}{*}{2 criterios (12)} & Base & 0,642 & 0,892 & 0,697 \\
+ & Refinada & 0,924 & 0,989 & 0,948 \\
+\multirow{2}{*}{3 o más (6)} & Base & 0,664 & 0,944 & 0,742 \\
+ & Refinada & 0,889 & 1,000 & 0,917 \\
 \midrule
-\multirow{2}{*}{Alérgenos y dietas (19)} & Base & 0,767 & 1,000 & 0,847 \\
+\multirow{2}{*}{Alérgenos y dietas (19)} & Base & 0,760 & 1,000 & 0,843 \\
  & Refinada & 1,000 & 1,000 & 1,000 \\
-\multirow{2}{*}{Con perfil nutricional (11)} & Base & 0,517 & 0,753 & 0,550 \\
- & Refinada & 0,763 & 0,965 & 0,830 \\
+\multirow{2}{*}{Con perfil nutricional (11)} & Base & 0,509 & 0,752 & 0,549 \\
+ & Refinada & 0,777 & 0,964 & 0,843 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -375,7 +375,7 @@ Grupo & Versión & Precision & Recall & F$_1$ \\
 \label{fig:precision}
 \end{figure*}
 
-La Fig.~\ref{fig:confusion} presenta la matriz de confusión agregada sobre los 3000 pares consulta--plato. Los falsos positivos, que representan el error crítico en términos de seguridad, se redujeron de 399 a 49 ($-87{,}7$~\%), y los falsos negativos, de 55 a 9.
+La Fig.~\ref{fig:confusion} presenta la matriz de confusión agregada sobre los 3000 pares consulta--plato. Los falsos positivos, que representan el error crítico en términos de seguridad, se redujeron de 400 a 45 ($-88{,}8$~\%), y los falsos negativos, de 56 a 9.
 
 \begin{figure}[t]
 \centering
@@ -384,7 +384,7 @@ La Fig.~\ref{fig:confusion} presenta la matriz de confusión agregada sobre los 
 \label{fig:confusion}
 \end{figure}
 
-Para el contraste estadístico, la prueba de Shapiro--Wilk rechazó la normalidad de las diferencias por consulta en las tres métricas ($p=0{,}002$ para Precision, $p<0{,}001$ para Recall y $p=0{,}002$ para F$_1$), por lo que se aplicó la prueba de rangos con signo de Wilcoxon (Tabla~\ref{tab:stats}). Las diferencias a favor de la versión refinada son significativas en las tres métricas ($p<0{,}05$). Ninguna consulta empeoró en Precision ni en F$_1$; solo la consulta Q12 (mantenimiento de peso) perdió Recall, porque las reglas refinadas excluyen del perfil el patachi y el pato a la ucayalina, de ahí el estadístico $W=1$ en esa métrica.
+Para el contraste estadístico, la prueba de Shapiro--Wilk rechazó la normalidad de las diferencias por consulta en las tres métricas ($p=0{,}002$ para Precision, $p<0{,}001$ para Recall y $p=0{,}001$ para F$_1$), por lo que se aplicó la prueba de rangos con signo de Wilcoxon (Tabla~\ref{tab:stats}). Las diferencias a favor de la versión refinada son significativas en las tres métricas ($p<0{,}05$). Ninguna consulta empeoró en Precision ni en F$_1$; solo la consulta Q12 (mantenimiento de peso) perdió Recall, porque las reglas refinadas excluyen del perfil el patachi y el pato a la ucayalina, de ahí el estadístico $W=1$ en esa métrica.
 
 \begin{table}[t]
 \centering
@@ -396,12 +396,12 @@ Métrica & Shapiro--Wilk $p$ & $W$ & $p$ \\
 \midrule
 Precision & 0,002 & 0 & $<0{,}001$ \\
 Recall & $<0{,}001$ & 1 & 0,017 \\
-F$_1$ & 0,002 & 0 & $<0{,}001$ \\
+F$_1$ & 0,001 & 0 & $<0{,}001$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-El análisis de errores explica la mejora. En la versión base, los falsos positivos de las consultas sobre alérgenos y dietas se deben a tres causas: (i) ingredientes escritos con su sinónimo regional, como el ceviche, cuyo «lenguado» no se reconocía como pescado, o el shambar, cuyo «trigo» no se reconocía como cereal con gluten; (ii) ingredientes derivados, como la papa a la huancaína, cuya salsa aporta leche, gluten y huevo; y (iii) la contaminación cruzada no considerada, como el chicharrón de pescado preparado en freidoras compartidas con mariscos. Las reglas refinadas eliminan los tres tipos de error, y las 19 consultas sobre alérgenos y dietas alcanzan Precision y Recall de 1,0. En los perfiles, la versión base clasificaba como bajos en calorías los postres y bebidas azucarados y las preparaciones con varios lácteos, y como altos en proteínas los platos con huevo o queso como acompañamiento; las reglas refinadas corrigen estos patrones. Los errores residuales (49 falsos positivos y 9 falsos negativos) se concentran en los perfiles nutricionales cualitativos de preparaciones como la causa, el chairo, el chayro, el caldo de cabeza, la patasca o el sudado de pescado, cuya clasificación depende de las porciones y de la cantidad de grasa, información que el modelo cualitativo no representa. Se optó por no añadir reglas específicas para estos platos, para no sobreajustar el motor al banco de pruebas.
+El análisis de errores explica la mejora. En la versión base, los falsos positivos de las consultas sobre alérgenos y dietas se deben a tres causas: (i) ingredientes escritos con su sinónimo regional, como el ceviche, cuyo «lenguado» no se reconocía como pescado, o el shambar, cuyo «trigo» no se reconocía como cereal con gluten; (ii) ingredientes derivados, como la papa a la huancaína, cuya salsa aporta leche, gluten y huevo; y (iii) la contaminación cruzada no considerada, como el chicharrón de pescado preparado en freidoras compartidas con mariscos. Las reglas refinadas eliminan los tres tipos de error, y las 19 consultas sobre alérgenos y dietas alcanzan Precision y Recall de 1,0. En los perfiles, la versión base clasificaba como bajos en calorías los postres y bebidas azucarados y las preparaciones con varios lácteos, y como altos en proteínas los platos con huevo o queso como acompañamiento; las reglas refinadas corrigen estos patrones. Los errores residuales (45 falsos positivos y 9 falsos negativos) se concentran en los perfiles nutricionales cualitativos de preparaciones como la causa, el chairo, el chayro, el caldo de cabeza, la patasca o el sudado de pescado, cuya clasificación depende de las porciones y de la cantidad de grasa, información que el modelo cualitativo no representa. Se optó por no añadir reglas específicas para estos platos, para no sobreajustar el motor al banco de pruebas.
 
 \begin{thebibliography}{99}
 
@@ -460,6 +460,10 @@ El análisis de errores explica la mejora. En la versión base, los falsos posit
 \bibitem{palma2008} J. T. Palma Méndez and R. Marín Morales, Eds., \emph{Inteligencia Artificial: Técnicas, métodos y aplicaciones}. Madrid, España: McGraw-Hill, 2008.
 
 \bibitem{codex2024} Codex Alimentarius Commission, ``General Standard for the Labelling of Prepackaged Foods,'' CXS 1-1985, rev. 2024. Rome, Italy: FAO/WHO.
+
+\bibitem{marcaperu2018trujillo} Marca Perú, ``Los 5 platos típicos de Trujillo más populares,'' peru.info, 27 dic. 2018. [Online]. Available: \url{https://peru.info/es-pe/gastronomia/blogperu/2/13/los-5-platos-tipicos-de-trujillo-mas-populares}
+
+\bibitem{andina2024trujillo} Agencia Peruana de Noticias Andina, ``¡Trujillo está de moda! Saborea y disfruta sus platos embajadores que deleitan paladares,'' 29 sep. 2024. [Online]. Available: \url{https://andina.pe/agencia/noticia-trujillo-esta-moda-saborea-y-disfruta-sus-platos-embajadores-deleitan-paladares-1001686.aspx}
 
 \end{thebibliography}
 

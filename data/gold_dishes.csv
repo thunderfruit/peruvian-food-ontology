@@ -46,7 +46,7 @@ frejol_colado,leche|sesamo,1,0,0,0,0,0
 arroz_con_leche,leche,1,0,0,0,0,0
 chicha_morada,,1,1,0,0,0,0
 emoliente,gluten,1,1,0,0,0,0
-aguadito_de_pollo,gluten,0,0,1,1,1,1
+pescado_a_la_trujillana,pescado|huevo,0,0,1,1,1,1
 papa_rellena,huevo|gluten,0,0,0,1,0,0
 shambar,gluten,0,0,0,1,0,0
 papa_a_la_huancaina,leche|gluten|huevo,1,0,0,0,0,1
@@ -59,7 +59,7 @@ adobo_arequipeno,gluten,0,0,0,1,0,0
 solterito,leche,1,0,1,1,1,1
 pastel_de_papa,leche|huevo,1,0,0,0,0,0
 cuy_chactado,,0,0,0,1,0,0
-cuy_al_horno,,0,0,0,1,0,1
+cuy_colorado,huevo,0,0,0,1,0,0
 chiri_uchu,leche|pescado|gluten|huevo,0,0,0,1,0,0
 olluquito_con_charqui,,0,0,0,1,0,1
 patasca,,0,0,0,1,0,1
