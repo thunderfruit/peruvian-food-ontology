@@ -263,7 +263,7 @@ perfil & Perfiles: además azúcar, grasa animal, maní y frutos secos, varios l
 \end{table}
 
 \begin{lstlisting}[caption={Regla de ingredientes derivados (SPARQL Update).}, label={lst:rule}, language=SQL]
-PREFIX pf: <http://unitru.edu.pe/ai2/peruvian-food#>
+PREFIX pf: <https://thunderfruit.github.io/peruvian-food-ontology/ontology#>
 INSERT { ?dish pf:tieneIngrediente ?part }
 WHERE  { ?dish pf:tieneIngrediente/pf:tieneComponente+ ?part }
 \end{lstlisting}
@@ -300,7 +300,7 @@ Para evidenciar el uso del sistema por un consumidor, sobre el endpoint público
 El programa de evaluación genera la consulta SPARQL de cada caso de prueba a partir de sus criterios, la ejecuta sobre cada versión, compara el resultado con el conjunto esperado y registra $TP$, $FP$, $FN$, $TN$, Precision, Recall y F$_1$. Las consultas son idénticas para ambas versiones; por ejemplo, la consulta Q24 (platos de Trujillo sin crustáceos) es:
 
 \begin{lstlisting}[language=SQL]
-PREFIX pf: <http://unitru.edu.pe/ai2/peruvian-food#>
+PREFIX pf: <https://thunderfruit.github.io/peruvian-food-ontology/ontology#>
 SELECT DISTINCT ?plato WHERE {
   ?plato a pf:Plato .
   ?plato pf:ciudad "Trujillo" .

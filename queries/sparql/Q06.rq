@@ -1,4 +1,4 @@
-PREFIX pf: <http://unitru.edu.pe/ai2/peruvian-food#>
+PREFIX pf: <https://thunderfruit.github.io/peruvian-food-ontology/ontology#>
 SELECT DISTINCT ?plato WHERE {
   ?plato a pf:Plato .
   FILTER NOT EXISTS { ?plato pf:contieneAlergeno ?a . VALUES ?a { pf:alergeno_huevo } }

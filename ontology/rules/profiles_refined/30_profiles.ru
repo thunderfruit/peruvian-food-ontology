@@ -4,7 +4,7 @@
 # - Alto en proteínas: fuente proteica principal (carne, ave, pescado, marisco o legumbre); el huevo y los
 #   lácteos como acompañamiento no cuentan; no aplica a postres ni bebidas.
 # - Mantenimiento: sin fritura, sin carne grasa ni grasa animal y sin azúcar añadido.
-PREFIX pf: <http://unitru.edu.pe/ai2/peruvian-food#>
+PREFIX pf: <https://thunderfruit.github.io/peruvian-food-ontology/ontology#>
 INSERT { ?dish a pf:PlatoBajoEnCalorias }
 WHERE  { ?dish a pf:Plato ; pf:tecnicaDeCoccion/pf:esTecnicaSaludable true
          FILTER NOT EXISTS { ?dish pf:tieneIngrediente ?ing . ?ing pf:tipoDeAlimento ?t

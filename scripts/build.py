@@ -12,7 +12,7 @@ from pathlib import Path
 from rdflib import OWL, RDF, RDFS, XSD, Graph, Literal, Namespace
 
 ROOT = Path(__file__).resolve().parent.parent
-PF = Namespace("http://unitru.edu.pe/ai2/peruvian-food#")
+PF = Namespace("https://thunderfruit.github.io/peruvian-food-ontology/ontology#")
 GROUP_CLASS = {"andino": PF.InsumoAndino, "marino": PF.InsumoMarino,
                "amazonico": PF.InsumoAmazonico, "general": PF.InsumoGeneral}
 REGION = {"costa": PF.Costa, "sierra": PF.Sierra, "selva": PF.Selva}

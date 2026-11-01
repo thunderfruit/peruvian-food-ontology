@@ -1,5 +1,5 @@
 # Perfiles cualitativos, versión base: solo técnica de cocción y categorías directas.
-PREFIX pf: <http://unitru.edu.pe/ai2/peruvian-food#>
+PREFIX pf: <https://thunderfruit.github.io/peruvian-food-ontology/ontology#>
 INSERT { ?dish a pf:PlatoBajoEnCalorias }
 WHERE  { ?dish a pf:Plato ; pf:tecnicaDeCoccion/pf:esTecnicaSaludable true
          FILTER NOT EXISTS { ?dish pf:tieneIngrediente ?ing . ?ing pf:tipoDeAlimento ?t
