@@ -19,18 +19,18 @@ https://thunderfruit.github.io/peruvian-food-ontology/prototype/recommender.html
 
 Escala: 1 = totalmente en desacuerdo, 2 = en desacuerdo, 3 = ni de acuerdo ni en desacuerdo, 4 = de acuerdo, 5 = totalmente de acuerdo.
 
-| N.º | Afirmación |
-|---|---|
-| 1 | Creo que me gustaría usar este sistema con frecuencia. |
-| 2 | Encontré el sistema innecesariamente complejo. |
-| 3 | Pensé que el sistema era fácil de usar. |
-| 4 | Creo que necesitaría el apoyo de una persona con conocimientos técnicos para usar este sistema. |
-| 5 | Encontré que las funciones del sistema estaban bien integradas. |
-| 6 | Pensé que había demasiada inconsistencia en el sistema. |
-| 7 | Imagino que la mayoría de las personas aprendería a usar este sistema muy rápidamente. |
-| 8 | Encontré el sistema muy engorroso de usar. |
-| 9 | Me sentí seguro usando el sistema. |
-| 10 | Necesité aprender muchas cosas antes de poder usar este sistema. |
+| N.º | Afirmación                                                                                      |
+| --- | ----------------------------------------------------------------------------------------------- |
+| 1   | Creo que me gustaría usar este sistema con frecuencia.                                          |
+| 2   | Encontré el sistema innecesariamente complejo.                                                  |
+| 3   | Pensé que el sistema era fácil de usar.                                                         |
+| 4   | Creo que necesitaría el apoyo de una persona con conocimientos técnicos para usar este sistema. |
+| 5   | Encontré que las funciones del sistema estaban bien integradas.                                 |
+| 6   | Pensé que había demasiada inconsistencia en el sistema.                                         |
+| 7   | Imagino que la mayoría de las personas aprendería a usar este sistema muy rápidamente.          |
+| 8   | Encontré el sistema muy engorroso de usar.                                                      |
+| 9   | Me sentí seguro usando el sistema.                                                              |
+| 10  | Necesité aprender muchas cosas antes de poder usar este sistema.                                |
 
 ## Registro y cálculo
 

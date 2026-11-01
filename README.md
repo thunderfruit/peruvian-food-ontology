@@ -6,6 +6,8 @@ Ontología OWL 2 de platos de la cocina peruana (costa, sierra y selva, con énf
 
 **Prototipo:** https://thunderfruit.github.io/peruvian-food-ontology/prototype/recommender.html
 
+**Ontología en WebProtégé:** https://webprotege.stanford.edu/#projects/99469a5d-e3c7-441f-973f-9bf499b1798e/edit/Classes (requiere iniciar sesión)
+
 **Informe (PDF):** [`report/AI2_U2_Research_Activity.pdf`](report/AI2_U2_Research_Activity.pdf)
 
 ## Estructura
