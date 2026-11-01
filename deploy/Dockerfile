@@ -11,6 +11,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certifi
 
 COPY ontology/peruvian_food_base.ttl ontology/peruvian_food_refined.ttl /data/
 COPY deploy/config.ttl /opt/fuseki/config.ttl
+# FUSEKI_BASE is /opt/fuseki/run; this replaces the default localhost-only admin rule
+COPY deploy/shiro.ini /opt/fuseki/run/shiro.ini
 
 WORKDIR /opt/fuseki
 ENV JVM_ARGS="-Xmx384m"
